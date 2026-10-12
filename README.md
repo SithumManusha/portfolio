@@ -1,5 +1,6 @@
 # 💼 Sithum Manusha — Software Engineering Portfolio
 
+[![Live Site](https://img.shields.io/badge/Live_Portfolio-sithum--manusha.vercel.app-4f46e5?style=for-the-badge&logo=vercel&logoColor=white)](https://sithum-manusha.vercel.app)
 [![React](https://img.shields.io/badge/React-19.2-61dafb?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178c6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-8.x-646cff?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
