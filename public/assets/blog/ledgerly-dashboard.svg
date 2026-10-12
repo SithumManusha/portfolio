@@ -1,0 +1,122 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Ledgerly finance dashboard</title>
+  <desc id="desc">A dark finance dashboard showing balance, spending, budget health, expense analytics, receipt OCR, multi-currency and secure data features.</desc>
+  <defs>
+    <linearGradient id="bg" x1="60" y1="30" x2="1140" y2="660" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0C2C26"/>
+      <stop offset="0.55" stop-color="#071C1A"/>
+      <stop offset="1" stop-color="#04100F"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="235" y1="175" x2="1040" y2="505" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#34D399"/>
+      <stop offset="1" stop-color="#22D3EE"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#133A32"/>
+      <stop offset="1" stop-color="#0B2622"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#020908" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" rx="28" fill="url(#bg)"/>
+  <circle cx="1070" cy="-10" r="210" fill="#16A37A" fill-opacity="0.12"/>
+  <circle cx="70" cy="680" r="180" fill="#22D3EE" fill-opacity="0.07"/>
+  <path d="M0 146H1200" stroke="#2DD4BF" stroke-opacity="0.12"/>
+
+  <g filter="url(#shadow)">
+    <rect x="62" y="52" width="1076" height="570" rx="22" fill="#071614" stroke="#2DD4BF" stroke-opacity="0.28"/>
+  </g>
+
+  <!-- Sidebar -->
+  <rect x="62" y="52" width="204" height="570" rx="22" fill="#0A211D"/>
+  <path d="M266 52V622" stroke="#2DD4BF" stroke-opacity="0.16"/>
+  <rect x="91" y="82" width="42" height="42" rx="12" fill="url(#accent)"/>
+  <path d="M102 94H122C124.2 94 126 95.8 126 98V108C126 110.2 124.2 112 122 112H102C99.8 112 98 110.2 98 108V98C98 95.8 99.8 94 102 94Z" stroke="#04211B" stroke-width="2.5"/>
+  <path d="M99 99L112 105L125 99" stroke="#04211B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="145" y="109" fill="#ECFEF7" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800">Ledgerly</text>
+  <text x="93" y="159" fill="#6EE7C0" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1.6">WORKSPACE</text>
+  <rect x="84" y="179" width="160" height="42" rx="12" fill="#1E7661" fill-opacity="0.34" stroke="#34D399" stroke-opacity="0.35"/>
+  <circle cx="107" cy="200" r="6" fill="#34D399"/>
+  <text x="124" y="205" fill="#E7FFF5" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">Overview</text>
+  <circle cx="107" cy="249" r="5" fill="#6B9188"/>
+  <text x="124" y="254" fill="#9BB8B0" font-family="Inter, Arial, sans-serif" font-size="14">Transactions</text>
+  <circle cx="107" cy="295" r="5" fill="#6B9188"/>
+  <text x="124" y="300" fill="#9BB8B0" font-family="Inter, Arial, sans-serif" font-size="14">Budgets</text>
+  <circle cx="107" cy="341" r="5" fill="#6B9188"/>
+  <text x="124" y="346" fill="#9BB8B0" font-family="Inter, Arial, sans-serif" font-size="14">Reports</text>
+  <circle cx="107" cy="387" r="5" fill="#6B9188"/>
+  <text x="124" y="392" fill="#9BB8B0" font-family="Inter, Arial, sans-serif" font-size="14">Groups</text>
+  <rect x="88" y="533" width="152" height="56" rx="12" fill="#0D302A" stroke="#2DD4BF" stroke-opacity="0.18"/>
+  <circle cx="113" cy="561" r="14" fill="#1C5A4C"/>
+  <text x="113" y="565" text-anchor="middle" fill="#B9FFF0" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="800">SM</text>
+  <text x="137" y="558" fill="#D8FFF2" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="700">Sithum</text>
+  <text x="137" y="575" fill="#77A99D" font-family="Inter, Arial, sans-serif" font-size="10">Personal workspace</text>
+
+  <!-- Main dashboard -->
+  <text x="302" y="101" fill="#E9FFF7" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="800">Financial overview</text>
+  <text x="302" y="125" fill="#7EA69C" font-family="Inter, Arial, sans-serif" font-size="13">Track spending, budgets and shared expenses in one place.</text>
+  <rect x="1003" y="81" width="103" height="32" rx="16" fill="#123A31" stroke="#2DD4BF" stroke-opacity="0.28"/>
+  <circle cx="1023" cy="97" r="5" fill="#34D399"/>
+  <text x="1036" y="102" fill="#B8FCE6" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700">SYNCED</text>
+
+  <!-- Metric cards -->
+  <rect x="302" y="160" width="240" height="106" rx="16" fill="url(#card)" stroke="#34D399" stroke-opacity="0.28"/>
+  <text x="322" y="189" fill="#87B6A8" font-family="Inter, Arial, sans-serif" font-size="12">Available balance</text>
+  <text x="322" y="226" fill="#F1FFF9" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800">$4,820.50</text>
+  <text x="322" y="248" fill="#5EE6B1" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700">↑ 12.8% this month</text>
+  <circle cx="503" cy="189" r="17" fill="#1A5C4C"/>
+  <path d="M495 190L502 183L509 190M502 184V197" stroke="#71F1BE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="560" y="160" width="240" height="106" rx="16" fill="url(#card)" stroke="#22D3EE" stroke-opacity="0.28"/>
+  <text x="580" y="189" fill="#87B6A8" font-family="Inter, Arial, sans-serif" font-size="12">Spent this month</text>
+  <text x="580" y="226" fill="#F1FFF9" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800">$1,247.80</text>
+  <text x="580" y="248" fill="#FBBF83" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700">↓ 4.2% vs last month</text>
+  <circle cx="761" cy="189" r="17" fill="#155267"/>
+  <path d="M754 184L761 191L768 184M761 190V177" stroke="#7DEBFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="818" y="160" width="288" height="106" rx="16" fill="url(#card)" stroke="#A78BFA" stroke-opacity="0.28"/>
+  <text x="838" y="189" fill="#87B6A8" font-family="Inter, Arial, sans-serif" font-size="12">Budget health</text>
+  <text x="838" y="226" fill="#F1FFF9" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800">78%</text>
+  <text x="838" y="248" fill="#C4B5FD" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700">On track for this cycle</text>
+  <circle cx="1053" cy="213" r="30" fill="none" stroke="#24493F" stroke-width="8"/>
+  <path d="M1053 183A30 30 0 1 1 1026 226" stroke="#A78BFA" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- Spending chart -->
+  <rect x="302" y="286" width="504" height="246" rx="16" fill="#0B2722" stroke="#2DD4BF" stroke-opacity="0.2"/>
+  <text x="326" y="318" fill="#DDFDF2" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="800">Spending activity</text>
+  <text x="326" y="340" fill="#779D94" font-family="Inter, Arial, sans-serif" font-size="11">Last 6 months</text>
+  <line x1="326" y1="467" x2="779" y2="467" stroke="#31564D" stroke-opacity="0.7"/>
+  <line x1="326" y1="426" x2="779" y2="426" stroke="#31564D" stroke-opacity="0.35" stroke-dasharray="4 6"/>
+  <line x1="326" y1="385" x2="779" y2="385" stroke="#31564D" stroke-opacity="0.35" stroke-dasharray="4 6"/>
+  <path d="M342 443C374 428 394 445 421 407C449 368 474 421 501 392C529 361 554 381 581 356C609 332 633 378 662 344C687 315 708 342 735 307C749 289 766 293 775 278" stroke="url(#accent)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M342 443C374 428 394 445 421 407C449 368 474 421 501 392C529 361 554 381 581 356C609 332 633 378 662 344C687 315 708 342 735 307C749 289 766 293 775 278V467H342V443Z" fill="url(#accent)" fill-opacity="0.11"/>
+  <circle cx="775" cy="278" r="6" fill="#34D399" stroke="#D9FFF0" stroke-width="2"/>
+  <text x="337" y="489" fill="#6F968D" font-family="Inter, Arial, sans-serif" font-size="10">Jan</text>
+  <text x="418" y="489" fill="#6F968D" font-family="Inter, Arial, sans-serif" font-size="10">Feb</text>
+  <text x="497" y="489" fill="#6F968D" font-family="Inter, Arial, sans-serif" font-size="10">Mar</text>
+  <text x="577" y="489" fill="#6F968D" font-family="Inter, Arial, sans-serif" font-size="10">Apr</text>
+  <text x="657" y="489" fill="#6F968D" font-family="Inter, Arial, sans-serif" font-size="10">May</text>
+  <text x="744" y="489" fill="#6F968D" font-family="Inter, Arial, sans-serif" font-size="10">Jun</text>
+
+  <!-- Breakdown panel -->
+  <rect x="824" y="286" width="282" height="246" rx="16" fill="#0B2722" stroke="#2DD4BF" stroke-opacity="0.2"/>
+  <text x="848" y="318" fill="#DDFDF2" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="800">Expense breakdown</text>
+  <circle cx="922" cy="402" r="63" fill="none" stroke="#24493F" stroke-width="22"/>
+  <path d="M922 339A63 63 0 0 1 978 373" stroke="#34D399" stroke-width="22" stroke-linecap="round"/>
+  <path d="M978 373A63 63 0 0 1 957 450" stroke="#22D3EE" stroke-width="22" stroke-linecap="round"/>
+  <path d="M957 450A63 63 0 0 1 870 438" stroke="#A78BFA" stroke-width="22" stroke-linecap="round"/>
+  <text x="922" y="399" text-anchor="middle" fill="#F1FFF9" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800">$1.2k</text>
+  <text x="922" y="418" text-anchor="middle" fill="#7EA69C" font-family="Inter, Arial, sans-serif" font-size="10">total</text>
+  <circle cx="849" cy="497" r="4" fill="#34D399"/><text x="860" y="501" fill="#8EADA4" font-family="Inter, Arial, sans-serif" font-size="10">Needs 46%</text>
+  <circle cx="930" cy="497" r="4" fill="#22D3EE"/><text x="941" y="501" fill="#8EADA4" font-family="Inter, Arial, sans-serif" font-size="10">Wants 31%</text>
+  <circle cx="1009" cy="497" r="4" fill="#A78BFA"/><text x="1020" y="501" fill="#8EADA4" font-family="Inter, Arial, sans-serif" font-size="10">Other 23%</text>
+
+  <!-- Feature ribbon -->
+  <rect x="302" y="551" width="804" height="46" rx="13" fill="#0E332C" stroke="#2DD4BF" stroke-opacity="0.18"/>
+  <circle cx="329" cy="574" r="7" fill="#34D399"/><text x="344" y="578" fill="#B9FDE8" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700">Receipt OCR</text>
+  <circle cx="482" cy="574" r="7" fill="#22D3EE"/><text x="497" y="578" fill="#B9FDE8" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700">Multi-currency</text>
+  <circle cx="657" cy="574" r="7" fill="#A78BFA"/><text x="672" y="578" fill="#B9FDE8" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700">Group splits</text>
+  <circle cx="821" cy="574" r="7" fill="#FBBF24"/><text x="836" y="578" fill="#B9FDE8" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="700">Secure sessions</text>
+</svg>

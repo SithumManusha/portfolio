@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Effective bug reporting workflow</title>
+  <desc id="desc">A visual defect workflow showing find, describe, prove, and verify stages.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#431407"/><stop offset="1" stop-color="#7c2d12"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#1c0803" flood-opacity=".45"/></filter>
+  </defs>
+  <rect width="1200" height="675" rx="36" fill="url(#bg)"/><circle cx="1040" cy="110" r="180" fill="#fb923c" opacity=".13"/><circle cx="140" cy="600" r="200" fill="#ef4444" opacity=".1"/>
+  <text x="84" y="92" fill="#fed7aa" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="3">DEFECT REPORTING &amp; AGILE</text>
+  <text x="84" y="146" fill="#fff7ed" font-family="Arial, sans-serif" font-size="42" font-weight="800">Make every bug easy to fix</text>
+  <text x="84" y="183" fill="#fed7aa" font-family="Arial, sans-serif" font-size="20">Clear evidence turns a problem into progress</text>
+  <g filter="url(#shadow)">
+    <rect x="100" y="264" width="250" height="188" rx="18" fill="#dc2626" stroke="#fca5a5" stroke-width="2"/><rect x="392" y="264" width="250" height="188" rx="18" fill="#ea580c" stroke="#fdba74" stroke-width="2"/><rect x="684" y="264" width="250" height="188" rx="18" fill="#d97706" stroke="#fde68a" stroke-width="2"/><rect x="976" y="264" width="124" height="188" rx="18" fill="#059669" stroke="#86efac" stroke-width="2"/>
+    <circle cx="225" cy="322" r="28" fill="#7f1d1d"/><text x="225" y="332" fill="#fecaca" font-family="Arial" font-size="25" font-weight="800" text-anchor="middle">!</text><text x="225" y="390" fill="white" font-family="Arial" font-size="23" font-weight="800" text-anchor="middle">FIND</text><text x="225" y="420" fill="#fee2e2" font-family="Arial" font-size="16" text-anchor="middle">reproduce</text>
+    <circle cx="517" cy="322" r="28" fill="#9a3412"/><path d="M503 322h28M517 308v28" stroke="#ffedd5" stroke-width="4"/><text x="517" y="390" fill="white" font-family="Arial" font-size="23" font-weight="800" text-anchor="middle">DESCRIBE</text><text x="517" y="420" fill="#ffedd5" font-family="Arial" font-size="16" text-anchor="middle">steps + expected</text>
+    <circle cx="809" cy="322" r="28" fill="#92400e"/><path d="M796 322l9 9 17-20" fill="none" stroke="#fef3c7" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><text x="809" y="390" fill="white" font-family="Arial" font-size="23" font-weight="800" text-anchor="middle">PROVE</text><text x="809" y="420" fill="#fef3c7" font-family="Arial" font-size="16" text-anchor="middle">logs + evidence</text>
+    <circle cx="1038" cy="322" r="28" fill="#065f46"/><path d="M1024 322l9 9 17-20" fill="none" stroke="#d1fae5" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><text x="1038" y="390" fill="white" font-family="Arial" font-size="19" font-weight="800" text-anchor="middle">VERIFY</text><text x="1038" y="420" fill="#d1fae5" font-family="Arial" font-size="14" text-anchor="middle">retest</text>
+  </g>
+  <path d="M350 358h42m250 0h42m250 0h42" stroke="#fed7aa" stroke-width="8" stroke-linecap="round"/><path d="m378 343 18 15-18 15m292-15 18 15-18 15m292-15 18 15-18 15" fill="none" stroke="#fff7ed" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="84" y="566" width="1032" height="1" fill="#fed7aa" opacity=".35"/><text x="84" y="612" fill="#ffedd5" font-family="Arial, sans-serif" font-size="18">Specific title • clear steps • expected vs actual • safe evidence</text><text x="1116" y="612" fill="#fdba74" font-family="Arial, sans-serif" font-size="18" text-anchor="end" font-weight="700">JIRA / AGILE</text>
+</svg>
