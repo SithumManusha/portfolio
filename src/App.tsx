@@ -92,9 +92,9 @@ const projectDetailsData: Record<string, ProjectDetails> = {
     role: "Software Systems & Quality Engineer",
     methodology: "Agile Scrum & Distributed Architecture",
     tags: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "NestJS", "PostgreSQL (Supabase)", "Prisma ORM", "Socket.io WebSockets", "IndexedDB"],
-    description: "Ryzera POS is an enterprise-grade multi-branch retail Point of Sale (POS) system engineered for high availability and terminal resilience during complete network blackouts. Architected around a client-first Progressive Web App (PWA) model, transactions are isolated and persisted into browser IndexedDB object stores with temporary cryptographic UUIDs, and automatically batched and reconciled against central PostgreSQL master instances via background Service Workers once connectivity is re-established.",
+    description: "Ryzera POS is an enterprise-grade multi-branch retail Point of Sale (POS) system engineered for high availability and terminal resilience during complete network blackouts. Architected around a client-first Progressive Web App (PWA) model, transactions are isolated and persisted into browser IndexedDB object stores with temporary cryptographic UUIDs, and automatically batched and reconciled against central PostgreSQL master instances via background Service Workers once connectivity is re-established. It features an interactive 7-node regional mesh radar visualizer, automated exponential backoff error auto-recovery, and a 3-way deterministic conflict reconciliation engine.",
     problemStatement: "Traditional cloud-dependent retail POS systems freeze or reject checkouts when physical store internet disconnects, resulting in lost sales, cashier bottleneck queues, and prone-to-error manual inventory reconciliations.",
-    solutionOverview: "Engineered an offline-first distributed architecture leveraging browser IndexedDB storage and event-driven Service Workers to execute sub-50ms offline checkouts. Implemented idempotency tokens, transaction retry queues, and atomic database locks to guarantee zero double-charges or stock collisions upon automated background sync.",
+    solutionOverview: "Engineered an offline-first distributed architecture leveraging browser IndexedDB storage and event-driven Service Workers to execute sub-50ms offline checkouts. Implemented idempotency tokens, a 3-way deterministic conflict engine (Branch Wins, Cloud Authority, and Smart Field-Level Merges), transaction retry queues with exponential backoff, and atomic database locks to guarantee zero double-charges or stock collisions upon automated background sync.",
     architecture: `+-----------------------------------------------------------------------------------+
 |               Cashier POS Client Terminal (Browser / Progressive Web App)         |
 |         Sales UI  <--->  IndexedDB Local Cache Store  <--->  Sync Service Worker  |
@@ -120,14 +120,19 @@ const projectDetailsData: Record<string, ProjectDetails> = {
         highlights: ["Instant UI response <50ms", "Local persistence in IndexedDB", "Thermal printer receipt templates"]
       },
       {
-        name: "Multi-Branch Inventory Ledger",
-        desc: "Centralized multi-location product catalog with real-time stock decrements across concurrent branch registers, low-stock triggers, and warehouse transfer tracking.",
-        highlights: ["ACID transaction integrity", "SKU & barcode indexation", "Automated stock audit logs"]
+        name: "3-Way Deterministic Conflict Engine",
+        desc: "Automated reconciliation for concurrent multi-branch catalog and inventory changes supporting Trust Local (Branch Wins), Cloud Master Authority, and Smart Field-Level Merging.",
+        highlights: ["Smart field-level merge", "Zero data loss", "Immutable audit trail"]
       },
       {
-        name: "Background Sync & Conflict Engine",
-        desc: "Intelligent background event loop monitoring network connectivity status, batching offline transactions, and resolving concurrent order collision states.",
-        highlights: ["Idempotent UUID payloads", "Automated retry backoff", "Zero duplicate invoice records"]
+        name: "7-Node Regional Mesh Topology Radar",
+        desc: "Interactive visualizer monitoring 7 regional nodes (Head Office, Kandy, Galle, Kurunegala, Negombo, Jaffna, Matara) with live WebSocket latency tracking & 100% mesh efficiency telemetry.",
+        highlights: ["Live sub-20ms heartbeat", "100% network efficiency score", "Real-time topology radar"]
+      },
+      {
+        name: "Fault-Tolerant Auto-Recovery & Device Manager",
+        desc: "Intelligent background event loop executing exponential backoff retry cycles on failed transactions with schema auto-normalization and in-place cryptographic POS terminal revocation.",
+        highlights: ["Zero-trust session kill", "Exponential backoff auto-recovery", "Automated PDF audit reports"]
       },
       {
         name: "Role-Based Access Control (RBAC)",
@@ -185,7 +190,7 @@ const projectDetailsData: Record<string, ProjectDetails> = {
       description: "Structured with foreign-key referential integrity, compound indexes on product barcodes, and immutable audit ledger tables to prevent financial and stock discrepancies."
     },
     image: "/ryzera_real_showcase.png?v=3d",
-    github: "https://github.com/SithumManusha/Ryzera-POS"
+    github: "https://github.com/Ryzera/Ryzera-POS"
   },
   ledgerly: {
     title: "Ledgerly — Autonomous AI Financial Intelligence & Collaborative Ledger",
@@ -1291,7 +1296,7 @@ const projectsData: ProjectItem[] = [
     image: '/ryzera_real_showcase.png?v=3d',
     alt: 'Ryzera POS Multi-Branch Retail Enterprise Showcase',
     tags: ['Next.js 16', 'TypeScript', 'NestJS', 'PostgreSQL (Supabase)', 'Prisma ORM', 'Socket.io', 'IndexedDB', 'Postman', 'Docker'],
-    githubUrl: 'https://github.com/SithumManusha/Ryzera-POS',
+    githubUrl: 'https://github.com/Ryzera/Ryzera-POS',
     detailsId: 'ryzera',
     featurePills: [
       { icon: 'fa-solid fa-wifi-slash', text: 'OFFLINE INDEXEDDB SYNC' },
