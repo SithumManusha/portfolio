@@ -4060,22 +4060,22 @@ function App() {
                         </div>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                           <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '0.88rem', lineHeight: 1.5 }}>
+                            <span style={{ flexShrink: 0 }}>🔐</span>
+                            <span><strong>Authentication Module:</strong> Secure multi-tenant user authentication, JWT token lifecycle management, and granular Role-Based Access Control (Super Admin, Branch Manager, Cashier).</span>
+                          </div>
+                          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '0.88rem', lineHeight: 1.5 }}>
                             <span style={{ flexShrink: 0 }}>🛒</span>
-                            <span><strong>Module 1 — Point-of-Sale Checkout:</strong> High-speed barcode scanning, dynamic discounts, multi-tender split payments (Cash/Card), and thermal receipt printing.</span>
+                            <span><strong>Billing Module:</strong> High-speed cashier point-of-sale checkout, barcode scanning, dynamic discount engine, and multi-tender split payments (Cash/Card).</span>
                           </div>
                           <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '0.88rem', lineHeight: 1.5 }}>
                             <span style={{ flexShrink: 0 }}>📦</span>
-                            <span><strong>Module 2 — Multi-Branch Inventory &amp; Stock Ledger:</strong> Centralized product catalog, real-time branch stock transfer workflows, and automated low-stock alerts.</span>
-                          </div>
-                          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '0.88rem', lineHeight: 1.5 }}>
-                            <span style={{ flexShrink: 0 }}>🛡️</span>
-                            <span><strong>Module 3 — Role-Based Access Control (RBAC):</strong> Multi-tier operational security boundaries across Super Admin, Branch Manager overrides, and Cashier roles.</span>
+                            <span><strong>Inventory Module:</strong> Centralized multi-branch product catalog, stock replenishment workflows, inter-branch stock transfers, and automated low-stock threshold triggers.</span>
                           </div>
                           <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '0.88rem', lineHeight: 1.5 }}>
                             <span style={{ flexShrink: 0 }}>📊</span>
-                            <span><strong>Module 4 — Business Intelligence &amp; Analytics:</strong> Visual revenue performance tracking, product category margin breakdowns, and financial audit reports.</span>
+                            <span><strong>Reporting Module:</strong> Business intelligence dashboards, daily branch revenue analytics, product margin breakdowns, and financial audit reports.</span>
                           </div>
-                          {/* Emphasized Module 5 (My Core Architectural Module) */}
+                          {/* Emphasized Sync Module (My Core Architectural Module) */}
                           <div style={{ 
                             display: 'flex', 
                             alignItems: 'flex-start', 
@@ -4091,7 +4091,7 @@ function App() {
                           }}>
                             <span style={{ flexShrink: 0 }}>⚡</span>
                             <span>
-                              <strong style={{ color: theme === 'light' ? '#047857' : '#34d399' }}>Module 5 — Distributed Offline Sync &amp; Edge Telemetry:</strong> IndexedDB client buffering, PWA Service Worker background reconciliation, 3-way conflict engine, and remote terminal kill-switch.
+                              <strong style={{ color: theme === 'light' ? '#047857' : '#34d399' }}>Sync Module:</strong> Offline-first synchronization engine using IndexedDB &amp; PWA Service Workers (&lt;50ms billing during outages), 3-way conflict resolution engine (Last-Write-Wins &amp; Additive Stock Merging), real-time Socket.io terminal telemetry, and zero-trust remote kill-switch device management.
                               <span style={{ 
                                 display: 'inline-block',
                                 marginLeft: '8px',
@@ -4104,7 +4104,7 @@ function App() {
                                 textTransform: 'uppercase',
                                 letterSpacing: '0.04em'
                               }}>
-                                ★ My Core Architectural Module
+                                ★ My Module &amp; Core Architectural Contribution
                               </span>
                             </span>
                           </div>
@@ -4141,7 +4141,7 @@ function App() {
                           textTransform: 'uppercase'
                         }}>
                           <i className="fa-solid fa-crown"></i>
-                          <span>My Core Subsystem &amp; Direct Architectural Ownership</span>
+                          <span>My Core Subsystem &amp; Direct Deliverables (Sync Module)</span>
                         </div>
                         <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#10b981', background: 'rgba(16, 185, 129, 0.12)', padding: '3px 10px', borderRadius: '6px', border: '1px solid rgba(16, 185, 129, 0.3)' }}>
                           Lead Backend, Data &amp; Offline Sync Architect
