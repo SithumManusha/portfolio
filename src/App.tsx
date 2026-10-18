@@ -4163,7 +4163,7 @@ function App() {
                         </li>
                         <li className="duo-scope-item">
                           <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
-                          <span><strong style={{ color: 'var(--text-primary)' }}>Zero-Trust Terminal Fleet Console &amp; Remote Kill-Switch:</strong> Created real-time terminal fleet management dashboard tracking battery levels (91% ⚡), Wi-Fi strength, and live connection states with 1-click remote security revocation (instant WebSocket termination and cryptographic JWT token invalidation).</span>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Zero-Trust Terminal Fleet Console &amp; Remote Kill-Switch:</strong> Created real-time terminal fleet management dashboard tracking battery levels (up to 95% ⚡), Wi-Fi strength, and live connection states with 1-click remote security revocation (instant WebSocket termination and cryptographic JWT token invalidation).</span>
                         </li>
                         <li className="duo-scope-item">
                           <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
@@ -4222,7 +4222,7 @@ function App() {
                       {[
                         { icon: "⚡", title: "Offline-First Non-Blocking Billing", desc: "Continuous cashier sales processing backed by browser IndexedDB local persistence with 100% Zero Data Loss" },
                         { icon: "🔄", title: "Smart Conflict Resolution Engine", desc: "Algorithmic resolution across domain policies (Additive Stock Merging, HQ Server Wins, and Last-Write-Wins) with an IDE-style visual diff" },
-                        { icon: "📡", title: "Live Edge Telemetry & Remote Kill-Switch", desc: "Real-time hardware fleet observability tracking battery levels (91% ⚡), Wi-Fi strength, and a 1-click remote security revocation" },
+                        { icon: "📡", title: "Live Edge Telemetry & Remote Kill-Switch", desc: "Real-time hardware fleet observability tracking battery levels (up to 95% ⚡), Wi-Fi strength, and a 1-click remote security revocation" },
                         { icon: "🚀", title: "Sub-50ms Real-Time Push Broadcasting", desc: "Instant emergency notice dispatch powered by Socket.io WebSockets without page reloads" },
                         { icon: "⚙️", title: "Centralized Runtime System Configuration", desc: "Dynamic management of 44 system parameters (including Sri Lankan 15% VAT and LKR currency) without server restarts" },
                         { icon: "🩺", title: "Executive Health Watchdog", desc: "Real-time 24-hour 15ms Latency Pulse tracking, proactive error detection, and instant client-side C-level compliance PDF exports" }
