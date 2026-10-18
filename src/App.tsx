@@ -3913,20 +3913,6 @@ function App() {
                         </span>
                       </div>
 
-                      {/* Team Context Scope */}
-                      <div style={{
-                        fontSize: '0.85rem',
-                        lineHeight: 1.5,
-                        color: 'var(--text-secondary)',
-                        background: theme === 'light' ? 'rgba(0, 0, 0, 0.02)' : 'rgba(255, 255, 255, 0.02)',
-                        border: '1px solid var(--card-border)',
-                        borderRadius: '8px',
-                        padding: '10px 14px',
-                        marginBottom: '14px'
-                      }}>
-                        <strong style={{ color: 'var(--text-primary)' }}>👥 Group Scope (5-Member Team — Microbotics, Group 17, University of Moratuwa):</strong> While the broader team engineered the structural conveyor chassis, RFID identification, and servo diverter gates, I personally owned and engineered the end-effector gripper mechatronics, C++ kinematics step calibration, custom PCB circuit, and the dual-MCU UART communication bridge.
-                      </div>
-
                       <ul className="duo-scope-list" style={{ gap: '12px' }}>
                         <li className="duo-scope-item">
                           <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
@@ -4064,8 +4050,66 @@ function App() {
                         Modern retail supermarket chains operating across geographically dispersed branches demand high availability, synchronized inventory, and continuous checkout reliability. However, unexpected internet blackouts, network drops, and power cuts frequently paralyze traditional cloud POS counters, causing stranded queues and direct financial losses. Furthermore, naive offline billing systems trigger destructive version collisions upon reconnection—resulting in phantom inventory, inaccurate accounting, and compliance failures. <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Ryzera POS</strong> was engineered as a full-stack, multi-branch enterprise retail platform that unifies point-of-sale billing, centralized inventory management, role-based governance, and an autonomous offline-first synchronization backbone.
                       </p>
                       <p style={{ margin: 0 }}>
-                        To bring this enterprise platform to life, we architected an end-to-end type-safe distributed stack: <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>Next.js 16 (App Router), React 19, and Tailwind CSS</strong> for a modular, high-performance UI suite, communicating with a scalable <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>NestJS</strong> backend and an AWS Singapore <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Supabase PostgreSQL</strong> cluster managed via <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Prisma ORM</strong>. The platform bridges four mission-critical retail domains: high-speed cashier checkout with barcode scanning, branch-level stock tracking and replenishment, granular Role-Based Access Control (Admin, Branch Manager, Cashier), and dynamic business intelligence reporting.
+                        To bring this enterprise platform to life, we architected an end-to-end type-safe distributed stack: <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>Next.js 16 (App Router), React 19, and Tailwind CSS</strong> for a modular, high-performance UI suite, communicating with a scalable <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>NestJS</strong> backend and an AWS Singapore <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Supabase PostgreSQL</strong> cluster managed via <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Prisma ORM</strong>.
                       </p>
+
+                      {/* 5 Core Enterprise Modules Breakdown */}
+                      <div style={{ marginTop: '6px', paddingTop: '12px', borderTop: '1px dashed rgba(var(--primary-rgb), 0.25)' }}>
+                        <div style={{ fontSize: '0.84rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', color: theme === 'light' ? '#0284c7' : '#38bdf8', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                          <i className="fa-solid fa-cubes"></i> 5 Core Enterprise Platform Modules:
+                        </div>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '0.88rem', lineHeight: 1.5 }}>
+                            <span style={{ flexShrink: 0 }}>🛒</span>
+                            <span><strong>Module 1 — Point-of-Sale Checkout:</strong> High-speed barcode scanning, dynamic discounts, multi-tender split payments (Cash/Card), and thermal receipt printing.</span>
+                          </div>
+                          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '0.88rem', lineHeight: 1.5 }}>
+                            <span style={{ flexShrink: 0 }}>📦</span>
+                            <span><strong>Module 2 — Multi-Branch Inventory &amp; Stock Ledger:</strong> Centralized product catalog, real-time branch stock transfer workflows, and automated low-stock alerts.</span>
+                          </div>
+                          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '0.88rem', lineHeight: 1.5 }}>
+                            <span style={{ flexShrink: 0 }}>🛡️</span>
+                            <span><strong>Module 3 — Role-Based Access Control (RBAC):</strong> Multi-tier operational security boundaries across Super Admin, Branch Manager overrides, and Cashier roles.</span>
+                          </div>
+                          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '0.88rem', lineHeight: 1.5 }}>
+                            <span style={{ flexShrink: 0 }}>📊</span>
+                            <span><strong>Module 4 — Business Intelligence &amp; Analytics:</strong> Visual revenue performance tracking, product category margin breakdowns, and financial audit reports.</span>
+                          </div>
+                          {/* Emphasized Module 5 (My Core Architectural Module) */}
+                          <div style={{ 
+                            display: 'flex', 
+                            alignItems: 'flex-start', 
+                            gap: '8px', 
+                            fontSize: '0.89rem', 
+                            lineHeight: 1.55,
+                            background: theme === 'light' ? 'rgba(16, 185, 129, 0.08)' : 'rgba(16, 185, 129, 0.12)',
+                            border: '1px solid rgba(16, 185, 129, 0.35)',
+                            borderLeft: '4px solid #10b981',
+                            borderRadius: '8px',
+                            padding: '9px 13px',
+                            marginTop: '2px'
+                          }}>
+                            <span style={{ flexShrink: 0 }}>⚡</span>
+                            <span>
+                              <strong style={{ color: theme === 'light' ? '#047857' : '#34d399' }}>Module 5 — Distributed Offline Sync &amp; Edge Telemetry:</strong> IndexedDB client buffering, PWA Service Worker background reconciliation, 3-way conflict engine, and remote terminal kill-switch.
+                              <span style={{ 
+                                display: 'inline-block',
+                                marginLeft: '8px',
+                                fontSize: '0.72rem', 
+                                fontWeight: 800, 
+                                background: '#10b981', 
+                                color: '#ffffff', 
+                                padding: '2px 8px', 
+                                borderRadius: '4px',
+                                textTransform: 'uppercase',
+                                letterSpacing: '0.04em'
+                              }}>
+                                ★ My Core Architectural Module
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
 
                     {/* My Key Contributions Card */}
@@ -4102,20 +4146,6 @@ function App() {
                         <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#10b981', background: 'rgba(16, 185, 129, 0.12)', padding: '3px 10px', borderRadius: '6px', border: '1px solid rgba(16, 185, 129, 0.3)' }}>
                           Lead Backend, Data &amp; Offline Sync Architect
                         </span>
-                      </div>
-
-                      {/* Team Context Scope */}
-                      <div style={{
-                        fontSize: '0.85rem',
-                        lineHeight: 1.5,
-                        color: 'var(--text-secondary)',
-                        background: theme === 'light' ? 'rgba(0, 0, 0, 0.02)' : 'rgba(255, 255, 255, 0.02)',
-                        border: '1px solid var(--card-border)',
-                        borderRadius: '8px',
-                        padding: '10px 14px',
-                        marginBottom: '14px'
-                      }}>
-                        <strong style={{ color: 'var(--text-primary)' }}>👥 Group Scope (4-Member Team):</strong> While the overall engineering team focused on cashier checkout screens, multi-branch product cataloging, and store-level revenue reporting, I personally architected and engineered the offline-first distributed synchronization engine, 3-way conflict resolution engine, real-time edge telemetry, and zero-trust device management console.
                       </div>
 
                       <ul className="duo-scope-list" style={{ gap: '12px' }}>
