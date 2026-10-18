@@ -91,7 +91,7 @@ const projectDetailsData: Record<string, ProjectDetails> = {
     category: "Enterprise Distributed Systems • Retail ERP & POS",
     role: "Software Systems & Quality Engineer",
     methodology: "Agile Scrum & Distributed Architecture",
-    tags: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS", "NestJS", "PostgreSQL (Supabase)", "Prisma ORM", "Socket.io WebSockets", "IndexedDB"],
+    tags: ["Next.js 16", "NestJS", "TypeScript", "PostgreSQL", "Prisma ORM", "IndexedDB", "Socket.io", "PWA", "Postman", "Jira", "Git"],
     description: "Ryzera POS is an enterprise-grade multi-branch retail Point of Sale (POS) system engineered for high availability and terminal resilience during complete network blackouts. Architected around a client-first Progressive Web App (PWA) model, transactions are isolated and persisted into browser IndexedDB object stores with temporary cryptographic UUIDs, and automatically batched and reconciled against central PostgreSQL master instances via background Service Workers once connectivity is re-established. It features an interactive 7-node regional mesh radar visualizer, automated exponential backoff error auto-recovery, and a 3-way deterministic conflict reconciliation engine.",
     problemStatement: "Traditional cloud-dependent retail POS systems freeze or reject checkouts when physical store internet disconnects, resulting in lost sales, cashier bottleneck queues, and prone-to-error manual inventory reconciliations.",
     solutionOverview: "Engineered an offline-first distributed architecture leveraging browser IndexedDB storage and event-driven Service Workers to execute sub-50ms offline checkouts. Implemented idempotency tokens, a 3-way deterministic conflict engine (Branch Wins, Cloud Authority, and Smart Field-Level Merges), transaction retry queues with exponential backoff, and atomic database locks to guarantee zero double-charges or stock collisions upon automated background sync.",
@@ -1287,11 +1287,11 @@ const projectsData: ProjectItem[] = [
       label: 'Group Project',
       role: 'Lead Backend & Offline Sync Architect'
     },
-    desc: 'A distributed, multi-branch retail Point of Sale (POS) and inventory platform engineered for zero-downtime offline sales continuity. Implements client-side IndexedDB local state caching, automated bi-directional synchronization via Service Workers, and mathematical conflict resolution. Validated via Postman REST collections, boundary stress-testing, and Role-Based Access Control (RBAC) verification.',
+    desc: 'A distributed, multi-branch retail Point of Sale (POS) and inventory platform engineered for zero-downtime offline sales continuity. Implements client-side IndexedDB local state caching, automated bi-directional synchronization via Service Workers, and mathematical conflict resolution. Features centralized multi-branch terminal monitoring, battery and network health tracking, and remote security revocation.',
     myContributions: [
-      'Built an offline-first & online real-time sync engine using IndexedDB and PWA Service Workers (<100ms billing) with automated batch reconciliation to PostgreSQL.',
-      'Implemented smart conflict resolution engine (Last-Write-Wins and Additive Stock Merging) and real-time terminal latency tracking via Socket.io WebSockets.',
-      'Developed Next.js 16 screens, integrated NestJS REST APIs, and performed boundary checks & Role-Based Access Control (RBAC) audits with Postman.'
+      'Offline-First Sync Engine: Architected IndexedDB client buffer & PWA Service Workers delivering sub-50ms billing during network blackouts with automated batch sync to PostgreSQL.',
+      '3-Way Conflict Engine: Implemented mathematical reconciliation (Branch Wins, Cloud Master, Smart Stock Merge) with real-time Socket.io latency tracking.',
+      'Terminal Fleet Console & Remote Kill-Switch: Built device monitoring dashboard to track POS battery levels & network health across branches with 1-click remote session revocation.'
     ],
     image: '/ryzera_real_showcase.png?v=3d',
     alt: 'Ryzera POS Multi-Branch Retail Enterprise Showcase',
@@ -1300,7 +1300,7 @@ const projectsData: ProjectItem[] = [
     detailsId: 'ryzera',
     featurePills: [
       { icon: 'fa-solid fa-wifi-slash', text: 'OFFLINE INDEXEDDB SYNC' },
-      { icon: 'fa-solid fa-shield-halved', text: 'POSTMAN RBAC AUDIT' }
+      { icon: 'fa-solid fa-tower-broadcast', text: 'EDGE TELEMETRY & KILL-SWITCH' }
     ]
   },
   {
@@ -1352,14 +1352,14 @@ const projectsData: ProjectItem[] = [
     category: 'Dual-MCU Mechatronics & Autonomous Conveyor Platform · 2025',
     teamBadge: {
       type: 'duo',
-      label: 'Group Project',
+      label: 'Group Project (UoM FIT - Microbotics)',
       role: 'Lead Firmware & Mechatronics Architect'
     },
     desc: 'An industrial-grade autonomous sorting conveyor platform combining a 4-DOF robotic arm, dual-microcontroller distributed architecture (Arduino Mega + Uno), RFID categorization, and closed-loop ultrasonic capacity monitoring. Calibrated for 98% pick-and-place precision and non-blocking UART coordination.',
     myContributions: [
-      'Constructed automated conveyor sorting prototype equipped with a 4-DOF robotic arm, ultrasonic sensors, an RFID reader, and 3 sorting compartments.',
-      'Engineered a two-finger mechanical gripper driven by an Arduino and stepper motor, calibrating motor step counts to achieve 98% pick-and-place precision.',
-      'Tested sensor signal timings and synchronized robotic arm kinematics with continuous conveyor belt transport via asynchronous UART serial bus.'
+      'Two-Finger Mechanical Gripper: Designed articulated gripper powered by 28BYJ-48 stepper motor & ULN2003 driver, optimized for lightweight payload balance.',
+      'Precision Firmware Calibration: Programmed Arduino C++ step routines (openGripper/closeGripper) achieving 98% pick-and-place precision without slipping or crushing.',
+      'Conveyor Assembly & Timing Sync: Built structural conveyor frame, aligned roller pulley tension, and synchronized item drop timing with continuous belt feed.'
     ],
     image: '/robotic_sorting_3d_showcase.png?v=3d',
     alt: 'Automated Robotic Sorting System 3D CAD, Robotic Arm & Full Conveyor Belt Showcase',
@@ -2785,16 +2785,33 @@ function App() {
                     {currentProj.myContributions && currentProj.myContributions.length > 0 && (
                       <div className="project-cv-highlights-box">
                         <div className="cv-highlights-header">
-                          <i className="fa-solid fa-code-commit"></i>
-                          <span>MY CONTRIBUTIONS</span>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                            <i className="fa-solid fa-crown" style={{ color: '#10b981' }}></i>
+                            <span>MY CORE SUBSYSTEM &amp; DIRECT CONTRIBUTIONS</span>
+                          </div>
+                          {currentProj.teamBadge?.role && (
+                            <span className="cv-highlights-role-badge">
+                              {currentProj.teamBadge.role}
+                            </span>
+                          )}
                         </div>
                         <ul className="cv-highlights-list">
-                          {currentProj.myContributions.map((hl, hlIdx) => (
-                            <li key={hlIdx} className="cv-highlight-item">
-                              <i className="fa-solid fa-circle-check"></i>
-                              <span>{hl}</span>
-                            </li>
-                          ))}
+                          {currentProj.myContributions.map((hl, hlIdx) => {
+                            const colonIndex = hl.indexOf(':');
+                            const hasPrefix = colonIndex !== -1;
+                            const prefix = hasPrefix ? hl.slice(0, colonIndex + 1) : '';
+                            const rest = hasPrefix ? hl.slice(colonIndex + 1) : hl;
+
+                            return (
+                              <li key={hlIdx} className="cv-highlight-item">
+                                <i className="fa-solid fa-circle-check"></i>
+                                <span>
+                                  {hasPrefix && <strong style={{ color: 'var(--text-primary)', marginRight: '5px' }}>{prefix}</strong>}
+                                  {rest}
+                                </span>
+                              </li>
+                            );
+                          })}
                         </ul>
                       </div>
                     )}
@@ -3865,7 +3882,7 @@ function App() {
                       background: theme === 'light' ? 'rgba(16, 185, 129, 0.04)' : 'rgba(16, 185, 129, 0.03)',
                       border: '1px solid rgba(16, 185, 129, 0.3)',
                       borderRadius: '14px',
-                      padding: '18px 20px',
+                      padding: '20px 22px',
                       marginBottom: '22px'
                     }}>
                       <div style={{
@@ -3874,8 +3891,8 @@ function App() {
                         justifyContent: 'space-between',
                         flexWrap: 'wrap',
                         gap: '8px',
-                        marginBottom: '12px',
-                        paddingBottom: '8px',
+                        marginBottom: '14px',
+                        paddingBottom: '10px',
                         borderBottom: '1px solid rgba(16, 185, 129, 0.2)'
                       }}>
                         <div style={{
@@ -3883,35 +3900,61 @@ function App() {
                           alignItems: 'center',
                           gap: '8px',
                           fontWeight: 800,
-                          fontSize: '0.92rem',
+                          fontSize: '0.94rem',
                           color: '#10b981',
                           letterSpacing: '0.04em',
                           textTransform: 'uppercase'
                         }}>
-                          <i className="fa-solid fa-code-commit"></i>
-                          <span>My Key Contributions</span>
+                          <i className="fa-solid fa-crown"></i>
+                          <span>My Core Subsystem &amp; Direct Architectural Ownership</span>
                         </div>
-                        <span style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-secondary)' }}>
-                          Lead Firmware, Kinematics &amp; Circuit Engineer
+                        <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#10b981', background: 'rgba(16, 185, 129, 0.12)', padding: '3px 10px', borderRadius: '6px', border: '1px solid rgba(16, 185, 129, 0.3)' }}>
+                          Lead Mechatronics, Firmware &amp; Circuit Engineer
                         </span>
                       </div>
 
-                      <ul className="duo-scope-list" style={{ gap: '10px' }}>
+                      {/* Team Context Scope */}
+                      <div style={{
+                        fontSize: '0.85rem',
+                        lineHeight: 1.5,
+                        color: 'var(--text-secondary)',
+                        background: theme === 'light' ? 'rgba(0, 0, 0, 0.02)' : 'rgba(255, 255, 255, 0.02)',
+                        border: '1px solid var(--card-border)',
+                        borderRadius: '8px',
+                        padding: '10px 14px',
+                        marginBottom: '14px'
+                      }}>
+                        <strong style={{ color: 'var(--text-primary)' }}>👥 Group Scope (5-Member Team — Microbotics, Group 17, University of Moratuwa):</strong> While the broader team engineered the structural conveyor chassis, RFID identification, and servo diverter gates, I personally owned and engineered the end-effector gripper mechatronics, C++ kinematics step calibration, custom PCB circuit, and the dual-MCU UART communication bridge.
+                      </div>
+
+                      <ul className="duo-scope-list" style={{ gap: '12px' }}>
                         <li className="duo-scope-item">
-                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981' }}></i>
-                          <span>Engineered 2-finger mechanical gripper &amp; calibrated motor step counts for <strong>98% pick-and-place precision</strong>.</span>
+                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Two-Finger Mechanical Gripper Design:</strong> Evaluated two-finger, three-finger, and suction designs; selected and engineered a two-finger mechanical gripper driven by a <strong>28BYJ-48 stepper motor</strong> for lightweight arm payload balance and precise angular step resolution.</span>
                         </li>
                         <li className="duo-scope-item">
-                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981' }}></i>
-                          <span>Programmed Arduino Uno C++ kinematics trajectory control &amp; microswitch endstop homing routines.</span>
+                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Stepper Motor Interfacing &amp; Power Drive:</strong> Interfaced gripper mechanism with 28BYJ-48 stepper motor and <strong>ULN2003 driver module</strong> to achieve smooth motion, isolate inductive back-EMF, and deliver calibrated holding torque.</span>
                         </li>
                         <li className="duo-scope-item">
-                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981' }}></i>
-                          <span>Designed EasyEDA single-layer PCB circuit (1mm track/clearance) for high stall current resilience.</span>
+                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Precision C++ Firmware Calibration (<code>openGripper()</code> / <code>closeGripper()</code>):</strong> Programmed Arduino C++ stepper routines, meticulously calibrating step counts and motor speeds across varying object dimensions and surface textures to achieve <strong>98% pick-and-place precision</strong> without slipping or crushing.</span>
                         </li>
                         <li className="duo-scope-item">
-                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981' }}></i>
-                          <span>Established non-blocking asynchronous UART serial link (<code>"OBJECT_DROPPED"</code> @ 9600 baud) with Mega master.</span>
+                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Conveyor Belt Mechanical Assembly:</strong> Designed and assembled structural conveyor frame, aligned rollers and pulleys, calibrated belt tension to eliminate slipping or stalling under continuous transport load, and aligned drive motor.</span>
+                        </li>
+                        <li className="duo-scope-item">
+                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Multi-Stage Kinematics &amp; Timing Synchronization:</strong> Independently bench-tested gripper kinematics, then synchronized drop timing with continuous conveyor transport to ensure smooth hand-off to the RFID classification stage.</span>
+                        </li>
+                        <li className="duo-scope-item">
+                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Custom Single-Layer PCB Design (EasyEDA):</strong> Engineered custom PCB layout with <strong>1mm track/clearance specifications</strong>, decoupling motor back-EMF and preventing microcontroller logic resets from high stall currents.</span>
+                        </li>
+                        <li className="duo-scope-item">
+                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Dual-Microcontroller Distributed Architecture:</strong> Implemented a non-blocking asynchronous <strong>UART serial protocol (9600 baud)</strong> linking the Arduino Uno kinematics slave with the Arduino Mega 2560 conveyor master.</span>
                         </li>
                       </ul>
                     </div>
@@ -4030,7 +4073,7 @@ function App() {
                       background: theme === 'light' ? 'rgba(16, 185, 129, 0.04)' : 'rgba(16, 185, 129, 0.03)',
                       border: '1px solid rgba(16, 185, 129, 0.3)',
                       borderRadius: '14px',
-                      padding: '18px 20px',
+                      padding: '20px 22px',
                       marginBottom: '22px'
                     }}>
                       <div style={{
@@ -4039,8 +4082,8 @@ function App() {
                         justifyContent: 'space-between',
                         flexWrap: 'wrap',
                         gap: '8px',
-                        marginBottom: '12px',
-                        paddingBottom: '8px',
+                        marginBottom: '14px',
+                        paddingBottom: '10px',
                         borderBottom: '1px solid rgba(16, 185, 129, 0.2)'
                       }}>
                         <div style={{
@@ -4048,35 +4091,61 @@ function App() {
                           alignItems: 'center',
                           gap: '8px',
                           fontWeight: 800,
-                          fontSize: '0.92rem',
+                          fontSize: '0.94rem',
                           color: '#10b981',
                           letterSpacing: '0.04em',
                           textTransform: 'uppercase'
                         }}>
-                          <i className="fa-solid fa-code-commit"></i>
-                          <span>My Key Contributions</span>
+                          <i className="fa-solid fa-crown"></i>
+                          <span>My Core Subsystem &amp; Direct Architectural Ownership</span>
                         </div>
-                        <span style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-secondary)' }}>
+                        <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#10b981', background: 'rgba(16, 185, 129, 0.12)', padding: '3px 10px', borderRadius: '6px', border: '1px solid rgba(16, 185, 129, 0.3)' }}>
                           Lead Backend, Data &amp; Offline Sync Architect
                         </span>
                       </div>
 
-                      <ul className="duo-scope-list" style={{ gap: '10px' }}>
+                      {/* Team Context Scope */}
+                      <div style={{
+                        fontSize: '0.85rem',
+                        lineHeight: 1.5,
+                        color: 'var(--text-secondary)',
+                        background: theme === 'light' ? 'rgba(0, 0, 0, 0.02)' : 'rgba(255, 255, 255, 0.02)',
+                        border: '1px solid var(--card-border)',
+                        borderRadius: '8px',
+                        padding: '10px 14px',
+                        marginBottom: '14px'
+                      }}>
+                        <strong style={{ color: 'var(--text-primary)' }}>👥 Group Scope (4-Member Team):</strong> While the overall engineering team focused on cashier checkout screens, multi-branch product cataloging, and store-level revenue reporting, I personally architected and engineered the offline-first distributed synchronization engine, 3-way conflict resolution engine, real-time edge telemetry, and zero-trust device management console.
+                      </div>
+
+                      <ul className="duo-scope-list" style={{ gap: '12px' }}>
                         <li className="duo-scope-item">
-                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981' }}></i>
-                          <span>Built offline-first &amp; online real-time sync engine using <strong>IndexedDB &amp; PWA Service Workers</strong> (&lt;100ms billing).</span>
+                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Offline-First Synchronization Engine:</strong> Architected browser <strong>IndexedDB local caching</strong> (<code>offlineQueue</code>) and PWA Service Worker background sync worker, delivering sub-50ms cashier billing during network outages with automated idempotent batch reconciliation to <strong>PostgreSQL</strong> upon reconnection.</span>
                         </li>
                         <li className="duo-scope-item">
-                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981' }}></i>
-                          <span>Engineered smart conflict resolution engine (Last-Write-Wins &amp; Additive Stock Merging) with <strong>Socket.io WebSockets</strong>.</span>
+                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>3-Way Deterministic Conflict Engine:</strong> Engineered mathematical collision resolution across 3 domain policies: <strong>Trust Local (Branch Wins)</strong> for clearance sales, <strong>Trust Master (Cloud Authority)</strong> for corporate catalog updates, and <strong>Smart Field-Level Merging</strong> for concurrent stock counts with visual audit diffs.</span>
                         </li>
                         <li className="duo-scope-item">
-                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981' }}></i>
-                          <span>Designed normalized PostgreSQL relational schema (8 master tables) with ACID transaction integrity.</span>
+                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Real-Time Edge Telemetry &amp; Mesh Radar:</strong> Built 7-node regional mesh visualizer (Colombo HQ, Kandy, Galle, Kurunegala, Negombo, Jaffna, Matara) with sub-20ms WebSocket heartbeat telemetry and live <strong>Socket.io</strong> latency tracking.</span>
                         </li>
                         <li className="duo-scope-item">
-                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981' }}></i>
-                          <span>Conducted boundary checks, Postman API collections, and <strong>Role-Based Access Control (RBAC)</strong> verification.</span>
+                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Zero-Trust Terminal Fleet Console &amp; Remote Kill-Switch:</strong> Created real-time terminal fleet management dashboard tracking battery levels (91% ⚡), Wi-Fi strength, and live connection states with 1-click remote security revocation (instant WebSocket termination and cryptographic JWT token invalidation).</span>
+                        </li>
+                        <li className="duo-scope-item">
+                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Centralized Runtime System Configuration:</strong> Engineered dynamic management of 44 system parameters (including Sri Lankan 15% VAT, LKR currency, and sync throttle intervals) applied live without server restarts.</span>
+                        </li>
+                        <li className="duo-scope-item">
+                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Executive Health Watchdog &amp; Compliance Exports:</strong> Implemented real-time 24-hour 15ms Latency Pulse tracking, automated dead-letter error quarantine with exponential backoff recovery, and instant client-side C-level compliance PDF report export via <strong>jsPDF</strong>.</span>
+                        </li>
+                        <li className="duo-scope-item">
+                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Relational Database Architecture:</strong> Designed normalized 3NF PostgreSQL relational schema (8 master tables: branches, registers, cashiers, products, inventory_ledger, sales_orders, sale_items, sync_events) with <strong>Prisma ORM</strong> and ACID transaction integrity.</span>
                         </li>
                       </ul>
                     </div>
