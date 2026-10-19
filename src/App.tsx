@@ -190,7 +190,8 @@ const projectDetailsData: Record<string, ProjectDetails> = {
       description: "Structured with foreign-key referential integrity, compound indexes on product barcodes, and immutable audit ledger tables to prevent financial and stock discrepancies."
     },
     image: "/ryzera_real_showcase.png?v=3d",
-    github: "https://github.com/Ryzera/Ryzera-POS"
+    github: "https://github.com/Ryzera/Ryzera-POS",
+    liveDemo: "https://pos-system-pos-web-app.vercel.app"
   },
   ledgerly: {
     title: "Ledgerly — Autonomous AI Financial Intelligence & Collaborative Ledger",
@@ -1296,6 +1297,7 @@ const projectsData: ProjectItem[] = [
     image: '/ryzera_real_showcase.png?v=3d',
     alt: 'Ryzera POS Multi-Branch Retail Enterprise Showcase',
     tags: ['Next.js 16', 'TypeScript', 'NestJS', 'PostgreSQL (Supabase)', 'Prisma ORM', 'Socket.io', 'IndexedDB', 'Postman', 'Docker'],
+    liveUrl: 'https://pos-system-pos-web-app.vercel.app',
     githubUrl: 'https://github.com/Ryzera/Ryzera-POS',
     detailsId: 'ryzera',
     featurePills: [
@@ -2628,7 +2630,7 @@ function App() {
                     <div className="browser-mockup-url-bar">
                       <i className="fa-solid fa-lock" style={{ fontSize: '0.62rem', color: '#10b981' }}></i>
                       <span>
-                        {currentProj.id === 'ryzera' ? 'ryzera.internal/pos-sync' :
+                        {currentProj.id === 'ryzera' ? 'pos-system-pos-web-app.vercel.app' :
                          currentProj.id === 'ledgerly' ? 'ledgerly-mbcd.onrender.com' :
                          currentProj.id === 'careerflow' ? 'careerflow-app.onrender.com' :
                          'github.com/SithumManusha/robotic-sorting-system'}
@@ -3989,6 +3991,11 @@ function App() {
                         </p>
                       </div>
                       <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center' }}>
+                        {project.liveDemo && (
+                          <a href={project.liveDemo} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
+                            <i className="fa-solid fa-arrow-up-right-from-square" style={{ marginRight: '6px' }}></i> Live Demo
+                          </a>
+                        )}
                         {project.github && (
                           <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
                             <i className="fa-brands fa-github" style={{ marginRight: '6px' }}></i> Source Code
