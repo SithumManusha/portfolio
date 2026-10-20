@@ -87,107 +87,114 @@ interface ProjectDetails {
 
 const projectDetailsData: Record<string, ProjectDetails> = {
   ryzera: {
-    title: "Ryzera POS",
-    category: "Enterprise Distributed Systems • Retail ERP & POS",
-    role: "Software Systems & Quality Engineer",
-    methodology: "Agile Scrum & Distributed Architecture",
-    tags: ["Next.js 16", "NestJS", "TypeScript", "PostgreSQL", "Prisma ORM", "IndexedDB", "Socket.io", "PWA", "Postman", "Jira", "Git"],
-    description: "Ryzera POS is an enterprise-grade multi-branch retail Point of Sale (POS) system engineered for high availability and terminal resilience during complete network blackouts. Architected around a client-first Progressive Web App (PWA) model, transactions are isolated and persisted into browser IndexedDB object stores with temporary cryptographic UUIDs, and automatically batched and reconciled against central PostgreSQL master instances via background Service Workers once connectivity is re-established. It features an interactive 7-node regional mesh radar visualizer, automated exponential backoff error auto-recovery, and a 3-way deterministic conflict reconciliation engine.",
-    problemStatement: "Traditional cloud-dependent retail POS systems freeze or reject checkouts when physical store internet disconnects, resulting in lost sales, cashier bottleneck queues, and prone-to-error manual inventory reconciliations.",
-    solutionOverview: "Engineered an offline-first distributed architecture leveraging browser IndexedDB storage and event-driven Service Workers to execute sub-50ms offline checkouts. Implemented idempotency tokens, a 3-way deterministic conflict engine (Branch Wins, Cloud Authority, and Smart Field-Level Merges), transaction retry queues with exponential backoff, and atomic database locks to guarantee zero double-charges or stock collisions upon automated background sync.",
+    title: "Super POS",
+    category: "Enterprise Distributed Systems • Multi-Branch Retail POS",
+    typeLabel: "2nd Year Group Software Project (Mentored by Ryzera Technologies Pvt Ltd) | 2026",
+    statusLabel: "Live in Production (Vercel Cloud)",
+    role: "Offline Synchronization & Conflict Resolution Architect",
+    methodology: "Turborepo Monorepo & Offline-First Distributed Architecture",
+    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "IndexedDB", "Recharts", "NestJS", "Node.js", "Prisma ORM", "Socket.io", "Zod", "REST APIs", "PostgreSQL (Supabase)", "Turborepo"],
+    description: "Super POS is an enterprise-grade multi-branch Point of Sale (POS) system developed as a second-year software project at the University of Moratuwa under the industry mentorship of Ryzera Technologies Pvt Ltd. Engineered as a Turborepo monorepo, it supports multi-tenant retail operations, RBAC, and offline-first workflows across Authentication, Billing, Inventory, Offline Sync, and Business Intelligence. My core contribution was architecting and developing the end-to-end Offline-First Data Synchronization & Conflict Resolution Suite—featuring an IndexedDB client offline queue (useOfflineSync), background batch retry pipelines (/sync/push, /sync/retry, /sync/batch-retry), Last-Write-Wins (LWW) 3-way conflict resolution, Recharts P50/P95/P99 latency analytics, Socket.io regional node topology & fleet broadcasts, and remote device access control with PDF health report exports.",
+    problemStatement: "Traditional cloud-dependent retail POS systems freeze or reject checkouts when physical store internet disconnects, resulting in lost sales, cashier bottleneck queues, and error-prone manual inventory reconciliations across branches.",
+    solutionOverview: "Engineered an end-to-end offline-first synchronization and conflict resolution suite using browser IndexedDB (RyzeraPOSDB > offlineQueue) to buffer offline sales, stock updates, and price changes locally with auto-reconnection sync. Built background sync and batch retry pipelines (/sync/push, /sync/retry, /sync/batch-retry), Last-Write-Wins (LWW) conflict checks with an interactive 3-way resolver (Trust Local, Trust Cloud, and Smart Merge), Recharts throughput analytics, Socket.io regional node health telemetry, and remote device access revocation with PDF audit exports.",
     architecture: `+-----------------------------------------------------------------------------------+
-|               Cashier POS Client Terminal (Browser / Progressive Web App)         |
-|         Sales UI  <--->  IndexedDB Local Cache Store  <--->  Sync Service Worker  |
+|          Client-Side POS Terminal (Next.js, React, TypeScript, Tailwind CSS)      |
+|     useOfflineSync Hook  <--->  IndexedDB (RyzeraPOSDB > offlineQueue)  <---> UI  |
 +-----------------------------------------------------------------------------------+
                                           |
-                REST / JSON APIs (Validated via Postman & Swagger UI)
+        REST APIs (/sync/push, /sync/retry, /sync/batch-retry) & Socket.io Telemetry
                                           v
 +-----------------------------------------------------------------------------------+
-|                        Central Enterprise Backend Server                          |
-|         Auth & RBAC Middleware  |  Inventory Controller  |  Sales Sync Router     |
+|                   Central Enterprise Backend (NestJS, Node.js, Zod)               |
+|    LWW Conflict Engine  |  Batch Retry Pipeline  |  Fleet Broadcast & Device Ctrl |
 +-----------------------------------------------------------------------------------+
                                           |
-                        ACID-Compliant Relational Data Layer
+                     Prisma ORM (ACID-Compliant Relational Layer)
                                           v
 +-----------------------------------------------------------------------------------+
-|                      PostgreSQL Central Enterprise Database                       |
-|           Branches, Registers, Products, Inventory Ledger, Audit Logs             |
+|                   PostgreSQL Cloud Database (Supabase) • Turborepo                |
+|      Branches, Devices, Sync Queue, Conflict Logs, Sync Policies, Audit Trail     |
 +-----------------------------------------------------------------------------------+`,
     modules: [
       {
-        name: "Cashier Checkout & Offline Cart",
-        desc: "High-speed barcode product lookup, dynamic cart pricing, discount engines, multi-tender split payments (Cash/Card), and offline receipt generation.",
-        highlights: ["Instant UI response <50ms", "Local persistence in IndexedDB", "Thermal printer receipt templates"]
+        name: "💾 Client-Side Offline Queue (IndexedDB)",
+        desc: "Built useOfflineSync (RyzeraPOSDB > offlineQueue) to buffer offline sales, stock updates, and price changes locally in the browser with automatic reconnection synchronization.",
+        highlights: ["IndexedDB offlineQueue persistence", "Auto-reconnection background flush", "Zero checkout downtime during outages"]
       },
       {
-        name: "3-Way Deterministic Conflict Engine",
-        desc: "Automated reconciliation for concurrent multi-branch catalog and inventory changes supporting Trust Local (Branch Wins), Cloud Master Authority, and Smart Field-Level Merging.",
-        highlights: ["Smart field-level merge", "Zero data loss", "Immutable audit trail"]
+        name: "🔄 Live Sync Queue & Error Recovery",
+        desc: "Engineered background sync and batch retry pipelines (/sync/push, /sync/retry, /sync/batch-retry) to flush pending payloads and recover failed records into PostgreSQL.",
+        highlights: ["Batch retry pipelines", "Payload inspection & manual retry", "Idempotent PostgreSQL ingestion"]
       },
       {
-        name: "7-Node Regional Mesh Topology Radar",
-        desc: "Interactive visualizer monitoring 7 regional nodes (Head Office, Kandy, Galle, Kurunegala, Negombo, Jaffna, Matara) with live WebSocket latency tracking & 100% mesh efficiency telemetry.",
-        highlights: ["Live sub-20ms heartbeat", "100% network efficiency score", "Real-time topology radar"]
+        name: "⚖️ Conflict Detection & 3-Way Resolution",
+        desc: "Implemented Last-Write-Wins (LWW) conflict checks and an interactive resolver supporting Trust Local (Branch Wins), Trust Cloud (Server Wins), and Smart Merge.",
+        highlights: ["Last-Write-Wins (LWW) detection", "Trust Local & Trust Cloud modes", "Smart field-level merge"]
       },
       {
-        name: "Fault-Tolerant Auto-Recovery & Device Manager",
-        desc: "Intelligent background event loop executing exponential backoff retry cycles on failed transactions with schema auto-normalization and in-place cryptographic POS terminal revocation.",
-        highlights: ["Zero-trust session kill", "Exponential backoff auto-recovery", "Automated PDF audit reports"]
+        name: "📊 Sync Analytics & Throughput Intelligence",
+        desc: "Built interactive Recharts dashboards tracking P50/P95/P99 sync latency, throughput trends, entity distribution, and multi-branch performance comparisons.",
+        highlights: ["P50/P95/P99 latency tracking", "Recharts throughput visualization", "Branch & entity breakdown"]
       },
       {
-        name: "Role-Based Access Control (RBAC)",
-        desc: "Multi-tier security boundaries separating Cashier terminal checkout access, Branch Manager overrides (refunds/voids), and Super Admin enterprise analytics.",
-        highlights: ["JWT token validation", "Manager PIN authorization", "Complete audit trail"]
+        name: "📡 Network Topology & Fleet Broadcasts",
+        desc: "Developed a live regional node health monitor with Socket.io WebSocket telemetry and real-time fleet broadcast notifications across all retail branches.",
+        highlights: ["Socket.io WebSocket telemetry", "Regional node health radar", "Real-time fleet broadcasts"]
+      },
+      {
+        name: "🛡️ Device Control, Sync Policies & Audit Trail",
+        desc: "Built remote device access revocation, entity sync policy rules, runtime settings, and an activity audit log with downloadable PDF health report exports.",
+        highlights: ["Remote device access revocation", "Entity sync policy rules", "Audit log & PDF health reports"]
       }
     ],
     qaHighlights: [
       {
-        title: "Offline Data Integrity & Sync Testing",
-        desc: "Simulated complete network disconnections validating that 100% of offline orders remain persisted in IndexedDB and reconcile with zero data loss.",
+        title: "Offline Queue & Auto-Reconnection Verification",
+        desc: "Simulated complete network disconnections via Chrome DevTools to verify that offline sales, stock updates, and price changes queue in IndexedDB and flush automatically on reconnect.",
         icon: "fa-arrows-rotate"
       },
       {
-        title: "ACID Concurrency & Stock Locks",
-        desc: "Validated race conditions across concurrent multi-register checkouts with PostgreSQL row-level locks and cryptographic UUID idempotency.",
-        icon: "fa-database"
+        title: "3-Way Conflict Resolution Validation",
+        desc: "Verified Last-Write-Wins (LWW) conflict detection and tested Trust Local, Trust Cloud, and Smart Merge resolution strategies across concurrent branch updates.",
+        icon: "fa-scale-balanced"
       },
       {
-        title: "REST API & Boundary Testing",
-        desc: "Tested checkout ingestion, inventory decrements, and manager void operations across 12+ endpoints with Postman collections and Swagger UI schemas.",
+        title: "Batch Retry & Error Recovery Testing",
+        desc: "Tested /sync/push, /sync/retry, and /sync/batch-retry REST endpoints with Zod schema validation and Prisma ORM transaction persistence.",
         icon: "fa-vial-circle-check"
       },
       {
-        title: "PWA Service Worker & Security Audits",
-        desc: "Audited Service Worker caching strategies, Lighthouse offline criteria, and JWT RBAC authentication boundary tokens.",
+        title: "WebSocket Telemetry & Device Revocation Audits",
+        desc: "Verified real-time Socket.io node health heartbeats, fleet broadcast delivery, remote terminal revocation, and PDF health report generation.",
         icon: "fa-shield-halved"
       }
     ],
     techLayers: [
       {
-        layer: "Frontend & Client POS",
-        technologies: ["JavaScript/TypeScript", "PWA Service Workers", "HTML5 & CSS Grid", "IndexedDB API"],
-        role: "Client-side checkout interface, reactive UI state, and local persistence layer."
+        layer: "🎨 Frontend & Client Sync",
+        technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "IndexedDB", "Recharts"],
+        role: "Client-side offline queue (useOfflineSync), interactive conflict resolver, Recharts analytics dashboards, and responsive control center UI."
       },
       {
-        layer: "Backend & API Routing",
-        technologies: ["Node.js", "Express REST API", "Swagger UI", "Postman Collections"],
-        role: "Microservices architecture handling authentication, sales ingestion, and inventory decrements."
+        layer: "⚙️ Backend & Real-Time Engine",
+        technologies: ["NestJS", "Node.js", "Prisma ORM", "Socket.io", "Zod", "REST APIs"],
+        role: "Background sync & batch retry pipelines (/sync/push, /sync/retry, /sync/batch-retry), LWW conflict checks, and live WebSocket telemetry."
       },
       {
-        layer: "Database & Storage",
-        technologies: ["PostgreSQL 16", "Relational ACID Engine", "SQL Query Optimization"],
-        role: "Master transaction ledger, branch schemas, relational integrity, and inventory records."
+        layer: "🗄️ Database & Monorepo",
+        technologies: ["PostgreSQL (Supabase)", "Turborepo", "Prisma Schema & Migrations"],
+        role: "Multi-tenant relational persistence, branch sync logs, conflict audit trails, and unified monorepo build orchestration."
       },
       {
-        layer: "Tooling & Collaboration",
-        technologies: ["Git & GitHub", "Jira Agile Scrum", "Chrome DevTools", "Jest Test Runner"],
-        role: "Version control, sprint lifecycle tracking, and comprehensive system verification."
+        layer: "🚀 Tooling & Deployment",
+        technologies: ["Git & GitHub", "Vercel Cloud", "Postman", "Chrome DevTools"],
+        role: "Version control, production cloud deployment, API endpoint verification, and offline network simulation."
       }
     ],
     databaseSchema: {
-      title: "Relational Multi-Branch Schema (PostgreSQL)",
-      tables: ["branches", "registers", "cashiers", "products", "inventory_ledger", "sales_orders", "sale_items", "sync_events"],
-      description: "Structured with foreign-key referential integrity, compound indexes on product barcodes, and immutable audit ledger tables to prevent financial and stock discrepancies."
+      title: "Relational Multi-Branch Sync Schema (PostgreSQL via Prisma ORM)",
+      tables: ["branches", "devices", "sync_queue", "sync_conflicts", "sync_error_logs", "sync_policies", "broadcast_messages", "audit_logs"],
+      description: "Structured with foreign-key referential integrity, branch isolation, conflict version tracking, and audit logs to guarantee consistent multi-branch synchronization."
     },
     image: "/ryzera_real_showcase.png?v=3d",
     github: "https://github.com/Ryzera/Ryzera-POS",
@@ -1281,28 +1288,28 @@ interface ProjectItem {
 const projectsData: ProjectItem[] = [
   {
     id: 'ryzera',
-    title: 'Ryzera POS',
-    category: 'Enterprise Distributed Retail POS & Offline Sync · 2026',
+    title: 'Super POS',
+    category: 'Multi-Branch Enterprise Retail POS & Offline Sync · 2026',
     teamBadge: {
       type: 'duo',
-      label: 'Group Project',
-      role: 'Lead Backend & Offline Sync Architect'
+      label: 'Group Project (Ryzera Technologies)',
+      role: 'Offline Sync & Conflict Resolution Architect'
     },
-    desc: 'A distributed, multi-branch retail Point of Sale (POS) and inventory platform engineered for zero-downtime offline sales continuity. Implements client-side IndexedDB local state caching, automated bi-directional synchronization via Service Workers, and mathematical conflict resolution. Features centralized multi-branch terminal monitoring, battery and network health tracking, and remote security revocation.',
+    desc: 'A multi-branch Point of Sale (POS) system developed as a 2nd-year software project at the University of Moratuwa under the industry mentorship of Ryzera Technologies Pvt Ltd. Engineered as a Turborepo monorepo supporting multi-tenant retail operations, RBAC, and end-to-end offline-first synchronization, Last-Write-Wins (LWW) conflict resolution, Recharts latency analytics, Socket.io regional node telemetry, and remote device access control.',
     myContributions: [
-      'Offline-First Sync Engine: Architected IndexedDB client buffer & PWA Service Workers delivering sub-50ms billing during network blackouts with automated batch sync to PostgreSQL.',
-      '3-Way Conflict Engine: Implemented mathematical reconciliation (Branch Wins, Cloud Master, Smart Stock Merge) with real-time Socket.io latency tracking.',
-      'Terminal Fleet Console & Remote Kill-Switch: Built device monitoring dashboard to track POS battery levels & network health across branches with 1-click remote session revocation.'
+      'Client-Side Offline Queue & Batch Recovery: Built useOfflineSync (IndexedDB offlineQueue) and batch retry pipelines (/sync/push, /sync/retry, /sync/batch-retry) to buffer offline sales, stock updates, and price changes with auto-reconnection sync to PostgreSQL.',
+      'Conflict Resolution & Sync Analytics: Implemented Last-Write-Wins (LWW) conflict checks, an interactive 3-way resolver (Trust Local, Trust Cloud, Smart Merge), and Recharts dashboards tracking P50/P95/P99 latency and throughput.',
+      'Network Topology, Fleet Broadcasts & Device Control: Developed a live regional node monitor and fleet broadcast system with Socket.io WebSockets, remote device access revocation, entity sync policies, and an audit trail with PDF health report exports.'
     ],
     image: '/ryzera_real_showcase.png?v=3d',
-    alt: 'Ryzera POS Multi-Branch Retail Enterprise Showcase',
-    tags: ['Next.js 16', 'TypeScript', 'NestJS', 'PostgreSQL (Supabase)', 'Prisma ORM', 'Socket.io', 'IndexedDB', 'Postman', 'Docker'],
+    alt: 'Super POS Multi-Branch Retail Enterprise Showcase',
+    tags: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'IndexedDB', 'Recharts', 'NestJS', 'Prisma ORM', 'Socket.io', 'Zod', 'PostgreSQL (Supabase)', 'Turborepo'],
     liveUrl: 'https://pos-system-pos-web-app.vercel.app',
     githubUrl: 'https://github.com/Ryzera/Ryzera-POS',
     detailsId: 'ryzera',
     featurePills: [
       { icon: 'fa-solid fa-wifi-slash', text: 'OFFLINE INDEXEDDB SYNC' },
-      { icon: 'fa-solid fa-tower-broadcast', text: 'EDGE TELEMETRY & KILL-SWITCH' }
+      { icon: 'fa-solid fa-tower-broadcast', text: 'SOCKET.IO TELEMETRY & LWW' }
     ]
   },
   {
