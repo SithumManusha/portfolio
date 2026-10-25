@@ -1,11 +1,12 @@
 # 💼 Sithum Manusha — Software Engineering Portfolio
 
-[![Live Site](https://img.shields.io/badge/Live_Portfolio-sithum--manusha.vercel.app-4f46e5?style=for-the-badge&logo=vercel&logoColor=white)](https://www.sithummanusha.me)
+[![Live Site](https://img.shields.io/badge/Live_Portfolio-sithummanusha.me-4f46e5?style=for-the-badge&logo=vercel&logoColor=white)](https://www.sithummanusha.me)
 [![React](https://img.shields.io/badge/React-19.2-61dafb?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178c6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-8.x-646cff?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.x-38bdf8?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Vercel](https://img.shields.io/badge/Deploy-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
+[![CodeQL Security](https://github.com/SithumManusha/portfolio/actions/workflows/codeql.yml/badge.svg)](https://github.com/SithumManusha/portfolio/actions/workflows/codeql.yml)
 
 > **Personal Engineering Portfolio & Technical Showcase of Sithum Manusha**  
 > *3rd-Year B.Sc. (Hons) in Information Technology & Management Undergraduate | University of Moratuwa*  
