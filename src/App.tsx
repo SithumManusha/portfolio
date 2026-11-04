@@ -1461,21 +1461,27 @@ const projectsData: ProjectItem[] = [
   {
     id: 'pulse-ai',
     title: 'Pulse AI Blog Engine',
-    category: 'Generative AI & Content Platform · 2026',
+    category: 'Generative AI Content Platform & Secure MVC Engine · 2026',
     teamBadge: {
       type: 'solo',
       label: 'Individual Project',
       role: 'Full-Stack & Generative AI Architect'
     },
-    desc: 'An AI-native content publishing and blog engine engineered with modern PHP 8, MySQL, and Google Gemini 1.5 Flash AI. Features 1-click executive summaries, auto-drafting, tone polishing, in-browser Text-to-Speech podcast audio playback, raw MVC architecture, CSRF/XSS defense, and automated CodeQL security scanning.',
-    image: '/blog_ai_diagram.png',
-    alt: 'Pulse AI Blog Engine Generative AI & MVC Architecture Showcase',
+    desc: 'An AI-native content publishing platform and blog engine engineered with modern PHP 8, MySQL, Tailwind CSS, and Google Gemini 1.5 Flash AI. Built using a clean Model-View-Controller (MVC) architecture, it features 1-click executive TL;DR summaries, dynamic post drafting from title prompts, in-browser Text-to-Speech podcast audio playback, and enterprise-grade OWASP security verified by automated CodeQL scanning.',
+    myContributions: [
+      'Google Gemini 1.5 Flash Copilot & AI Services: Built GeminiService communicating via raw cURL to generate 1-click executive TL;DR bullet summaries, dynamic post drafting from title prompts, tone polishing, and automated tag taxonomy.',
+      'Web Speech Synthesis Audio Engine: Implemented an in-browser Text-to-Speech podcast player with native speech synthesis, variable speed controls (1.0x, 1.25x, 1.5x), and zero external latency.',
+      'Enterprise OWASP Defense & DevSecOps: Structured clean MVC architecture with a PDO database singleton, automated CSRF tokens, Markdown-to-HTML XSS filtering, bcrypt hashing, and continuous CodeQL semantic security scanning.'
+    ],
+    image: '/pulse_ai_3d_showcase.png?v=3d',
+    alt: 'Pulse AI Blog Engine Generative AI & MVC Architecture 3D Interface Showcase',
     tags: ['PHP 8', 'Google Gemini AI', 'MySQL', 'Tailwind CSS', 'Web Speech API', 'MVC Architecture', 'CodeQL', 'GitHub Actions'],
     githubUrl: 'https://github.com/SithumManusha/pulse-ai-blog-engine',
     detailsId: 'pulse-ai',
     featurePills: [
       { icon: 'fa-solid fa-brain', text: 'GEMINI 1.5 FLASH AI' },
-      { icon: 'fa-solid fa-shield-halved', text: 'OWASP & CODEQL' }
+      { icon: 'fa-solid fa-headphones', text: 'WEB SPEECH PODCAST TTS' },
+      { icon: 'fa-solid fa-shield-halved', text: 'OWASP & CODEQL SECURITY' }
     ]
   },
   {
@@ -2763,6 +2769,7 @@ function App() {
                         {currentProj.id === 'ryzera' ? 'pos-system-pos-web-app.vercel.app' :
                          currentProj.id === 'ledgerly' ? 'ledgerly-mbcd.onrender.com' :
                          currentProj.id === 'careerflow' ? 'careerflow-app.onrender.com' :
+                         currentProj.id === 'pulse-ai' ? 'pulse-ai-blog-engine.local' :
                          'github.com/SithumManusha/robotic-sorting-system'}
                       </span>
                     </div>
@@ -2792,7 +2799,8 @@ function App() {
                     boxShadow: '0 4px 12px rgba(0,0,0,0.3)'
                   }}>
                     <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#10b981', display: 'inline-block' }}></span>
-                    {currentProj.id === 'robotic-sorting' ? 'Mechatronics & Embedded Architecture' : 'Enterprise Architecture'}
+                    {currentProj.id === 'robotic-sorting' ? 'Mechatronics & Embedded Architecture' :
+                     currentProj.id === 'pulse-ai' ? 'Generative AI & MVC Architecture' : 'Enterprise Architecture'}
                   </div>
 
                   {/* Aspect Video Image Container */}
@@ -3981,13 +3989,35 @@ function App() {
                     {/* Divider */}
                     <hr style={{ border: 'none', borderTop: '1px solid var(--card-border)', margin: '20px 0' }} />
 
-                    {/* Architecture & Overview */}
+                    {/* Architecture & Overview Box (Identical 3-paragraph executive box as CareerFlow) */}
                     <h4 style={{ margin: '0 0 14px 0', fontSize: '1.1rem', fontWeight: 800, color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <i className="fa-solid fa-layer-group" style={{ color: 'var(--primary-color)' }}></i> Architecture &amp; System Design
                     </h4>
-                    <p style={{ margin: '0 0 16px 0', fontSize: '0.95rem', lineHeight: 1.6, color: 'var(--text-secondary)' }}>
-                      Pulse AI Blog Engine is an AI-native content publishing system built from first principles using clean Object-Oriented PHP 8 and the Model-View-Controller (MVC) architectural pattern. It bridges high-speed generative AI assistance with rigorous OWASP web security standards.
-                    </p>
+                    <div style={{ 
+                      background: theme === 'light' ? 'rgba(var(--primary-rgb), 0.04)' : 'rgba(15, 23, 42, 0.75)',
+                      border: theme === 'light' ? '1px solid rgba(var(--primary-rgb), 0.2)' : '1px solid rgba(99, 102, 241, 0.25)',
+                      borderLeft: '4px solid #38bdf8',
+                      borderRadius: '12px',
+                      padding: '20px 24px',
+                      display: 'flex', 
+                      flexDirection: 'column', 
+                      gap: '14px', 
+                      fontSize: '0.95rem', 
+                      lineHeight: 1.72, 
+                      color: theme === 'light' ? '#334155' : '#e2e8f0',
+                      marginBottom: '22px',
+                      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)'
+                    }}>
+                      <p style={{ margin: 0 }}>
+                        Traditional content management systems (CMS) and blogging engines are static, rigid, and vulnerable to common injection attacks. To modernize the digital writing and reading experience, I engineered <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Pulse AI Blog Engine</strong>—an AI-native content publishing platform combining the raw execution speed of modern <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>PHP 8.0+ and MySQL</strong> with real-time generative intelligence powered by <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>Google Gemini 1.5 Flash AI</strong>.
+                      </p>
+                      <p style={{ margin: 0 }}>
+                        The backend is architected from first principles following the <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Model-View-Controller (MVC)</strong> design pattern. It decouples presentation from business logic through dedicated controllers (<code style={{ background: theme === 'light' ? 'rgba(var(--primary-rgb), 0.1)' : 'rgba(255,255,255,0.08)', padding: '2px 6px', borderRadius: '4px', fontSize: '0.84rem', fontFamily: 'monospace', color: theme === 'light' ? '#059669' : '#a7f3d0' }}>PostController, AuthController, AIController</code>), an asynchronous cURL-based Gemini AI service, and a thread-safe <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>PDO Database Singleton</strong> enforcing parameterized prepared queries.
+                      </p>
+                      <p style={{ margin: 0 }}>
+                        For readers, the platform delivers an in-browser <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>Web Speech API Audio Podcast Player</strong> supporting variable playback speeds (1.0x, 1.25x, 1.5x) with zero third-party audio latency. The entire codebase is protected by enterprise OWASP security controls (cryptographic CSRF tokens, Markdown-to-HTML XSS filtering, bcrypt hashing) and validated through automated <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>CodeQL static semantic analysis</strong> and an 8-module automated QA integration test suite.
+                      </p>
+                    </div>
 
                     {/* ASCII Architecture Flow Box */}
                     <pre style={{
@@ -4027,46 +4057,33 @@ function App() {
 +----------------------------------------+   +--------------------------------------+`}
                     </pre>
 
-                    {/* Key Engineering Features Grid */}
-                    <h4 style={{ margin: '0 0 14px 0', fontSize: '1.1rem', fontWeight: 800, color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <i className="fa-solid fa-cubes" style={{ color: 'var(--primary-color)' }}></i> Core Technical Innovations
+                    {/* Key Capabilities */}
+                    <h4 style={{ margin: '0 0 16px 0', fontSize: '1.1rem', fontWeight: 800, color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <i className="fa-solid fa-circle-check" style={{ color: 'var(--primary-color)' }}></i> Key Capabilities
                     </h4>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '14px', marginBottom: '22px' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                       {[
-                        {
-                          icon: "fa-solid fa-brain",
-                          title: "Google Gemini 1.5 Flash AI Copilot",
-                          desc: "Direct REST cURL integration delivering 1-click executive TL;DR bullet summaries, AI blog drafting from titles, tone & readability refinement, and automated taxonomy tag extraction."
-                        },
-                        {
-                          icon: "fa-solid fa-headphones",
-                          title: "In-Browser Web Speech Podcast Player",
-                          desc: "Native HTML5 Web Speech Synthesis API integration converting technical articles into podcasts with multi-speed controls (1.0x, 1.25x, 1.5x) and zero third-party audio latency."
-                        },
-                        {
-                          icon: "fa-solid fa-shield-halved",
-                          title: "OWASP Hardened Defense Suite",
-                          desc: "Complete PDO parameterized queries (Zero SQL injection), cryptographic CSRF token generation and verification, safe Markdown-to-HTML sanitization (Zero Stored XSS), and bcrypt password hashing."
-                        },
-                        {
-                          icon: "fa-solid fa-code-compare",
-                          title: "DevSecOps & CodeQL Quality Gate",
-                          desc: "Automated GitHub Actions CI pipelines executing continuous static code analysis and semantic security vulnerability scanning with GitHub CodeQL."
-                        }
-                      ].map((feat, idx) => (
-                        <div key={idx} style={{
-                          background: theme === 'light' ? 'rgba(var(--primary-rgb), 0.04)' : 'rgba(var(--primary-rgb), 0.03)',
-                          border: theme === 'light' ? '1px solid rgba(var(--primary-rgb), 0.2)' : '1px solid rgba(var(--primary-rgb), 0.12)',
-                          borderRadius: '10px',
-                          padding: '14px'
+                        { icon: "🧠", title: "Real-Time Google Gemini 1.5 Flash Copilot", desc: "1-Click instant TL;DR executive summaries, automated article drafting from title prompts, tone polishing, and SEO tag taxonomy" },
+                        { icon: "🎧", title: "In-Browser Web Speech Podcast Player", desc: "Native HTML5 Web Speech Synthesis API audio player with multi-speed controls (1.0x, 1.25x, 1.5x) and zero latency" },
+                        { icon: "🏛️", title: "Clean Model-View-Controller (MVC) Pattern", desc: "Decoupled architecture with dedicated controllers, database models, cURL service helpers, and clean URL routing" },
+                        { icon: "🛡️", title: "OWASP Hardened Defense Suite", desc: "Full PDO parameterized statements (Zero SQLi), cryptographic CSRF token verification, and Markdown-to-HTML sanitization (Zero XSS)" },
+                        { icon: "🗄️", title: "Normalized MySQL 8.0 Relational Persistence", desc: "3NF normalized schema across users, posts, comments, categories, and tags with foreign key cascade constraints" },
+                        { icon: "🧪", title: "Automated QA Audit & CodeQL Security Gate", desc: "8-module automated integration test suite with 100% pass rate + GitHub Actions CodeQL semantic security scanning" }
+                      ].map((cap, capIdx) => (
+                        <div key={capIdx} style={{ 
+                          display: 'flex', 
+                          alignItems: 'flex-start', 
+                          gap: '12px', 
+                          background: theme === 'light' ? 'rgba(16, 185, 129, 0.04)' : 'rgba(255, 255, 255, 0.02)', 
+                          border: theme === 'light' ? '1px solid rgba(var(--primary-rgb), 0.2)' : '1px solid var(--card-border)', 
+                          borderRadius: '10px', 
+                          padding: '12px 16px' 
                         }}>
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-                            <i className={feat.icon} style={{ color: 'var(--primary-color)', fontSize: '1rem' }}></i>
-                            <strong style={{ fontSize: '0.95rem', color: 'var(--text-primary)' }}>{feat.title}</strong>
+                          <span style={{ fontSize: '1.25rem', lineHeight: 1, marginTop: '2px', flexShrink: 0 }}>{cap.icon}</span>
+                          <div style={{ fontSize: '0.9rem', lineHeight: 1.5, color: 'var(--text-secondary)' }}>
+                            <strong style={{ color: 'var(--text-primary)', marginRight: '6px' }}>{cap.title}:</strong>
+                            {cap.desc}
                           </div>
-                          <p style={{ margin: 0, fontSize: '0.85rem', lineHeight: 1.5, color: 'var(--text-secondary)' }}>
-                            {feat.desc}
-                          </p>
                         </div>
                       ))}
                     </div>
