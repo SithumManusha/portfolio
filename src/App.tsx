@@ -1310,12 +1310,6 @@ const leadershipActivities: LeadershipItem[] = [
         period: '2025',
         desc: 'Organizing committee member for Project "Rest with Hope" conducted by Leo Club, UoM.',
         active: true
-      },
-      {
-        title: 'Active Club Member',
-        period: '2024 – PRESENT',
-        desc: 'Active member participating in community service, social welfare, and university volunteer programs.',
-        active: false
       }
     ],
     volunteering: {
