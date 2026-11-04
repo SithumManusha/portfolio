@@ -648,7 +648,7 @@ const projectDetailsData: Record<string, ProjectDetails> = {
       tables: ["users (id, username, email, password_hash, role, created_at)", "posts (id, user_id, title, slug, content, summary, category, status, created_at)", "comments (id, post_id, user_id, comment, created_at)", "tags (id, name, slug)", "post_tags (post_id, tag_id)"],
       description: "Normalized 3NF relational database schema with foreign key constraints, indexing on slugs and user IDs, and cascading comment deletes."
     },
-    liveDemo: "https://pulse-ai-blog-engine-enh6hzeebedkgpag.eastasia-01.azurewebsites.net",
+    liveDemo: "https://pulse-ai-blog-engine.onrender.com",
     github: "https://github.com/SithumManusha/pulse-ai-blog-engine"
   },
   'robotic-sorting': {
@@ -1021,6 +1021,7 @@ const skillsCategories: SkillCategory[] = [
       { name: 'TypeScript', icon: 'fa-solid fa-file-code', color: '#3b82f6' },
       { name: 'JavaScript', icon: 'fa-brands fa-js', color: '#eab308' },
       { name: 'C', icon: 'fa-solid fa-c', color: '#659ad2' },
+      { name: 'PHP (8)', icon: 'fa-brands fa-php', color: '#777bb4' },
       { name: 'SQL', icon: 'fa-solid fa-database', color: '#06b6d4' }
     ]
   },
@@ -1047,6 +1048,7 @@ const skillsCategories: SkillCategory[] = [
       { name: 'Node.js & Express', icon: 'fa-brands fa-node-js', color: '#22c55e' },
       { name: 'NestJS', icon: 'fa-solid fa-fire', color: '#e0234e' },
       { name: 'RESTful APIs', icon: 'fa-solid fa-network-wired', color: '#38bdf8' },
+      { name: 'PHP (OOP / MVC)', icon: 'fa-brands fa-php', color: '#777bb4' },
       { name: 'Prisma & Drizzle ORM', icon: 'fa-solid fa-gem', color: '#c5f74f' }
     ]
   },
@@ -1057,7 +1059,7 @@ const skillsCategories: SkillCategory[] = [
     skills: [
       { name: 'PostgreSQL', icon: 'fa-solid fa-database', color: '#336791' },
       { name: 'MySQL', icon: 'fa-solid fa-server', color: '#00758f' },
-      { name: 'Redis', icon: 'fa-solid fa-layer-group', color: '#dc2626' },
+      { name: 'SQLite & PDO', icon: 'fa-solid fa-hard-drive', color: '#003B57' },
       { name: 'SQL Schema & ACID Design', icon: 'fa-solid fa-table', color: '#818cf8' }
     ]
   },
@@ -1471,8 +1473,8 @@ const projectsData: ProjectItem[] = [
     desc: 'An AI-native content publishing platform and blog engine engineered with modern PHP 8, MySQL, Tailwind CSS, and Google Gemini 1.5 Flash AI. Built using a clean Model-View-Controller (MVC) architecture, it features 1-click executive TL;DR summaries, dynamic post drafting from title prompts, in-browser Text-to-Speech podcast audio playback, and enterprise-grade OWASP security verified by automated CodeQL scanning.',
     image: '/pulse_ai_3d_showcase.png?v=3d',
     alt: 'Pulse AI Blog Engine Generative AI & MVC Architecture 3D Interface Showcase',
-    tags: ['PHP 8', 'Microsoft Azure', 'Docker', 'Google Gemini AI', 'SQLite', 'Tailwind CSS', 'Web Speech API', 'CodeQL'],
-    liveUrl: 'https://pulse-ai-blog-engine-enh6hzeebedkgpag.eastasia-01.azurewebsites.net',
+    tags: ['PHP 8', 'MySQL', 'Docker', 'Google Gemini AI', 'SQLite', 'Tailwind CSS', 'Web Speech API', 'CodeQL'],
+    liveUrl: 'https://pulse-ai-blog-engine.onrender.com',
     githubUrl: 'https://github.com/SithumManusha/pulse-ai-blog-engine',
     detailsId: 'pulse-ai',
     featurePills: [
@@ -2766,7 +2768,7 @@ function App() {
                         {currentProj.id === 'ryzera' ? 'pos-system-pos-web-app.vercel.app' :
                          currentProj.id === 'ledgerly' ? 'ledgerly-nine-rust.vercel.app' :
                          currentProj.id === 'careerflow' ? 'careerflow-pink.vercel.app' :
-                         currentProj.id === 'pulse-ai' ? 'pulse-ai-blog-engine.azurewebsites.net' :
+                         currentProj.id === 'pulse-ai' ? 'pulse-ai-blog-engine.onrender.com' :
                          'github.com/SithumManusha/robotic-sorting-system'}
                       </span>
                     </div>
@@ -3948,7 +3950,7 @@ function App() {
                         </p>
                       </div>
                       <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center' }}>
-                        <a href="https://pulse-ai-blog-engine-enh6hzeebedkgpag.eastasia-01.azurewebsites.net" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
+                        <a href="https://pulse-ai-blog-engine.onrender.com" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
                           <i className="fa-solid fa-rocket" style={{ marginRight: '6px' }}></i> Live Demo
                         </a>
                         <a href="https://github.com/SithumManusha/pulse-ai-blog-engine" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
