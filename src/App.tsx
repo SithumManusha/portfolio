@@ -1470,8 +1470,8 @@ const projectsData: ProjectItem[] = [
     desc: 'An AI-native content publishing platform and blog engine engineered with modern PHP 8, MySQL, Tailwind CSS, and Google Gemini 1.5 Flash AI. Built using a clean Model-View-Controller (MVC) architecture, it features 1-click executive TL;DR summaries, dynamic post drafting from title prompts, in-browser Text-to-Speech podcast audio playback, and enterprise-grade OWASP security verified by automated CodeQL scanning.',
     image: '/pulse_ai_3d_showcase.png?v=3d',
     alt: 'Pulse AI Blog Engine Generative AI & MVC Architecture 3D Interface Showcase',
-    tags: ['PHP 8', 'Google Gemini AI', 'MySQL', 'Tailwind CSS', 'Web Speech API', 'MVC Architecture', 'CodeQL', 'GitHub Actions'],
-    liveUrl: 'https://pulse-ai-blog-engine.onrender.com',
+    tags: ['PHP 8', 'Microsoft Azure', 'Docker', 'Google Gemini AI', 'SQLite', 'Tailwind CSS', 'Web Speech API', 'CodeQL'],
+    liveUrl: 'https://pulse-ai-blog-engine-enh6hzeebedkgpag.eastasia-01.azurewebsites.net',
     githubUrl: 'https://github.com/SithumManusha/pulse-ai-blog-engine',
     detailsId: 'pulse-ai',
     featurePills: [
@@ -2765,7 +2765,7 @@ function App() {
                         {currentProj.id === 'ryzera' ? 'pos-system-pos-web-app.vercel.app' :
                          currentProj.id === 'ledgerly' ? 'ledgerly-nine-rust.vercel.app' :
                          currentProj.id === 'careerflow' ? 'careerflow-pink.vercel.app' :
-                         currentProj.id === 'pulse-ai' ? 'pulse-ai-blog-engine.onrender.com' :
+                         currentProj.id === 'pulse-ai' ? 'pulse-ai-blog-engine.azurewebsites.net' :
                          'github.com/SithumManusha/robotic-sorting-system'}
                       </span>
                     </div>
@@ -3947,7 +3947,7 @@ function App() {
                         </p>
                       </div>
                       <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center' }}>
-                        <a href="https://pulse-ai-blog-engine.onrender.com" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
+                        <a href="https://pulse-ai-blog-engine-enh6hzeebedkgpag.eastasia-01.azurewebsites.net" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
                           <i className="fa-solid fa-rocket" style={{ marginRight: '6px' }}></i> Live Demo
                         </a>
                         <a href="https://github.com/SithumManusha/pulse-ai-blog-engine" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
