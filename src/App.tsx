@@ -648,7 +648,7 @@ const projectDetailsData: Record<string, ProjectDetails> = {
       tables: ["users (id, username, email, password_hash, role, created_at)", "posts (id, user_id, title, slug, content, summary, category, status, created_at)", "comments (id, post_id, user_id, comment, created_at)", "tags (id, name, slug)", "post_tags (post_id, tag_id)"],
       description: "Normalized 3NF relational database schema with foreign key constraints, indexing on slugs and user IDs, and cascading comment deletes."
     },
-    github: "https://github.com/SithumManusha/blog-app-IN2120"
+    github: "https://github.com/SithumManusha/pulse-ai-blog-engine"
   },
   'robotic-sorting': {
     title: "Automated Robotic Sorting System — Dual-Microcontroller Mechatronic Platform",
@@ -1471,7 +1471,7 @@ const projectsData: ProjectItem[] = [
     image: '/blog_ai_diagram.png',
     alt: 'Pulse AI Blog Engine Generative AI & MVC Architecture Showcase',
     tags: ['PHP 8', 'Google Gemini AI', 'MySQL', 'Tailwind CSS', 'Web Speech API', 'MVC Architecture', 'CodeQL', 'GitHub Actions'],
-    githubUrl: 'https://github.com/SithumManusha/blog-app-IN2120',
+    githubUrl: 'https://github.com/SithumManusha/pulse-ai-blog-engine',
     detailsId: 'pulse-ai',
     featurePills: [
       { icon: 'fa-solid fa-brain', text: 'GEMINI 1.5 FLASH AI' },
@@ -3943,7 +3943,7 @@ function App() {
                         </p>
                       </div>
                       <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center' }}>
-                        <a href="https://github.com/SithumManusha/blog-app-IN2120" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
+                        <a href="https://github.com/SithumManusha/pulse-ai-blog-engine" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
                           <i className="fa-brands fa-github" style={{ marginRight: '6px' }}></i> Source Code
                         </a>
                       </div>
