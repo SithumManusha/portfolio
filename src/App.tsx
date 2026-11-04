@@ -648,6 +648,7 @@ const projectDetailsData: Record<string, ProjectDetails> = {
       tables: ["users (id, username, email, password_hash, role, created_at)", "posts (id, user_id, title, slug, content, summary, category, status, created_at)", "comments (id, post_id, user_id, comment, created_at)", "tags (id, name, slug)", "post_tags (post_id, tag_id)"],
       description: "Normalized 3NF relational database schema with foreign key constraints, indexing on slugs and user IDs, and cascading comment deletes."
     },
+    liveDemo: "https://pulse-ai-blog-engine-enh6hzeebedkgpag.eastasia-01.azurewebsites.net",
     github: "https://github.com/SithumManusha/pulse-ai-blog-engine"
   },
   'robotic-sorting': {
