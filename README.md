@@ -20,7 +20,7 @@
 | :--- | :--- | :--- | :--- |
 | **CareerFlow** | Full-Stack & AI Systems (Individual) | Java 21, Spring Boot 3, Python 3.12, FastAPI, Next.js 14, Docker, JUnit 5, Playwright | [Live Demo](https://careerflow-app.onrender.com) • [GitHub](https://github.com/SithumManusha/careerflow) |
 | **Ryzera POS** | Lead Backend & Offline Sync Architect (Group) | Next.js 16, NestJS, TypeScript, PostgreSQL (Supabase), Prisma, IndexedDB, Socket.io | [GitHub](https://github.com/SithumManusha/Ryzera-POS) |
-| **Ledgerly** | Full-Stack Software & AI Engineer (Individual) | React 19, TypeScript, tRPC 11, Node.js, Express, PostgreSQL, Recharts, Vitest (68 Tests) | [Live Demo](https://ledgerly-mbcd.onrender.com) • [GitHub](https://github.com/SithumManusha/Ledgerly) |
+| **Ledgerly** | Full-Stack Software & AI Engineer (Individual) | React 19, TypeScript, tRPC 11, Node.js, Express, PostgreSQL, Recharts, Vitest (68 Tests) | [Live Demo](https://ledgerly-nine-rust.vercel.app) • [GitHub](https://github.com/SithumManusha/Ledgerly) |
 | **Robotic Sorting System** | Lead Firmware & Mechatronics Architect (Group) | Embedded C++, Arduino Mega & Uno, Dual-MCU UART Serial, RFID, Stepper Motors | [GitHub](https://github.com/SithumManusha/robotic-sorting-system) |
 
 ---

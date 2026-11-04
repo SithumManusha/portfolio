@@ -418,7 +418,7 @@ const projectDetailsData: Record<string, ProjectDetails> = {
     },
     image: "/ledgerly_showcase.png?v=3d",
     github: "https://github.com/SithumManusha/Ledgerly",
-    liveDemo: "https://ledgerly-mbcd.onrender.com"
+    liveDemo: "https://ledgerly-nine-rust.vercel.app"
   },
   careerflow: {
     title: "CareerFlow Enterprise — Distributed ATS Resume Optimizer & AI Interview Platform",
@@ -1428,7 +1428,7 @@ const projectsData: ProjectItem[] = [
     image: '/ledgerly_showcase.png?v=3d',
     alt: 'Ledgerly Workspace & Dashboard Showcase',
     tags: ['React 19', 'TypeScript', 'tRPC 11', 'PostgreSQL', 'Server-Sent Events', 'Tailwind CSS', 'Recharts', 'Vitest (68 Tests)'],
-    liveUrl: 'https://ledgerly-mbcd.onrender.com/',
+    liveUrl: 'https://ledgerly-nine-rust.vercel.app/',
     githubUrl: 'https://github.com/SithumManusha/Ledgerly',
     detailsId: 'ledgerly',
     featurePills: [
@@ -2763,7 +2763,7 @@ function App() {
                       <i className="fa-solid fa-lock" style={{ fontSize: '0.62rem', color: '#10b981' }}></i>
                       <span>
                         {currentProj.id === 'ryzera' ? 'pos-system-pos-web-app.vercel.app' :
-                         currentProj.id === 'ledgerly' ? 'ledgerly-mbcd.onrender.com' :
+                         currentProj.id === 'ledgerly' ? 'ledgerly-nine-rust.vercel.app' :
                          currentProj.id === 'careerflow' ? 'careerflow-pink.vercel.app' :
                          currentProj.id === 'pulse-ai' ? 'pulse-ai-blog-engine.onrender.com' :
                          'github.com/SithumManusha/robotic-sorting-system'}
@@ -3816,7 +3816,7 @@ function App() {
                         </p>
                       </div>
                       <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center' }}>
-                        <a href="https://ledgerly-mbcd.onrender.com/" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
+                        <a href="https://ledgerly-nine-rust.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
                           <i className="fa-solid fa-rocket" style={{ marginRight: '6px' }}></i> Live Demo
                         </a>
                         <a href="https://github.com/SithumManusha/Ledgerly" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
