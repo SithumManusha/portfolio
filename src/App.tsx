@@ -609,7 +609,8 @@ const projectDetailsData: Record<string, ProjectDetails> = {
           "Full PDO Prepared Statements: Parameterized queries across all database operations, eliminating SQL injection.",
           "Automated CSRF Protection: Cryptographic token generation and strict validation on all state-mutating requests.",
           "Markdown to HTML Sanitization: Custom parser filtering dangerous script vectors to prevent Stored XSS.",
-          "Bcrypt Password Security: Secure hashing via PHP's native password_hash() with high work factor."
+          "Bcrypt Password Security: Secure hashing via PHP's native password_hash() with high work factor.",
+          "Tokenized Password Reset: Cryptographically secure 15-minute expiring tokens with single-use replay protection."
         ]
       },
       {
