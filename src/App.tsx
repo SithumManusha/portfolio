@@ -1301,27 +1301,6 @@ const leadershipActivities: LeadershipItem[] = [
     }
   },
   {
-    id: 'leo-club',
-    name: 'Leo Club of UoM',
-    icon: 'fa-solid fa-globe',
-    roles: [
-      {
-        title: 'Member of the Organizing Committee — Project "Rest with Hope"',
-        period: '2025',
-        desc: 'Organizing committee member for Project "Rest with Hope" conducted by Leo Club, UoM.',
-        active: true
-      }
-    ],
-    volunteering: {
-      title: 'INITIATIVES & SERVICE',
-      items: [
-        'Project "Rest with Hope"',
-        'Community Welfare',
-        'Leo Club of UoM'
-      ]
-    }
-  },
-  {
     id: 'fit-moments',
     name: 'FIT Moments (Faculty Media Body)',
     icon: 'fa-solid fa-camera-retro',
