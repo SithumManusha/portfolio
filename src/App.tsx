@@ -1476,6 +1476,7 @@ const projectsData: ProjectItem[] = [
     image: '/pulse_ai_3d_showcase.png?v=3d',
     alt: 'Pulse AI Blog Engine Generative AI & MVC Architecture 3D Interface Showcase',
     tags: ['PHP 8', 'Google Gemini AI', 'MySQL', 'Tailwind CSS', 'Web Speech API', 'MVC Architecture', 'CodeQL', 'GitHub Actions'],
+    liveUrl: 'https://pulse-ai-blog-engine.onrender.com',
     githubUrl: 'https://github.com/SithumManusha/pulse-ai-blog-engine',
     detailsId: 'pulse-ai',
     featurePills: [
@@ -2769,7 +2770,7 @@ function App() {
                         {currentProj.id === 'ryzera' ? 'pos-system-pos-web-app.vercel.app' :
                          currentProj.id === 'ledgerly' ? 'ledgerly-mbcd.onrender.com' :
                          currentProj.id === 'careerflow' ? 'careerflow-app.onrender.com' :
-                         currentProj.id === 'pulse-ai' ? 'pulse-ai-blog-engine.local' :
+                         currentProj.id === 'pulse-ai' ? 'pulse-ai-blog-engine.onrender.com' :
                          'github.com/SithumManusha/robotic-sorting-system'}
                       </span>
                     </div>
@@ -3951,6 +3952,9 @@ function App() {
                         </p>
                       </div>
                       <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center' }}>
+                        <a href="https://pulse-ai-blog-engine.onrender.com" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
+                          <i className="fa-solid fa-rocket" style={{ marginRight: '6px' }}></i> Live Demo
+                        </a>
                         <a href="https://github.com/SithumManusha/pulse-ai-blog-engine" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
                           <i className="fa-brands fa-github" style={{ marginRight: '6px' }}></i> Source Code
                         </a>
