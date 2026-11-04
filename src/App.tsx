@@ -1468,11 +1468,6 @@ const projectsData: ProjectItem[] = [
       role: 'Full-Stack & Generative AI Architect'
     },
     desc: 'An AI-native content publishing platform and blog engine engineered with modern PHP 8, MySQL, Tailwind CSS, and Google Gemini 1.5 Flash AI. Built using a clean Model-View-Controller (MVC) architecture, it features 1-click executive TL;DR summaries, dynamic post drafting from title prompts, in-browser Text-to-Speech podcast audio playback, and enterprise-grade OWASP security verified by automated CodeQL scanning.',
-    myContributions: [
-      'Google Gemini 1.5 Flash Copilot & AI Services: Built GeminiService communicating via raw cURL to generate 1-click executive TL;DR bullet summaries, dynamic post drafting from title prompts, tone polishing, and automated tag taxonomy.',
-      'Web Speech Synthesis Audio Engine: Implemented an in-browser Text-to-Speech podcast player with native speech synthesis, variable speed controls (1.0x, 1.25x, 1.5x), and zero external latency.',
-      'Enterprise OWASP Defense & DevSecOps: Structured clean MVC architecture with a PDO database singleton, automated CSRF tokens, Markdown-to-HTML XSS filtering, bcrypt hashing, and continuous CodeQL semantic security scanning.'
-    ],
     image: '/pulse_ai_3d_showcase.png?v=3d',
     alt: 'Pulse AI Blog Engine Generative AI & MVC Architecture 3D Interface Showcase',
     tags: ['PHP 8', 'Google Gemini AI', 'MySQL', 'Tailwind CSS', 'Web Speech API', 'MVC Architecture', 'CodeQL', 'GitHub Actions'],
