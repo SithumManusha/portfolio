@@ -4023,44 +4023,6 @@ function App() {
                       </p>
                     </div>
 
-                    {/* ASCII Architecture Flow Box */}
-                    <pre style={{
-                      background: theme === 'light' ? '#0f172a' : '#020617',
-                      color: '#38bdf8',
-                      padding: '16px',
-                      borderRadius: '10px',
-                      fontSize: '0.75rem',
-                      lineHeight: 1.4,
-                      overflowX: 'auto',
-                      marginBottom: '22px',
-                      fontFamily: 'monospace'
-                    }}>
-{`+-----------------------------------------------------------------------------------+
-|                         CLIENT BROWSER INTERFACE                                   |
-|   Tailwind CSS UI • LocalStorage Dark/Light Mode • Web Speech API TTS • AJAX Feeds |
-+-----------------------------------------+-----------------------------------------+
-                                          | HTTP Request
-                                          v
-+-----------------------------------------------------------------------------------+
-|                     APPLICATION SECURITY & ROUTER LAYER                           |
-|       public/index.php • Session Guard • CSRF Token Verification • Sanitizer      |
-+-----------------------------------------+-----------------------------------------+
-                                          | Authenticated Request
-                                          v
-+-----------------------------------------------------------------------------------+
-|                          MVC CONTROLLERS & SERVICES                               |
-|   PostController • AuthController • CommentController • AIController (JSON API)   |
-|   GeminiService (cURL REST to Gemini 1.5 Flash) • Markdown XSS Filter Helper      |
-+--------------------+------------------------------------+-------------------------+
-                     |                                    |
-                     v                                    v
-+--------------------+-------------------+   +------------+-------------------------+
-|     DATA PERSISTENCE LAYER             |   |       EXTERNAL AI CLOUD              |
-|   Database.php (PDO Singleton)         |   |   Google Gemini 1.5 Flash API        |
-|   MySQL Relational Schema (InnoDB)     |   |   (Summaries, Drafting, Ideation)    |
-+----------------------------------------+   +--------------------------------------+`}
-                    </pre>
-
                     {/* Key Capabilities */}
                     <h4 style={{ margin: '0 0 16px 0', fontSize: '1.1rem', fontWeight: 800, color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <i className="fa-solid fa-circle-check" style={{ color: 'var(--primary-color)' }}></i> Key Capabilities
