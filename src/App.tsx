@@ -547,6 +547,109 @@ const projectDetailsData: Record<string, ProjectDetails> = {
     github: "https://github.com/SithumManusha/careerflow",
     liveDemo: "https://careerflow-app.onrender.com"
   },
+  'pulse-ai': {
+    title: "Pulse AI Blog Engine",
+    category: "Generative AI Content Publishing Platform & Secure MVC Engine",
+    typeLabel: "Individual Software Project | 2026",
+    statusLabel: "Open Source (GitHub)",
+    role: "Full-Stack & Generative AI Architect",
+    methodology: "Clean MVC Pattern & DevSecOps Automated CI/CD",
+    tags: ["PHP 8", "MySQL", "Google Gemini AI 1.5 Flash", "Tailwind CSS", "Web Speech API (TTS)", "MVC Architecture", "CSRF Protection", "XSS Sanitization", "CodeQL Security", "GitHub Actions"],
+    description: "Pulse AI Blog Engine is an AI-powered content publishing platform engineered with modern PHP 8, MySQL, Tailwind CSS, and Google Gemini 1.5 Flash AI. Built from first principles using a clean Model-View-Controller (MVC) architecture, it delivers 1-click executive summaries, AI-assisted drafting, tone polishing, and automated taxonomy tagging. The platform also features an in-browser podcast audio mode via the Web Speech API, enterprise-grade OWASP security (PDO prepared statements, CSRF tokens, XSS HTML filters, bcrypt hashing), and automated CodeQL security scanning via GitHub Actions CI.",
+    problemStatement: "Traditional content management systems (CMS) and blogging engines are static and vulnerable to common web injection attacks. Authors struggle with content ideation and editing, while readers lack quick executive digests or accessibility-first listening modes.",
+    solutionOverview: "Engineered an AI-native publishing platform with deep Google Gemini 1.5 Flash API integration for instant TL;DR summaries, auto-drafting, and SEO headline generation. Integrated the native Web Speech API for variable-speed audio reading, structured the backend in modular MVC with a PDO singleton, and fortified all endpoints against CSRF, SQLi, and XSS attacks verified by automated CodeQL quality gates.",
+    architecture: `+-----------------------------------------------------------------------------------+
+|                         CLIENT BROWSER INTERFACE                                   |
+|   Tailwind CSS UI • LocalStorage Dark/Light Mode • Web Speech API TTS • AJAX Feeds |
++-----------------------------------------+-----------------------------------------+
+                                          | HTTP Request
+                                          v
++-----------------------------------------------------------------------------------+
+|                     APPLICATION SECURITY & ROUTER LAYER                           |
+|       public/index.php • Session Guard • CSRF Token Verification • Sanitizer      |
++-----------------------------------------+-----------------------------------------+
+                                          | Authenticated Request
+                                          v
++-----------------------------------------------------------------------------------+
+|                          MVC CONTROLLERS & SERVICES                               |
+|   PostController • AuthController • CommentController • AIController (JSON API)   |
+|   GeminiService (cURL REST to Gemini 1.5 Flash) • Markdown XSS Filter Helper      |
++--------------------+------------------------------------+-------------------------+
+                     |                                    |
+                     v                                    v
++--------------------+-------------------+   +------------+-------------------------+
+|     DATA PERSISTENCE LAYER             |   |       EXTERNAL AI CLOUD              |
+|   Database.php (PDO Singleton)         |   |   Google Gemini 1.5 Flash API        |
+|   MySQL Relational Schema (InnoDB)     |   |   (Summaries, Drafting, Ideation)    |
++----------------------------------------+   +--------------------------------------+`,
+    modules: [
+      {
+        name: "Google Gemini 1.5 Flash AI Copilot",
+        desc: "Built a dedicated GeminiService communicating directly with Google Gemini AI REST endpoints over cURL.",
+        highlights: [
+          "1-Click Executive Summary: Generates instant 3-bullet TL;DR insight boxes for readers.",
+          "AI Auto-Drafting: Generates structured, professional technical blog drafts from a single title prompt.",
+          "Tone & Grammar Polish: Refines active voice, readability, and formatting directly inside the editor.",
+          "Taxonomy & Tagging: Automatically scans body content and extracts trending SEO tags."
+        ]
+      },
+      {
+        name: "In-Browser Web Speech Audio Player",
+        desc: "Integrated the HTML5 Web Speech Synthesis API to transform written articles into an interactive podcast experience.",
+        highlights: [
+          "Podcast Mode: Reads article content aloud directly in the browser with zero external latency or API cost.",
+          "Adjustable Playback: Supports multi-speed controls (1.0x, 1.25x, 1.5x) and play/pause/reset states.",
+          "Accessibility First: Enables audio listening for visually impaired readers or on-the-go consumption."
+        ]
+      },
+      {
+        name: "OWASP Hardened Security Architecture",
+        desc: "Implemented comprehensive defenses against common web application vulnerabilities.",
+        highlights: [
+          "Full PDO Prepared Statements: Parameterized queries across all database operations, eliminating SQL injection.",
+          "Automated CSRF Protection: Cryptographic token generation and strict validation on all state-mutating requests.",
+          "Markdown to HTML Sanitization: Custom parser filtering dangerous script vectors to prevent Stored XSS.",
+          "Bcrypt Password Security: Secure hashing via PHP's native password_hash() with high work factor."
+        ]
+      },
+      {
+        name: "DevSecOps & CI Quality Gate",
+        desc: "Automated continuous integration and security scanning pipelines via GitHub Actions.",
+        highlights: [
+          "CodeQL Static Security Analysis: Automated semantic code scanning on every commit and pull request.",
+          "CI Quality Pipeline: Automated PHP linting, syntax verification, and schema validation."
+        ]
+      }
+    ],
+    techLayers: [
+      {
+        layer: "Presentation & Browser",
+        technologies: ["Tailwind CSS 3.4", "Web Speech API (TTS)", "Vanilla JS", "AJAX", "Plus Jakarta Sans"],
+        role: "Delivers responsive mobile-first views, dark/light theme persistence, interactive modals, and real-time audio playback."
+      },
+      {
+        layer: "Application & Routing",
+        technologies: ["PHP 8.0+", "Apache / .htaccess", "MVC Pattern", "Composer Autoloading"],
+        role: "Dispatches requests to dedicated controllers (Post, Auth, AI, Comment) with session guards and CSRF middleware."
+      },
+      {
+        layer: "AI & External Services",
+        technologies: ["Google Gemini 1.5 Flash API", "RESTful cURL Client", "JSON Serialization"],
+        role: "Executes LLM prompts for executive summaries, structured drafting, grammar polish, and taxonomy classification."
+      },
+      {
+        layer: "Data & Security",
+        technologies: ["MySQL 8.0", "PDO Database Helper (Singleton)", "Bcrypt Hashing", "CodeQL Security"],
+        role: "Provides normalized relational persistence with parameterized queries, encrypted passwords, and automated vulnerability scanning."
+      }
+    ],
+    databaseSchema: {
+      title: "Relational Content & User Schema (MySQL)",
+      tables: ["users (id, username, email, password_hash, role, created_at)", "posts (id, user_id, title, slug, content, summary, category, status, created_at)", "comments (id, post_id, user_id, comment, created_at)", "tags (id, name, slug)", "post_tags (post_id, tag_id)"],
+      description: "Normalized 3NF relational database schema with foreign key constraints, indexing on slugs and user IDs, and cascading comment deletes."
+    },
+    github: "https://github.com/SithumManusha/blog-app-IN2120"
+  },
   'robotic-sorting': {
     title: "Automated Robotic Sorting System — Dual-Microcontroller Mechatronic Platform",
     category: "Mechatronics & Embedded Systems • Autonomous Industrial Robotics",
@@ -1353,6 +1456,26 @@ const projectsData: ProjectItem[] = [
     featurePills: [
       { icon: 'fa-solid fa-brain', text: 'TF-IDF & COSINE NLP' },
       { icon: 'fa-solid fa-server', text: 'JAVA 21 & SPRING BOOT 3' }
+    ]
+  },
+  {
+    id: 'pulse-ai',
+    title: 'Pulse AI Blog Engine',
+    category: 'Generative AI & Content Platform · 2026',
+    teamBadge: {
+      type: 'solo',
+      label: 'Individual Project',
+      role: 'Full-Stack & Generative AI Architect'
+    },
+    desc: 'An AI-native content publishing and blog engine engineered with modern PHP 8, MySQL, and Google Gemini 1.5 Flash AI. Features 1-click executive summaries, auto-drafting, tone polishing, in-browser Text-to-Speech podcast audio playback, raw MVC architecture, CSRF/XSS defense, and automated CodeQL security scanning.',
+    image: '/blog_ai_diagram.png',
+    alt: 'Pulse AI Blog Engine Generative AI & MVC Architecture Showcase',
+    tags: ['PHP 8', 'Google Gemini AI', 'MySQL', 'Tailwind CSS', 'Web Speech API', 'MVC Architecture', 'CodeQL', 'GitHub Actions'],
+    githubUrl: 'https://github.com/SithumManusha/blog-app-IN2120',
+    detailsId: 'pulse-ai',
+    featurePills: [
+      { icon: 'fa-solid fa-brain', text: 'GEMINI 1.5 FLASH AI' },
+      { icon: 'fa-solid fa-shield-halved', text: 'OWASP & CODEQL' }
     ]
   },
   {
@@ -3803,6 +3926,147 @@ function App() {
                             <strong style={{ color: 'var(--text-primary)', marginRight: '6px', fontSize: '0.94rem' }}>{cap.title}:</strong>
                             {cap.desc}
                           </div>
+                        </div>
+                      ))}
+                    </div>
+                  </>
+                ) : activeProjectId === 'pulse-ai' ? (
+                  <>
+                    {/* Header: Title, Subtitle, and Quick Links */}
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '14px', marginBottom: '14px' }}>
+                      <div style={{ flex: '1 1 360px' }}>
+                        <h3 className="modal-project-title" style={{ margin: '0 0 6px 0', fontSize: '1.75rem', fontWeight: 800, color: 'var(--text-primary)' }}>
+                          Pulse AI Blog Engine
+                        </h3>
+                        <p style={{ margin: 0, fontSize: '0.98rem', color: 'var(--primary-color)', fontWeight: 600, lineHeight: 1.4 }}>
+                          Generative AI Publishing Platform, Google Gemini Copilot &amp; Secure MVC Engine
+                        </p>
+                      </div>
+                      <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center' }}>
+                        <a href="https://github.com/SithumManusha/blog-app-IN2120" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
+                          <i className="fa-brands fa-github" style={{ marginRight: '6px' }}></i> Source Code
+                        </a>
+                      </div>
+                    </div>
+
+                    {/* Tech Stack Pills */}
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '22px' }}>
+                      {[
+                        "PHP 8.0+",
+                        "Google Gemini 1.5 Flash",
+                        "MySQL (InnoDB)",
+                        "Tailwind CSS 3.4",
+                        "Web Speech API (TTS)",
+                        "MVC Architecture",
+                        "PDO Prepared Statements",
+                        "CSRF Protection",
+                        "XSS Sanitization",
+                        "CodeQL Security",
+                        "GitHub Actions CI"
+                      ].map(tech => (
+                        <span key={tech} style={{ 
+                          fontSize: '0.8rem', 
+                          background: theme === 'light' ? 'rgba(var(--primary-rgb), 0.1)' : 'rgba(var(--primary-rgb), 0.08)', 
+                          border: theme === 'light' ? '1px solid rgba(var(--primary-rgb), 0.35)' : '1px solid rgba(var(--primary-rgb), 0.25)', 
+                          color: 'var(--text-primary)', 
+                          padding: '4px 12px', 
+                          borderRadius: '20px', 
+                          fontWeight: 600 
+                        }}>
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Divider */}
+                    <hr style={{ border: 'none', borderTop: '1px solid var(--card-border)', margin: '20px 0' }} />
+
+                    {/* Architecture & Overview */}
+                    <h4 style={{ margin: '0 0 14px 0', fontSize: '1.1rem', fontWeight: 800, color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <i className="fa-solid fa-layer-group" style={{ color: 'var(--primary-color)' }}></i> Architecture &amp; System Design
+                    </h4>
+                    <p style={{ margin: '0 0 16px 0', fontSize: '0.95rem', lineHeight: 1.6, color: 'var(--text-secondary)' }}>
+                      Pulse AI Blog Engine is an AI-native content publishing system built from first principles using clean Object-Oriented PHP 8 and the Model-View-Controller (MVC) architectural pattern. It bridges high-speed generative AI assistance with rigorous OWASP web security standards.
+                    </p>
+
+                    {/* ASCII Architecture Flow Box */}
+                    <pre style={{
+                      background: theme === 'light' ? '#0f172a' : '#020617',
+                      color: '#38bdf8',
+                      padding: '16px',
+                      borderRadius: '10px',
+                      fontSize: '0.75rem',
+                      lineHeight: 1.4,
+                      overflowX: 'auto',
+                      marginBottom: '22px',
+                      fontFamily: 'monospace'
+                    }}>
+{`+-----------------------------------------------------------------------------------+
+|                         CLIENT BROWSER INTERFACE                                   |
+|   Tailwind CSS UI • LocalStorage Dark/Light Mode • Web Speech API TTS • AJAX Feeds |
++-----------------------------------------+-----------------------------------------+
+                                          | HTTP Request
+                                          v
++-----------------------------------------------------------------------------------+
+|                     APPLICATION SECURITY & ROUTER LAYER                           |
+|       public/index.php • Session Guard • CSRF Token Verification • Sanitizer      |
++-----------------------------------------+-----------------------------------------+
+                                          | Authenticated Request
+                                          v
++-----------------------------------------------------------------------------------+
+|                          MVC CONTROLLERS & SERVICES                               |
+|   PostController • AuthController • CommentController • AIController (JSON API)   |
+|   GeminiService (cURL REST to Gemini 1.5 Flash) • Markdown XSS Filter Helper      |
++--------------------+------------------------------------+-------------------------+
+                     |                                    |
+                     v                                    v
++--------------------+-------------------+   +------------+-------------------------+
+|     DATA PERSISTENCE LAYER             |   |       EXTERNAL AI CLOUD              |
+|   Database.php (PDO Singleton)         |   |   Google Gemini 1.5 Flash API        |
+|   MySQL Relational Schema (InnoDB)     |   |   (Summaries, Drafting, Ideation)    |
++----------------------------------------+   +--------------------------------------+`}
+                    </pre>
+
+                    {/* Key Engineering Features Grid */}
+                    <h4 style={{ margin: '0 0 14px 0', fontSize: '1.1rem', fontWeight: 800, color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <i className="fa-solid fa-cubes" style={{ color: 'var(--primary-color)' }}></i> Core Technical Innovations
+                    </h4>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '14px', marginBottom: '22px' }}>
+                      {[
+                        {
+                          icon: "fa-solid fa-brain",
+                          title: "Google Gemini 1.5 Flash AI Copilot",
+                          desc: "Direct REST cURL integration delivering 1-click executive TL;DR bullet summaries, AI blog drafting from titles, tone & readability refinement, and automated taxonomy tag extraction."
+                        },
+                        {
+                          icon: "fa-solid fa-headphones",
+                          title: "In-Browser Web Speech Podcast Player",
+                          desc: "Native HTML5 Web Speech Synthesis API integration converting technical articles into podcasts with multi-speed controls (1.0x, 1.25x, 1.5x) and zero third-party audio latency."
+                        },
+                        {
+                          icon: "fa-solid fa-shield-halved",
+                          title: "OWASP Hardened Defense Suite",
+                          desc: "Complete PDO parameterized queries (Zero SQL injection), cryptographic CSRF token generation and verification, safe Markdown-to-HTML sanitization (Zero Stored XSS), and bcrypt password hashing."
+                        },
+                        {
+                          icon: "fa-solid fa-code-compare",
+                          title: "DevSecOps & CodeQL Quality Gate",
+                          desc: "Automated GitHub Actions CI pipelines executing continuous static code analysis and semantic security vulnerability scanning with GitHub CodeQL."
+                        }
+                      ].map((feat, idx) => (
+                        <div key={idx} style={{
+                          background: theme === 'light' ? 'rgba(var(--primary-rgb), 0.04)' : 'rgba(var(--primary-rgb), 0.03)',
+                          border: theme === 'light' ? '1px solid rgba(var(--primary-rgb), 0.2)' : '1px solid rgba(var(--primary-rgb), 0.12)',
+                          borderRadius: '10px',
+                          padding: '14px'
+                        }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+                            <i className={feat.icon} style={{ color: 'var(--primary-color)', fontSize: '1rem' }}></i>
+                            <strong style={{ fontSize: '0.95rem', color: 'var(--text-primary)' }}>{feat.title}</strong>
+                          </div>
+                          <p style={{ margin: 0, fontSize: '0.85rem', lineHeight: 1.5, color: 'var(--text-secondary)' }}>
+                            {feat.desc}
+                          </p>
                         </div>
                       ))}
                     </div>
