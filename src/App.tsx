@@ -545,7 +545,7 @@ const projectDetailsData: Record<string, ProjectDetails> = {
     },
     image: "/careerflow_showcase.png?v=3d",
     github: "https://github.com/SithumManusha/careerflow",
-    liveDemo: "https://careerflow-app.onrender.com"
+    liveDemo: "https://careerflow-pink.vercel.app"
   },
   'pulse-ai': {
     title: "Pulse AI Blog Engine",
@@ -1450,7 +1450,7 @@ const projectsData: ProjectItem[] = [
     image: '/careerflow_showcase.png?v=3d',
     alt: 'CareerFlow Enterprise ATS Optimizer & AI Interview Platform',
     tags: ['Next.js 14', 'Java 21', 'Spring Boot 3', 'Python 3.12', 'FastAPI', 'PostgreSQL', 'Render', 'Playwright'],
-    liveUrl: 'https://careerflow-app.onrender.com',
+    liveUrl: 'https://careerflow-pink.vercel.app',
     githubUrl: 'https://github.com/SithumManusha/careerflow',
     detailsId: 'careerflow',
     featurePills: [
@@ -2764,7 +2764,7 @@ function App() {
                       <span>
                         {currentProj.id === 'ryzera' ? 'pos-system-pos-web-app.vercel.app' :
                          currentProj.id === 'ledgerly' ? 'ledgerly-mbcd.onrender.com' :
-                         currentProj.id === 'careerflow' ? 'careerflow-app.onrender.com' :
+                         currentProj.id === 'careerflow' ? 'careerflow-pink.vercel.app' :
                          currentProj.id === 'pulse-ai' ? 'pulse-ai-blog-engine.onrender.com' :
                          'github.com/SithumManusha/robotic-sorting-system'}
                       </span>
@@ -3699,7 +3699,7 @@ function App() {
                         </p>
                       </div>
                       <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center' }}>
-                        <a href="https://careerflow-app.onrender.com" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
+                        <a href="https://careerflow-pink.vercel.app" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
                           <i className="fa-solid fa-rocket" style={{ marginRight: '6px' }}></i> Live Demo
                         </a>
                         <a href="https://github.com/SithumManusha/careerflow" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
