@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { CommandPalette } from './components/CommandPalette';
+import { TiltCard } from './components/TiltCard';
 
 // ==========================================
 // DATA DEFINITIONS (PROJECTS & BLOGS)
@@ -1660,6 +1662,18 @@ function App() {
   // Scroll states
   const [scrollProgress, setScrollProgress] = useState(0);
   const [navbarScrolled, setNavbarScrolled] = useState(false);
+  const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
+
+  useEffect(() => {
+    const handleGlobalKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setIsCommandPaletteOpen(prev => !prev);
+      }
+    };
+    window.addEventListener('keydown', handleGlobalKeyDown);
+    return () => window.removeEventListener('keydown', handleGlobalKeyDown);
+  }, []);
   const [activeSection, setActiveSection] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -2007,7 +2021,16 @@ function App() {
               </a>
             </li>
           </ul>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <button 
+              className="cmd-k-btn" 
+              onClick={() => setIsCommandPaletteOpen(true)}
+              title="Quick Search & Command Menu (Ctrl + K)"
+            >
+              <i className="fa-solid fa-terminal" style={{ fontSize: '0.78rem' }}></i>
+              <span style={{ fontSize: '0.80rem', fontWeight: 600 }}>Command</span>
+              <kbd>⌘K</kbd>
+            </button>
             <button 
               className="theme-toggle" 
               id="theme-toggle" 
@@ -2697,13 +2720,19 @@ function App() {
           </div>
         </div>
 
-        {/* Active Featured Project Card (Carousel Slide) */}
+        {/* Active Featured Project Card (Carousel Slide with 3D Tilt Physics) */}
         <AnimatePresence mode="wait">
           {(() => {
             const currentProj = projectsData[projectSlideIndex];
             return (
-              <motion.div
+              <TiltCard
                 key={currentProj.id}
+                tiltMaxAngle={4}
+                scale={1.008}
+                glowColor={theme === 'light' ? 'rgba(99, 102, 241, 0.12)' : 'rgba(99, 102, 241, 0.22)'}
+                style={{ width: '100%', borderRadius: '20px' }}
+              >
+              <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
@@ -2742,7 +2771,7 @@ function App() {
                         {currentProj.id === 'ryzera' ? 'pos-system-pos-web-app.vercel.app' :
                          currentProj.id === 'ledgerly' ? 'ledgerly-nine-rust.vercel.app' :
                          currentProj.id === 'careerflow' ? 'careerflow-pink.vercel.app' :
-                         currentProj.id === 'pulse-ai' ? 'pulse-ai-blog-engine.azurewebsites.net' :
+                         currentProj.id === 'pulse-ai' ? 'pulse-ai-blog-engine.onrender.com' :
                          'github.com/SithumManusha/robotic-sorting-system'}
                       </span>
                     </div>
@@ -2993,6 +3022,7 @@ function App() {
                   </div>
                 </div>
               </motion.div>
+              </TiltCard>
             );
           })()}
         </AnimatePresence>
@@ -4780,6 +4810,20 @@ function App() {
           </div>
         ))}
       </div>
+
+      {/* Global Command Palette (Ctrl + K / ⌘K) */}
+      <CommandPalette
+        isOpen={isCommandPaletteOpen}
+        onClose={() => setIsCommandPaletteOpen(false)}
+        onSelectProject={(projId) => {
+          const idx = projectsData.findIndex(p => p.id === projId);
+          if (idx !== -1) setProjectSlideIndex(idx);
+        }}
+        onDownloadCV={handleDownloadCV}
+        toggleTheme={toggleTheme}
+        theme={theme}
+        showToast={showToast}
+      />
     </>
   );
 }
