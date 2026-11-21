@@ -911,7 +911,7 @@ const projectDetailsData: Record<string, ProjectDetails> = {
       tables: ["parcels", "parcel_status_history", "idempotency_keys", "delivery_zones", "zone_pricing_rules", "outbox_events"],
       description: "PostgreSQL schema with PostGIS polygon geometry for delivery zones, foreign key integrity on status history, and transactional outbox event storage."
     },
-    image: "/swiftdrop_3d_showcase.png?v=home3d",
+    image: "/swiftdrop_3d_showcase.png?v=real_home_v3",
     github: "https://github.com/RJSoori/SwiftDrop"
   }
 };
@@ -1608,7 +1608,7 @@ const projectsData: ProjectItem[] = [
       'Dynamic Quoting & PostGIS Spatial Rules: Implemented volumetric pricing algorithms (L×W×H/5000) and point-in-polygon zone lookups across 25 Sri Lankan cities with automated fallback base rates.',
       'Live SVG QR Tracking & Outbox Relay: Developed automated QR code generation in Next.js 15, public mobile tracking screens, and transactional outbox event publishing to RabbitMQ topic exchanges.'
     ],
-    image: '/swiftdrop_3d_showcase.png?v=home3d',
+    image: '/swiftdrop_3d_showcase.png?v=real_home_v3',
     alt: 'SwiftDrop Enterprise Microservices Courier & Logistics Platform 3D Interface Showcase',
     tags: ['Java 21', 'Spring Boot 3.5', 'Next.js 15', 'TypeScript', 'PostgreSQL (PostGIS)', 'RabbitMQ', 'Docker Compose', 'JUnit 5', 'Vitest', 'Tailwind CSS'],
     githubUrl: 'https://github.com/RJSoori/SwiftDrop',
@@ -2932,6 +2932,7 @@ function App() {
                          currentProj.id === 'ledgerly' ? 'ledgerly-nine-rust.vercel.app' :
                          currentProj.id === 'careerflow' ? 'careerflow-pink.vercel.app' :
                          currentProj.id === 'pulse-ai' ? 'pulse-ai-blog-engine.onrender.com' :
+                         currentProj.id === 'swiftdrop' ? 'github.com/RJSoori/SwiftDrop' :
                          'github.com/SithumManusha/robotic-sorting-system'}
                       </span>
                     </div>
@@ -2962,7 +2963,8 @@ function App() {
                   }}>
                     <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#10b981', display: 'inline-block' }}></span>
                     {currentProj.id === 'robotic-sorting' ? 'Mechatronics & Embedded Architecture' :
-                     currentProj.id === 'pulse-ai' ? 'Generative AI & MVC Architecture' : 'Enterprise Architecture'}
+                     currentProj.id === 'pulse-ai' ? 'Generative AI & MVC Architecture' :
+                     currentProj.id === 'swiftdrop' ? 'Enterprise Microservices & Cloud' : 'Enterprise Architecture'}
                   </div>
 
                   {/* Aspect Video Image Container */}
