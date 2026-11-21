@@ -911,7 +911,7 @@ const projectDetailsData: Record<string, ProjectDetails> = {
       tables: ["parcels", "parcel_status_history", "idempotency_keys", "delivery_zones", "zone_pricing_rules", "outbox_events"],
       description: "PostgreSQL schema with PostGIS polygon geometry for delivery zones, foreign key integrity on status history, and transactional outbox event storage."
     },
-    image: "/swiftdrop_3d_showcase.png?v=3d",
+    image: "/swiftdrop_3d_showcase.png?v=home3d",
     github: "https://github.com/RJSoori/SwiftDrop"
   }
 };
@@ -1608,7 +1608,7 @@ const projectsData: ProjectItem[] = [
       'Dynamic Quoting & PostGIS Spatial Rules: Implemented volumetric pricing algorithms (L×W×H/5000) and point-in-polygon zone lookups across 25 Sri Lankan cities with automated fallback base rates.',
       'Live SVG QR Tracking & Outbox Relay: Developed automated QR code generation in Next.js 15, public mobile tracking screens, and transactional outbox event publishing to RabbitMQ topic exchanges.'
     ],
-    image: '/swiftdrop_3d_showcase.png?v=3d',
+    image: '/swiftdrop_3d_showcase.png?v=home3d',
     alt: 'SwiftDrop Enterprise Microservices Courier & Logistics Platform 3D Interface Showcase',
     tags: ['Java 21', 'Spring Boot 3.5', 'Next.js 15', 'TypeScript', 'PostgreSQL (PostGIS)', 'RabbitMQ', 'Docker Compose', 'JUnit 5', 'Vitest', 'Tailwind CSS'],
     githubUrl: 'https://github.com/RJSoori/SwiftDrop',
