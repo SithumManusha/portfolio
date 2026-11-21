@@ -132,6 +132,20 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
         navigateTo('#projects');
       }
     },
+    {
+      id: 'proj-robotics',
+      title: 'Automated Robotic Sorting System — 4-DOF Microcontroller Conveyor',
+      subtitle: 'Arduino Mega, Stepper Motors NEMA 17, Sensors, Hardware Integration',
+      category: 'Projects',
+      icon: 'fa-solid fa-robot',
+      badge: 'Hardware',
+      keywords: ['robotics', 'arduino', 'hardware', 'conveyor', 'sorting', 'motors'],
+      action: () => {
+        onClose();
+        onSelectProject('robotic-sorting');
+        navigateTo('#projects');
+      }
+    },
 
     // 2. Navigation
     {

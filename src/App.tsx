@@ -1618,6 +1618,31 @@ const projectsData: ProjectItem[] = [
       { icon: 'fa-solid fa-route', text: 'POSTGIS & RABBITMQ' },
       { icon: 'fa-solid fa-qrcode', text: 'SVG QR TRACKING' }
     ]
+  },
+  {
+    id: 'robotic-sorting',
+    title: 'Robotic Sorting System',
+    category: 'Dual-MCU Mechatronics & Autonomous Conveyor Platform · 2025',
+    teamBadge: {
+      type: 'duo',
+      label: 'Group Project (UoM FIT - Microbotics)',
+      role: 'Lead Firmware & Mechatronics Architect'
+    },
+    desc: 'An industrial-grade autonomous sorting conveyor platform combining a 4-DOF robotic arm, dual-microcontroller distributed architecture (Arduino Mega + Uno), RFID categorization, and closed-loop ultrasonic capacity monitoring. Calibrated for 98% pick-and-place precision and non-blocking UART coordination.',
+    myContributions: [
+      'Two-Finger Mechanical Gripper: Designed articulated gripper powered by 28BYJ-48 stepper motor & ULN2003 driver, optimized for lightweight payload balance.',
+      'Precision Firmware Calibration: Programmed Arduino C++ step routines (openGripper/closeGripper) achieving 98% pick-and-place precision without slipping or crushing.',
+      'Conveyor Assembly & Timing Sync: Built structural conveyor frame, aligned roller pulley tension, and synchronized item drop timing with continuous belt feed.'
+    ],
+    image: '/robotic_sorting_3d_showcase.png?v=3d',
+    alt: 'Automated Robotic Sorting System 3D CAD, Robotic Arm & Full Conveyor Belt Showcase',
+    tags: ['Embedded C++', 'Arduino Mega', 'Arduino Uno', 'UART Serial', 'NEMA 17 Stepper', 'RFID (SPI)', 'HC-SR04 Ultrasonic', 'EasyEDA PCB'],
+    githubUrl: 'https://github.com/SithumManusha/robotic-sorting-system',
+    detailsId: 'robotic-sorting',
+    featurePills: [
+      { icon: 'fa-solid fa-microchip', text: 'DUAL-MCU UART BUS' },
+      { icon: 'fa-solid fa-robot', text: '98% PICK & PLACE' }
+    ]
   }
 ];
 
