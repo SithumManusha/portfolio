@@ -779,6 +779,140 @@ const projectDetailsData: Record<string, ProjectDetails> = {
     },
     image: "/robotic_sorting_3d_showcase.png?v=3d",
     github: "https://github.com/SithumManusha/robotic-sorting-system"
+  },
+  'swiftdrop': {
+    title: "SwiftDrop — Enterprise Microservices Courier & Logistics Management System",
+    category: "Distributed Systems • Enterprise Architecture • Event-Driven Microservices",
+    typeLabel: "Level 3 Enterprise Application Development (IN3101) | 2026",
+    statusLabel: "Validated Production Microservices Stack (UoM FIT Group 03 Zentrix)",
+    executiveHighlights: [
+      {
+        icon: "fa-solid fa-server",
+        title: "Distributed Microservices Architecture",
+        desc: "Java 21 & Spring Boot 3.5 microservices behind Spring Cloud Gateway with unified JWT auth, rate limiting, and centralized error handling."
+      },
+      {
+        icon: "fa-solid fa-diagram-project",
+        title: "Parcel Lifecycle State Machine",
+        desc: "Strict state transition engine (CREATED → PICKED_UP → IN_TRANSIT → OUT_FOR_DELIVERY → DELIVERED) with immutable status history audit trails."
+      },
+      {
+        icon: "fa-solid fa-map-location-dot",
+        title: "PostGIS Spatial Dynamic Quoting",
+        desc: "Point-in-polygon spatial zone matching with volumetric weight pricing (L×W×H/5000) and dynamic surcharge matrices across 25 island-wide municipal zones."
+      },
+      {
+        icon: "fa-solid fa-tower-broadcast",
+        title: "Transactional Outbox & RabbitMQ Bus",
+        desc: "Guaranteed at-least-once event delivery publishing parcel.status.changed to RabbitMQ topic exchanges with idempotent consumer deduplication."
+      }
+    ],
+    role: "Core Backend & Parcel Lifecycle Architect (M3)",
+    methodology: "Domain-Driven Design (DDD), Contract-First API Development & Agile Microservices",
+    tags: ["Java 21", "Spring Boot 3.5", "Next.js 15", "TypeScript", "PostgreSQL 16", "PostGIS", "RabbitMQ", "Docker Compose", "Flyway", "JUnit 5", "Vitest", "Playwright", "Tailwind CSS"],
+    description: "SwiftDrop is an enterprise-grade island-wide parcel delivery and courier logistics management system designed and engineered to replace legacy manual dispatch operations. Built as a collaborative 10-person enterprise microservices platform, the system supports multi-role access (Customers, Approved Merchants, Couriers, and Dispatchers) with real-time tracking, automated assignment, and asynchronous notification workflows.",
+    problemStatement: "Traditional courier operations suffer from manual phone bookings, lack of package visibility, uncoordinated courier dispatches, and loss of revenue due to inaccurate volumetric weight calculations and un-audited parcel status updates.",
+    solutionOverview: "Architected a decoupled microservices platform. Implemented a robust parcel service enforcing legal lifecycle transitions, volumetric pricing with PostGIS spatial geometry, instant SVG QR codes for mobile tracking, and transactional outbox event publishing to RabbitMQ for asynchronous notifications and webhooks.",
+    architecture: `+-----------------------------------------------------------------------------------+
+|               Next.js 15 Client Applications (Customer / Merchant / Courier / Admin)|
++-----------------------------------------------------------------------------------+
+                                          |  HTTPS / REST / SSE
+                                          v
++-----------------------------------------------------------------------------------+
+|                         Spring Cloud Gateway (Port 8080)                          |
+|             JWT Verification  |  Rate Limiting  |  Request Tracing                |
++-----------------------------------------------------------------------------------+
+       |                        |                         |
+       v                        v                         v
++--------------+       +-------------------+       +-------------------+
+| auth-service |       |   parcel-service  |       |  dispatch-service |
+| (OAuth2/JWT) |       | (M3 State Machine)|       |  (Assignments)    |
++--------------+       +-------------------+       +-------------------+
+                                | (Outbox Relay)
+                                v
++-----------------------------------------------------------------------------------+
+|                        RabbitMQ Topic Event Bus (Exchange)                        |
+|                     Routing Key: parcel.status.changed                            |
++-----------------------------------------------------------------------------------+
+       |                                |                         |
+       v                                v                         v
++----------------------+     +---------------------+     +--------------------+
+| notification-service |     |   realtime-service  |     |  merchant-service  |
+|  (Mailpit / SMS)     |     | (WebSockets / SSE)  |     | (Webhooks + Retry) |
++----------------------+     +---------------------+     +--------------------+`,
+    modules: [
+      {
+        name: "Customer Parcel Booking & Dynamic Quoting Engine",
+        desc: "Interactive booking workflow calculating volumetric vs. actual weight tariffs across 25 Sri Lankan cities, providing instant estimates before booking confirmation with idempotency key deduplication.",
+        highlights: ["Volumetric pricing (L×W×H/5000)", "Idempotent POST /api/v1/parcels", "Sub-50ms quote estimation"]
+      },
+      {
+        name: "Parcel Lifecycle State Machine & Audit History",
+        desc: "State pattern implementation validating valid lifecycle transitions (CREATED → PICKED_UP → IN_TRANSIT → OUT_FOR_DELIVERY → DELIVERED / FAILED), recording every transition in an immutable status history table.",
+        highlights: ["Enforced illegal transition guards", "Comprehensive status history trail", "Spring Data saveAndFlush versioning"]
+      },
+      {
+        name: "Live SVG QR Code Generation & Public Tracking",
+        desc: "Client-side SVG QR code generator embedding direct mobile tracking URLs, paired with a public mobile-responsive tracking timeline displaying real-time delivery milestones.",
+        highlights: ["Zero-dependency SVG QR generation", "Public tracking without login", "Mobile-optimized responsive view"]
+      },
+      {
+        name: "Transactional Outbox & Event-Driven Publishing",
+        desc: "Outbox relay pattern ensuring zero lost status-change events during database transactions, publishing to RabbitMQ topic exchanges consumed by notification and realtime microservices.",
+        highlights: ["At-least-once delivery guarantee", "Idempotent event consumers", "Dead-letter queue retry resilience"]
+      }
+    ],
+    qaHighlights: [
+      {
+        title: "31 Backend Unit & Integration Tests (JUnit 5)",
+        desc: "Exhaustive unit test coverage for ParcelController, InternalParcelController, QuoteController, and ParcelService state transitions with Mockito.",
+        icon: "fa-bullseye"
+      },
+      {
+        title: "97 Frontend Unit Tests (Vitest)",
+        desc: "Comprehensive testing for customer booking forms, schema validation, role guards, and tracking resolution with 100% pass rate.",
+        icon: "fa-vial-circle-check"
+      },
+      {
+        title: "End-to-End Automated Scenarios (Playwright)",
+        desc: "Automated end-to-end browser tests verifying customer booking, dispatcher assignment, courier status updates, and live tracking.",
+        icon: "fa-arrows-rotate"
+      },
+      {
+        title: "Zero-Vulnerability TypeScript & Linting",
+        desc: "Clean tsc --noEmit and ESLint compilation ensuring strict type safety and high enterprise code quality.",
+        icon: "fa-shield-halved"
+      }
+    ],
+    techLayers: [
+      {
+        layer: "🌐 Presentation Tier",
+        technologies: ["Next.js 15 (App Router)", "React 19", "TypeScript", "Tailwind CSS", "shadcn/ui", "Lucide Icons"],
+        role: "Responsive customer booking portal, dynamic fee estimation preview, and SVG QR code rendering."
+      },
+      {
+        layer: "⚙️ Core Business Logic",
+        technologies: ["Java 21", "Spring Boot 3.5", "Spring Data JPA", "Hibernate", "Bean Validation"],
+        role: "Parcel lifecycle state machine, dynamic quoting engine, idempotency validation, and audit persistence."
+      },
+      {
+        layer: "📡 Event Streaming & Broker",
+        technologies: ["RabbitMQ", "Spring AMQP", "Transactional Outbox", "Topic Exchange"],
+        role: "Asynchronous status event distribution to notification, merchant webhook, and realtime tracking services."
+      },
+      {
+        layer: "🗄️ Persistence & Spatial Data",
+        technologies: ["PostgreSQL 16", "PostGIS", "Flyway Migrations", "Docker Compose"],
+        role: "Spatial polygon zone storage, point-in-polygon query resolution, and versioned schema migrations."
+      }
+    ],
+    databaseSchema: {
+      title: "Relational Parcel & Zone Spatial Schema",
+      tables: ["parcels", "parcel_status_history", "idempotency_keys", "delivery_zones", "zone_pricing_rules", "outbox_events"],
+      description: "PostgreSQL schema with PostGIS polygon geometry for delivery zones, foreign key integrity on status history, and transactional outbox event storage."
+    },
+    image: "/swiftdrop_3d_showcase.png?v=3d",
+    github: "https://github.com/RJSoori/SwiftDrop"
   }
 };
 
@@ -1460,28 +1594,29 @@ const projectsData: ProjectItem[] = [
     ]
   },
   {
-    id: 'robotic-sorting',
-    title: 'Robotic Sorting System',
-    category: 'Dual-MCU Mechatronics & Autonomous Conveyor Platform · 2025',
+    id: 'swiftdrop',
+    title: 'SwiftDrop',
+    category: 'Enterprise Microservices & Courier Logistics Platform · 2026',
     teamBadge: {
       type: 'duo',
-      label: 'Group Project (UoM FIT - Microbotics)',
-      role: 'Lead Firmware & Mechatronics Architect'
+      label: 'Group Project (UoM FIT - Group 03 Zentrix)',
+      role: 'Core Backend & Parcel Lifecycle Architect'
     },
-    desc: 'An industrial-grade autonomous sorting conveyor platform combining a 4-DOF robotic arm, dual-microcontroller distributed architecture (Arduino Mega + Uno), RFID categorization, and closed-loop ultrasonic capacity monitoring. Calibrated for 98% pick-and-place precision and non-blocking UART coordination.',
+    desc: 'An island-wide enterprise courier and logistics platform engineered as a distributed microservices system with Java 21, Spring Boot 3.5, Next.js 15, PostgreSQL (PostGIS), and RabbitMQ. Features an automated parcel lifecycle state machine with status history audit trails, dynamic volumetric quoting across 25 municipal zones, instant SVG QR code generation for mobile tracking, and transactional outbox event publishing with idempotent consumers.',
     myContributions: [
-      'Two-Finger Mechanical Gripper: Designed articulated gripper powered by 28BYJ-48 stepper motor & ULN2003 driver, optimized for lightweight payload balance.',
-      'Precision Firmware Calibration: Programmed Arduino C++ step routines (openGripper/closeGripper) achieving 98% pick-and-place precision without slipping or crushing.',
-      'Conveyor Assembly & Timing Sync: Built structural conveyor frame, aligned roller pulley tension, and synchronized item drop timing with continuous belt feed.'
+      'Customer Booking & Lifecycle APIs: Architected parcel-service endpoints (POST /api/v1/parcels, GET /track/{no}) with idempotency key deduplication, status history tracking, and strict state machine transition validation.',
+      'Dynamic Quoting & PostGIS Spatial Rules: Implemented volumetric pricing algorithms (L×W×H/5000) and point-in-polygon zone lookups across 25 Sri Lankan cities with automated fallback base rates.',
+      'Live SVG QR Tracking & Outbox Relay: Developed automated QR code generation in Next.js 15, public mobile tracking screens, and transactional outbox event publishing to RabbitMQ topic exchanges.'
     ],
-    image: '/robotic_sorting_3d_showcase.png?v=3d',
-    alt: 'Automated Robotic Sorting System 3D CAD, Robotic Arm & Full Conveyor Belt Showcase',
-    tags: ['Embedded C++', 'Arduino Mega', 'Arduino Uno', 'UART Serial', 'NEMA 17 Stepper', 'RFID (SPI)', 'HC-SR04 Ultrasonic', 'EasyEDA PCB'],
-    githubUrl: 'https://github.com/SithumManusha/robotic-sorting-system',
-    detailsId: 'robotic-sorting',
+    image: '/swiftdrop_3d_showcase.png?v=3d',
+    alt: 'SwiftDrop Enterprise Microservices Courier & Logistics Platform 3D Interface Showcase',
+    tags: ['Java 21', 'Spring Boot 3.5', 'Next.js 15', 'TypeScript', 'PostgreSQL (PostGIS)', 'RabbitMQ', 'Docker Compose', 'JUnit 5', 'Vitest', 'Tailwind CSS'],
+    githubUrl: 'https://github.com/RJSoori/SwiftDrop',
+    detailsId: 'swiftdrop',
     featurePills: [
-      { icon: 'fa-solid fa-microchip', text: 'DUAL-MCU UART BUS' },
-      { icon: 'fa-solid fa-robot', text: '98% PICK & PLACE' }
+      { icon: 'fa-solid fa-server', text: 'SPRING BOOT 3 & JAVA 21' },
+      { icon: 'fa-solid fa-route', text: 'POSTGIS & RABBITMQ' },
+      { icon: 'fa-solid fa-qrcode', text: 'SVG QR TRACKING' }
     ]
   }
 ];
@@ -2076,7 +2211,7 @@ function App() {
             3rd-Year BSc (Hons) IT &amp; Management Student | University of Moratuwa
           </h2>
           <p className="hero-description" style={{ marginBottom: '28px', lineHeight: 1.7, maxWidth: '820px', width: '100%' }}>
-            I'm an undergraduate at the University of Moratuwa passionate about full-stack web development and software quality. I build clean, reliable applications using <strong style={{ color: 'var(--text-primary)' }}>Java (Spring Boot), React, TypeScript, and PostgreSQL</strong>, with a strong focus on clean code and automated testing. Currently seeking a Software Engineering Internship to learn, contribute, and build practical software.
+            Third-year IT &amp; Management undergraduate at the University of Moratuwa with hands-on experience in full-stack web engineering using <strong style={{ color: 'var(--text-primary)' }}>React, Next.js, TypeScript, and Java Spring Boot</strong>. Proven track record of architecting offline-first retail systems and microservices-backed web platforms with automated testing and relational database design. Seeking a 6-month Software Engineering Internship commencing January 2027 to deliver clean, scalable code in collaborative engineering teams.
           </p>
           <div className="hero-actions">
             <a href="#projects" className="btn btn-primary">

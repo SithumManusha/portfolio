@@ -119,16 +119,16 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       }
     },
     {
-      id: 'proj-robotics',
-      title: 'Automated Robotic Sorting System — 4-DOF Microcontroller Conveyor',
-      subtitle: 'Arduino Mega, Stepper Motors NEMA 17, Sensors, Hardware Integration',
+      id: 'proj-swiftdrop',
+      title: 'SwiftDrop — Enterprise Microservices Courier & Logistics Platform',
+      subtitle: 'Java 21, Spring Boot 3.5, Next.js 15, PostGIS, RabbitMQ, Docker Compose',
       category: 'Projects',
-      icon: 'fa-solid fa-robot',
-      badge: 'Hardware',
-      keywords: ['robotics', 'arduino', 'hardware', 'conveyor', 'sorting', 'motors'],
+      icon: 'fa-solid fa-truck-fast',
+      badge: 'Microservices',
+      keywords: ['swiftdrop', 'courier', 'logistics', 'spring boot', 'java', 'microservices', 'rabbitmq', 'postgis', 'qr'],
       action: () => {
         onClose();
-        onSelectProject('robotic-sorting');
+        onSelectProject('swiftdrop');
         navigateTo('#projects');
       }
     },
