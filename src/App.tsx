@@ -4396,6 +4396,166 @@ function App() {
                       ))}
                     </div>
                   </>
+                ) : activeProjectId === 'swiftdrop' ? (
+                  <>
+                    {/* Header: Title, Subtitle, and Quick Links */}
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '14px', marginBottom: '14px' }}>
+                      <div style={{ flex: '1 1 360px' }}>
+                        <h3 className="modal-project-title" style={{ margin: '0 0 6px 0', fontSize: '1.75rem', fontWeight: 800, color: 'var(--text-primary)' }}>
+                          SwiftDrop
+                        </h3>
+                        <p style={{ margin: 0, fontSize: '0.98rem', color: theme === 'light' ? '#0d9488' : '#2dd4bf', fontWeight: 600, lineHeight: 1.4 }}>
+                          Island-Wide Enterprise Microservices Courier &amp; Logistics Management System (UoM FIT &bull; Group 03 Zentrix)
+                        </p>
+                      </div>
+                      <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center' }}>
+                        <a href="https://github.com/RJSoori/SwiftDrop" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
+                          <i className="fa-brands fa-github" style={{ marginRight: '6px' }}></i> Source Code (GitHub)
+                        </a>
+                      </div>
+                    </div>
+
+                    {/* Tech Stack Pills */}
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '22px' }}>
+                      {[
+                        "Java 21",
+                        "Spring Boot 3.5",
+                        "Next.js 15 (App Router)",
+                        "TypeScript",
+                        "PostgreSQL 16 (PostGIS)",
+                        "RabbitMQ Event Bus",
+                        "Docker Compose",
+                        "Spring Cloud Gateway",
+                        "Redis (Rate Limiter)",
+                        "MinIO (S3 Photos)",
+                        "Mailpit (SMTP/SMS)",
+                        "JUnit 5 (458 Tests)",
+                        "Vitest (97 Tests)",
+                        "Tailwind CSS"
+                      ].map(tech => (
+                        <span key={tech} style={{ 
+                          fontSize: '0.8rem', 
+                          background: theme === 'light' ? 'rgba(13, 148, 136, 0.1)' : 'rgba(45, 212, 191, 0.08)', 
+                          border: theme === 'light' ? '1px solid rgba(13, 148, 136, 0.35)' : '1px solid rgba(45, 212, 191, 0.25)', 
+                          color: 'var(--text-primary)', 
+                          padding: '4px 12px', 
+                          borderRadius: '20px', 
+                          fontWeight: 600 
+                        }}>
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Architecture & Overview */}
+                    <h4 style={{ margin: '0 0 14px 0', fontSize: '1.1rem', fontWeight: 800, color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <i className="fa-solid fa-layer-group" style={{ color: theme === 'light' ? '#0d9488' : '#2dd4bf' }}></i> Architecture &amp; System Overview
+                    </h4>
+                    <p style={{ margin: '0 0 16px 0', fontSize: '0.92rem', lineHeight: 1.65, color: 'var(--text-secondary)' }}>
+                      SwiftDrop is a distributed enterprise courier and parcel logistics platform engineered for high-concurrency island-wide package tracking across Sri Lanka. Built on a resilient event-driven microservices architecture, all incoming traffic traverses a <strong>Spring Cloud Gateway</strong> with role-based routing and IP rate-limiting, dispatching requests across <strong>8 decoupled Spring Boot microservices</strong> with dedicated PostgreSQL schemas. Cross-service state transitions are coordinated asynchronously via <strong>RabbitMQ topic exchanges</strong> using the <strong>Transactional Outbox pattern</strong> to eliminate distributed transaction failures.
+                    </p>
+
+                    {/* 5 Core Enterprise Platform Modules */}
+                    <div style={{ marginBottom: '24px' }}>
+                      <h4 style={{ margin: '0 0 12px 0', fontSize: '1.05rem', fontWeight: 700, color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <i className="fa-solid fa-cubes" style={{ color: theme === 'light' ? '#0d9488' : '#2dd4bf' }}></i> 5 Core Enterprise Subsystems
+                      </h4>
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '10px' }}>
+                        {[
+                          { title: "Customer Booking & Quoting (Module 3)", desc: "Dynamic volumetric pricing (L×W×H/5000), PostGIS zone matching, and instant SVG QR tracking generation." },
+                          { title: "Merchant Gateway & Signed Webhooks (M2 & M6)", desc: "OAuth 2.0 client credentials, HMAC-SHA256 signed webhook delivery with 4-tier exponential backoff and replay." },
+                          { title: "Dispatcher & Courier Workload Balancing (M4 & M9)", desc: "Automated lowest-workload courier assignment, 360px courier mobile PWA, camera photo proof, and 4-digit OTP verification." },
+                          { title: "Real-Time Tracking & Event Stream (Module 7)", desc: "Public waybill tracking, Server-Sent Events (SSE) live push stream, and authenticated WebSockets per role." },
+                          { title: "Transactional Outbox & Notifications (Module 1 & M5)", desc: "Guaranteed event publishing on RabbitMQ parcel.events exchange, dead-letter queues, and Mailpit SMTP/SMS relays." }
+                        ].map((mod, modIdx) => (
+                          <div key={modIdx} style={{
+                            padding: '12px 14px',
+                            background: theme === 'light' ? '#f8fafc' : 'rgba(255,255,255,0.02)',
+                            border: '1px solid var(--card-border)',
+                            borderRadius: '8px'
+                          }}>
+                            <div style={{ fontWeight: 700, fontSize: '0.85rem', color: theme === 'light' ? '#0f766e' : '#5eead4', marginBottom: '4px' }}>
+                              {mod.title}
+                            </div>
+                            <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.45 }}>
+                              {mod.desc}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Sithum's Direct Core Subsystem Box */}
+                    <div style={{ 
+                      background: theme === 'light' ? 'rgba(13, 148, 136, 0.05)' : 'rgba(45, 212, 191, 0.04)', 
+                      border: theme === 'light' ? '1.5px solid rgba(13, 148, 136, 0.35)' : '1.5px solid rgba(45, 212, 191, 0.25)', 
+                      borderRadius: '12px', 
+                      padding: '20px', 
+                      marginBottom: '26px' 
+                    }}>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px', marginBottom: '14px' }}>
+                        <span style={{ fontSize: '0.88rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', color: theme === 'light' ? '#0f766e' : '#5eead4' }}>
+                          <i className="fa-solid fa-crown" style={{ marginRight: '6px' }}></i> My Core Subsystem &amp; Direct Deliverables (Module 3)
+                        </span>
+                        <span style={{ fontSize: '0.75rem', fontWeight: 700, background: theme === 'light' ? '#ccfbf1' : 'rgba(45, 212, 191, 0.15)', color: theme === 'light' ? '#0f766e' : '#5eead4', padding: '3px 10px', borderRadius: '12px' }}>
+                          Lead Backend &amp; Parcel Lifecycle Architect
+                        </span>
+                      </div>
+                      <ul className="duo-scope-list" style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                        <li className="duo-scope-item">
+                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Customer Parcel Booking &amp; Lifecycle APIs:</strong> Architected primary <code>parcel-service</code> REST endpoints (<code>POST /api/v1/parcels</code>, <code>GET /api/v1/parcels/:id</code>) backed by client-provided <code>Idempotency-Key</code> deduplication to prevent duplicate bookings, complete status history audit trails, and strict state machine transition validation (<code>CREATED &rarr; PICKED_UP &rarr; IN_TRANSIT &rarr; OUT_FOR_DELIVERY &rarr; DELIVERED / FAILED</code>).</span>
+                        </li>
+                        <li className="duo-scope-item">
+                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Dynamic Volumetric Quoting Engine (L&times;W&times;H / 5000):</strong> Developed multi-variable pricing algorithms dynamically charging for the maximum of actual mass vs. volumetric weight, integrated with PostGIS point-in-polygon queries across 25 Sri Lankan administrative zones with automated fallback base rates.</span>
+                        </li>
+                        <li className="duo-scope-item">
+                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Automated SVG QR Code Generation &amp; Public Mobile Tracking:</strong> Built real-time client-side SVG QR code generation in Next.js 15, instant waybill confirmation screens, and responsive public tracking view optimized for mobile couriers and customers.</span>
+                        </li>
+                        <li className="duo-scope-item">
+                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Transactional Outbox Event Publishing:</strong> Integrated database transactional outbox table with Spring Data JPA and RabbitMQ <code>parcel.events</code> topic exchange, atomically publishing <code>parcel.created</code> events with guaranteed delivery.</span>
+                        </li>
+                        <li className="duo-scope-item">
+                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Comprehensive Enterprise Testing Suite:</strong> Authored 31 backend JUnit tests in <code>parcel-service</code> (122 tests total across module), 97 frontend Vitest tests, and verified complete end-to-end access-control and validation probe immunity.</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    {/* Key Technical Capabilities */}
+                    <h4 style={{ margin: '0 0 16px 0', fontSize: '1.1rem', fontWeight: 800, color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <i className="fa-solid fa-circle-check" style={{ color: theme === 'light' ? '#0d9488' : '#2dd4bf' }}></i> Key Technical Capabilities
+                    </h4>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                      {[
+                        { icon: "📦", title: "Automated Parcel Lifecycle State Machine", desc: "Enforces strict monotonic transitions (CREATED, PICKED_UP, IN_TRANSIT, OUT_FOR_DELIVERY, DELIVERED/FAILED), rejecting illegal jumps with RFC 7807 problem details" },
+                        { icon: "📍", title: "PostGIS Spatial GeoJSON Routing & Pricing", desc: "Polygon containment queries mapping coordinates to 25 Sri Lankan municipal zones for instant tariff resolution" },
+                        { icon: "📨", title: "Transactional Outbox Event Relay", desc: "Guarantees zero event loss across RabbitMQ topic exchanges by committing event rows within the same database transaction as parcel updates" },
+                        { icon: "🛡️", title: "Idempotent API Operations", desc: "Zero double-booking guarantee: clients supply Idempotency-Key headers, returning identical parcel payloads on redundant submissions" },
+                        { icon: "📱", title: "Vector SVG QR Tracking Waybills", desc: "Instant vector QR generation in Next.js 15 routing physical parcel labels directly to public tracking timelines" },
+                        { icon: "🧪", title: "Full-Stack Automated Test Rig", desc: "458 backend tests across 11 modules with Testcontainers (real PostgreSQL, PostGIS, RabbitMQ, Redis) + 97 Vitest frontend tests + 14 Playwright E2E scenarios" }
+                      ].map((cap, capIdx) => (
+                        <div key={capIdx} style={{ 
+                          display: 'flex', 
+                          alignItems: 'flex-start', 
+                          gap: '12px', 
+                          background: theme === 'light' ? 'rgba(13, 148, 136, 0.04)' : 'rgba(255, 255, 255, 0.02)', 
+                          border: theme === 'light' ? '1px solid rgba(13, 148, 136, 0.2)' : '1px solid var(--card-border)', 
+                          borderRadius: '10px', 
+                          padding: '12px 16px' 
+                        }}>
+                          <span style={{ fontSize: '1.25rem', lineHeight: 1, marginTop: '2px', flexShrink: 0 }}>{cap.icon}</span>
+                          <div style={{ fontSize: '0.9rem', lineHeight: 1.5, color: 'var(--text-secondary)' }}>
+                            <strong style={{ color: 'var(--text-primary)', marginRight: '6px' }}>{cap.title}:</strong>
+                            {cap.desc}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </>
                 ) : (
                   <>
                     {/* Header: Title, Subtitle, and Quick Links */}
