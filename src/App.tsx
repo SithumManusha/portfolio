@@ -650,7 +650,7 @@ const projectDetailsData: Record<string, ProjectDetails> = {
       tables: ["users (id, username, email, password_hash, role, created_at)", "posts (id, user_id, title, slug, content, summary, category, status, created_at)", "comments (id, post_id, user_id, comment, created_at)", "tags (id, name, slug)", "post_tags (post_id, tag_id)"],
       description: "Normalized relational schema supporting MySQL and SQLite via PDO prepared statements with foreign key constraints."
     },
-    liveDemo: "https://pulse-ai-blog-engine.onrender.com",
+    liveDemo: "https://pulse-ai-blog-engine-enh6hzeebedkgpag.eastasia-01.azurewebsites.net",
     github: "https://github.com/SithumManusha/pulse-ai-blog-engine"
   },
   'robotic-sorting': {
@@ -798,7 +798,7 @@ const projectDetailsData: Record<string, ProjectDetails> = {
       {
         icon: "fa-solid fa-map-location-dot",
         title: "PostGIS Spatial Quoting & QR Tracking",
-        desc: "Dynamic volumetric quoting engine and automated SVG QR code tracking in Next.js 15 & TypeScript across 25 island-wide municipal zones with PostGIS spatial queries."
+        desc: "Dynamic volumetric quoting engine, automated ZXing QR code shipping labels, and public tracking in Next.js 15 & TypeScript across island-wide delivery zones with PostGIS spatial queries."
       },
       {
         icon: "fa-solid fa-tower-broadcast",
@@ -811,7 +811,7 @@ const projectDetailsData: Record<string, ProjectDetails> = {
     tags: ["Java 21", "Spring Boot 3.5", "Spring Data JPA", "Next.js 15", "TypeScript", "PostgreSQL (PostGIS)", "RabbitMQ", "Docker Compose", "JUnit 5", "Vitest", "Tailwind CSS"],
     description: "SwiftDrop is an enterprise-grade island-wide parcel delivery and courier logistics management system designed and engineered to replace legacy manual dispatch operations. Built as a collaborative 10-person enterprise microservices platform, the system supports multi-role access (Customers, Approved Merchants, Couriers, and Dispatchers) with real-time tracking, automated assignment, and asynchronous notification workflows.",
     problemStatement: "Traditional courier operations suffer from manual phone bookings, lack of package visibility, uncoordinated courier dispatches, and loss of revenue due to inaccurate volumetric weight calculations and un-audited parcel status updates.",
-    solutionOverview: "Architected a decoupled microservices platform. Implemented a robust parcel service enforcing legal lifecycle transitions, volumetric pricing with PostGIS spatial geometry, instant SVG QR codes for mobile tracking, and transactional outbox event publishing to RabbitMQ for asynchronous notifications and webhooks.",
+    solutionOverview: "Architected a decoupled microservices platform. Implemented a robust parcel service enforcing legal lifecycle transitions, volumetric pricing with PostGIS spatial geometry, automated ZXing QR shipping labels for mobile tracking, and transactional outbox event publishing to RabbitMQ for asynchronous notifications and webhooks.",
     architecture: `+-----------------------------------------------------------------------------------+
 |               Next.js 15 Client Applications (Customer / Merchant / Courier / Admin)|
 +-----------------------------------------------------------------------------------+
@@ -851,9 +851,9 @@ const projectDetailsData: Record<string, ProjectDetails> = {
         highlights: ["Enforced illegal transition guards", "Comprehensive status history trail", "Spring Data saveAndFlush versioning"]
       },
       {
-        name: "Live SVG QR Code Generation & Public Tracking",
-        desc: "Client-side SVG QR code generator embedding direct mobile tracking URLs, paired with a public mobile-responsive tracking timeline displaying real-time delivery milestones.",
-        highlights: ["Zero-dependency SVG QR generation", "Public tracking without login", "Mobile-optimized responsive view"]
+        name: "Automated QR Code Labels (ZXing) & Public Tracking",
+        desc: "Backend ZXing QR code generation embedded into downloadable PDF shipping labels linking directly to public tracking URLs, paired with a mobile-responsive tracking timeline displaying real-time delivery milestones.",
+        highlights: ["ZXing QR code label generation", "Public tracking without login", "Mobile-optimized responsive view"]
       },
       {
         name: "Transactional Outbox & Event-Driven Publishing",
@@ -887,7 +887,7 @@ const projectDetailsData: Record<string, ProjectDetails> = {
       {
         layer: "🌐 Presentation Tier",
         technologies: ["Next.js 15 (App Router)", "React 19", "TypeScript", "Tailwind CSS", "shadcn/ui", "Lucide Icons"],
-        role: "Responsive customer booking portal, dynamic fee estimation preview, and SVG QR code rendering."
+        role: "Responsive customer booking portal, dynamic fee estimation preview, and QR label/public tracking UI."
       },
       {
         layer: "⚙️ Core Business Logic",
@@ -1539,10 +1539,10 @@ const projectsData: ProjectItem[] = [
       label: 'Group Project — Booking & Spatial Quoting',
       role: 'Booking & Spatial Quoting (Module 3)'
     },
-    desc: 'A microservices logistics platform built with Java 21, Spring Boot 3.5, Spring Data JPA, Next.js 15, TypeScript, PostgreSQL (PostGIS), and RabbitMQ. Features customer booking and parcel lifecycle state machine transitions with idempotency keys, dynamic volumetric quoting across 25 island-wide municipal zones with PostGIS spatial queries, automated SVG QR code tracking, and transactional outbox event publishing backed by 31 backend JUnit tests and 97 frontend Vitest tests.',
+    desc: 'A microservices logistics platform built with Java 21, Spring Boot 3.5, Spring Data JPA, Next.js 15, TypeScript, PostgreSQL (PostGIS), and RabbitMQ. Features customer booking and parcel lifecycle state machine transitions with idempotency keys, dynamic volumetric quoting across island-wide delivery zones with PostGIS spatial queries, automated ZXing QR code shipping labels & public tracking, and transactional outbox event publishing backed by 31 backend JUnit tests and 97 frontend Vitest tests.',
     myContributions: [
       'Customer Booking & Parcel Lifecycle Microservices: Built Java 21 & Spring Boot 3.5 services implementing state machine transitions, status history audit trails, and idempotency key handling.',
-      'Dynamic Volumetric Quoting & SVG QR Tracking: Developed volumetric pricing and automated SVG QR code tracking in Next.js 15 & TypeScript across 25 island-wide municipal zones with PostGIS spatial queries.',
+      'Dynamic Volumetric Quoting & QR Tracking: Developed volumetric pricing, automated ZXing QR code shipping labels, and public tracking in Next.js 15 & TypeScript across island-wide delivery zones with PostGIS spatial queries.',
       'Transactional Outbox & Automated Tests: Integrated asynchronous event publishing via RabbitMQ topic exchanges with transactional outbox guarantees, backed by 31 backend JUnit tests and 97 frontend Vitest tests.'
     ],
     image: '/swiftdrop_3d_showcase.png?v=real_home_v3',
@@ -1553,7 +1553,7 @@ const projectsData: ProjectItem[] = [
     featurePills: [
       { icon: 'fa-solid fa-server', text: 'JAVA 21 & SPRING BOOT 3.5' },
       { icon: 'fa-solid fa-route', text: 'POSTGIS & RABBITMQ OUTBOX' },
-      { icon: 'fa-solid fa-qrcode', text: 'SVG QR & 128 TESTS' }
+      { icon: 'fa-solid fa-qrcode', text: 'QR LABELS & 128 TESTS' }
     ]
   },
   {
@@ -1612,7 +1612,7 @@ const projectsData: ProjectItem[] = [
     image: '/pulse_ai_3d_showcase.png?v=3d',
     alt: 'Pulse AI Blog Engine Content Publishing Platform & MVC Showcase',
     tags: ['PHP 8', 'MySQL', 'SQLite (PDO)', 'Google Gemini API', 'Docker', 'GitHub Actions', 'CodeQL', 'Tailwind CSS', 'Web Speech API'],
-    liveUrl: 'https://pulse-ai-blog-engine.onrender.com',
+    liveUrl: 'https://pulse-ai-blog-engine-enh6hzeebedkgpag.eastasia-01.azurewebsites.net',
     githubUrl: 'https://github.com/SithumManusha/pulse-ai-blog-engine',
     detailsId: 'pulse-ai',
     featurePills: [
@@ -2934,7 +2934,7 @@ function App() {
                         {currentProj.id === 'ryzera' ? 'pos-system-pos-web-app.vercel.app' :
                          currentProj.id === 'ledgerly' ? 'ledgerly-nine-rust.vercel.app' :
                          currentProj.id === 'careerflow' ? 'careerflow-pink.vercel.app' :
-                         currentProj.id === 'pulse-ai' ? 'pulse-ai-blog-engine.onrender.com' :
+                         currentProj.id === 'pulse-ai' ? 'pulse-ai-blog-engine.azurewebsites.net' :
                          currentProj.id === 'swiftdrop' ? 'github.com/RJSoori/SwiftDrop' :
                          'github.com/SithumManusha/robotic-sorting-system'}
                       </span>
@@ -4116,7 +4116,7 @@ function App() {
                         </p>
                       </div>
                       <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center' }}>
-                        <a href="https://pulse-ai-blog-engine.onrender.com" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
+                        <a href="https://pulse-ai-blog-engine-enh6hzeebedkgpag.eastasia-01.azurewebsites.net" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
                           <i className="fa-solid fa-rocket" style={{ marginRight: '6px' }}></i> Live Demo
                         </a>
                         <a href="https://github.com/SithumManusha/pulse-ai-blog-engine" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
@@ -4456,7 +4456,7 @@ function App() {
                       </h4>
                       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '10px' }}>
                         {[
-                          { title: "Customer Booking & Quoting (Module 3)", desc: "Dynamic volumetric pricing (L×W×H/5000), PostGIS zone matching, and instant SVG QR tracking generation." },
+                          { title: "Customer Booking & Quoting (Module 3)", desc: "Dynamic volumetric pricing (L×W×H/5000), PostGIS zone matching, and automated ZXing QR shipping labels." },
                           { title: "Merchant Gateway & Signed Webhooks (M2 & M6)", desc: "OAuth 2.0 client credentials, HMAC-SHA256 signed webhook delivery with 4-tier exponential backoff and replay." },
                           { title: "Dispatcher & Courier Workload Balancing (M4 & M9)", desc: "Automated lowest-workload courier assignment, 360px courier mobile PWA, camera photo proof, and 4-digit OTP verification." },
                           { title: "Real-Time Tracking & Event Stream (Module 7)", desc: "Public waybill tracking, Server-Sent Events (SSE) live push stream, and authenticated WebSockets per role." },
@@ -4502,11 +4502,11 @@ function App() {
                         </li>
                         <li className="duo-scope-item">
                           <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
-                          <span><strong style={{ color: 'var(--text-primary)' }}>Dynamic Volumetric Quoting Engine (L&times;W&times;H / 5000):</strong> Developed dynamic pricing algorithms integrated with PostGIS spatial point-in-polygon queries across 25 island-wide municipal zones with fallback base rates.</span>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Dynamic Volumetric Quoting Engine (L&times;W&times;H / 5000):</strong> Developed dynamic pricing algorithms integrated with PostGIS spatial point-in-polygon queries across island-wide delivery zones with fallback base rates.</span>
                         </li>
                         <li className="duo-scope-item">
                           <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
-                          <span><strong style={{ color: 'var(--text-primary)' }}>Automated SVG QR Code Generation &amp; Public Mobile Tracking:</strong> Built client-side SVG QR code tracking in Next.js 15 &amp; TypeScript with instant waybill confirmation and public mobile tracking timelines.</span>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Automated QR Code Shipping Labels (ZXing) &amp; Public Tracking:</strong> Built backend ZXing QR code PDF shipping labels paired with Next.js 15 &amp; TypeScript waybill downloads and public mobile tracking timelines.</span>
                         </li>
                         <li className="duo-scope-item">
                           <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
@@ -4526,10 +4526,10 @@ function App() {
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                       {[
                         { icon: "📦", title: "Parcel Lifecycle State Machine", desc: "Enforces strict transitions (CREATED, PICKED_UP, IN_TRANSIT, OUT_FOR_DELIVERY, DELIVERED/FAILED) with status history audit trails" },
-                        { icon: "📍", title: "PostGIS Spatial Quoting", desc: "Polygon containment queries mapping coordinates across 25 island-wide municipal zones for dynamic volumetric pricing" },
+                        { icon: "📍", title: "PostGIS Spatial Quoting", desc: "Polygon containment queries mapping coordinates across island-wide delivery zones for dynamic volumetric pricing" },
                         { icon: "📨", title: "Transactional Outbox & RabbitMQ", desc: "Commits outbox event rows within the same database transaction as parcel updates for reliable RabbitMQ topic exchange publishing" },
                         { icon: "🛡️", title: "Idempotent API Operations", desc: "Client-supplied Idempotency-Key headers prevent duplicate parcel creation on retried requests" },
-                        { icon: "📱", title: "Automated SVG QR Code Tracking", desc: "Vector QR generation in Next.js 15 & TypeScript linking parcel labels directly to public tracking timelines" },
+                        { icon: "📱", title: "Automated QR Code Labels (ZXing)", desc: "Backend ZXing QR shipping labels linking parcel waybills directly to public Next.js tracking timelines" },
                         { icon: "🧪", title: "Automated Test Coverage", desc: "31 backend JUnit 5 tests + 97 frontend Vitest tests verifying booking, quoting, state transitions, and tracking" }
                       ].map((cap, capIdx) => (
                         <div key={capIdx} style={{ 
