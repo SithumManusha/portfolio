@@ -89,14 +89,14 @@ interface ProjectDetails {
 
 const projectDetailsData: Record<string, ProjectDetails> = {
   ryzera: {
-    title: "Super POS",
-    category: "Enterprise Distributed Systems • Multi-Branch Retail POS",
-    typeLabel: "2nd Year Group Software Project (Mentored by Ryzera Technologies Pvt Ltd) | 2026",
-    statusLabel: "Live in Production (Vercel Cloud)",
-    role: "Offline Synchronization & Conflict Resolution Architect",
+    title: "Super POS — Multi-Branch Offline-First Retail POS",
+    category: "Multi-Branch Offline-First Retail POS • Offline Sync & Telemetry",
+    typeLabel: "Group Project — Offline Sync & Telemetry (Mentored by Ryzera Technologies) | 2025 – 2026",
+    statusLabel: "Live in Production (Vercel)",
+    role: "Offline Sync & Telemetry Engineer",
     methodology: "Turborepo Monorepo & Offline-First Distributed Architecture",
-    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "IndexedDB", "Recharts", "NestJS", "Node.js", "Prisma ORM", "Socket.io", "Zod", "REST APIs", "PostgreSQL (Supabase)", "Turborepo"],
-    description: "Super POS is an enterprise-grade multi-branch Point of Sale (POS) system developed as a second-year software project at the University of Moratuwa under the industry mentorship of Ryzera Technologies Pvt Ltd. Engineered as a Turborepo monorepo, it supports multi-tenant retail operations, RBAC, and offline-first workflows across Authentication, Billing, Inventory, Offline Sync, and Business Intelligence. My core contribution was architecting and developing the end-to-end Offline-First Data Synchronization & Conflict Resolution Suite—featuring an IndexedDB client offline queue (useOfflineSync), background batch retry pipelines (/sync/push, /sync/retry, /sync/batch-retry), Last-Write-Wins (LWW) 3-way conflict resolution, Recharts P50/P95/P99 latency analytics, Socket.io regional node topology & fleet broadcasts, and remote device access control with PDF health report exports.",
+    tags: ["Next.js", "React", "TypeScript", "NestJS", "Node.js", "PostgreSQL", "Prisma ORM", "Socket.io", "IndexedDB", "Tailwind CSS", "Turborepo"],
+    description: "Super POS is a multi-branch offline-first retail Point of Sale (POS) system built as a group software project at the University of Moratuwa under the mentorship of Ryzera Technologies Pvt Ltd. Engineered as a Turborepo monorepo, it supports multi-tenant retail operations, RBAC, and offline-first workflows across Authentication, Billing, Inventory, Offline Sync, and Reporting. My core contribution was building the Offline Sync & Telemetry subsystem—featuring a client-side IndexedDB transaction queue (useOfflineSync), automated background synchronization with Last-Write-Wins (LWW) conflict detection and an interactive three-way resolver, and a real-time node fleet monitor with Socket.io telemetry, fleet-wide broadcast alerts, and automated audit report exports.",
     problemStatement: "Traditional cloud-dependent retail POS systems freeze or reject checkouts when physical store internet disconnects, resulting in lost sales, cashier bottleneck queues, and error-prone manual inventory reconciliations across branches.",
     solutionOverview: "Engineered an end-to-end offline-first synchronization and conflict resolution suite using browser IndexedDB (RyzeraPOSDB > offlineQueue) to buffer offline sales, stock updates, and price changes locally with auto-reconnection sync. Built background sync and batch retry pipelines (/sync/push, /sync/retry, /sync/batch-retry), Last-Write-Wins (LWW) conflict checks with an interactive 3-way resolver (Trust Local, Trust Cloud, and Smart Merge), Recharts throughput analytics, Socket.io regional node health telemetry, and remote device access revocation with PDF audit exports.",
     architecture: `+-----------------------------------------------------------------------------------+
@@ -203,19 +203,19 @@ const projectDetailsData: Record<string, ProjectDetails> = {
     liveDemo: "https://pos-system-pos-web-app.vercel.app"
   },
   ledgerly: {
-    title: "Ledgerly — Autonomous AI Financial Intelligence & Collaborative Ledger",
-    category: "Full-stack financial intelligence engine, autonomous copilot, and real-time collaborative ledger.",
-    typeLabel: "Individual Full-Stack & AI Systems Project | 2026",
-    statusLabel: "Live in Production (24/7 Always-On)",
-    role: "Full-Stack Software & AI Systems Engineer",
+    title: "Ledgerly — Personal Finance Analytics & Collaborative Ledger",
+    category: "Personal finance analytics, runway simulation, and real-time collaborative ledger.",
+    typeLabel: "Individual Project | 2025 – 2026",
+    statusLabel: "Live in Production (Vercel & Render)",
+    role: "Full-Stack Software Engineer",
     methodology: "Agile Scrum & Automated CI/CD Pipeline",
-    tags: ["React 19", "TypeScript", "tRPC 11", "Node.js", "Express.js", "PostgreSQL", "Server-Sent Events (SSE)", "Tailwind CSS", "Recharts", "Vitest (68 Tests)"],
-    description: "Managing personal budgets and splitting expenses across roommates or group trips often results in tangled debts, uneven payments, and messy spreadsheet calculation errors. My goal was to build Ledgerly—an enterprise-grade financial intelligence platform and collaborative ledger that acts as an autonomous financial advisor and automated accountant in your pocket. Beyond conventional CRUD budgeting apps, Ledgerly features an Autonomous AI Copilot calculating a dynamic 0–100 Financial Health Score (with letter grades A+ to D) and detecting category spending velocity anomalies (>25% surge above baselines). It introduces an interactive 'What-If' Financial Runway Simulator allowing users to stress-test discretionary cuts, simulate capital purchases, and project comparative 6-month cash-flow curves. For collaborative households, Ledgerly pairs 4 mathematical debt-minimization split models (Equal, Percentage, Exact, and Occupancy Days) with a real-time Server-Sent Events (SSE) notification bell and live chronological activity audit stream. Fortified by 68 automated Vitest unit/integration tests and deployed 24/7 on Render Cloud, this project represents production-ready, bank-grade financial engineering balancing complex algorithms with an intuitive user experience.",
+    tags: ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "Drizzle ORM", "OpenAI API", "SSE", "Recharts", "Vitest (68 Tests)", "Render"],
+    description: "Managing personal budgets and splitting expenses across roommates or group trips often results in tangled debts, uneven payments, and error-prone spreadsheet calculations. Ledgerly is a personal finance analytics platform and collaborative ledger featuring a financial health scoring engine (0–100 scale) with spending velocity anomaly detection and LLM-assisted insights and statement parsing via the OpenAI API. It includes an interactive Recharts runway simulator to model discretionary spending cuts and major purchases across comparative 6-month cash-flow curves, plus multi-party debt simplification using a Greedy Two-Pointer algorithm across 4 split models (Equal, Percentage, Exact, Occupancy Days) with real-time SSE alerts and PDF settlement exports. Secured with end-to-end type safety, OWASP session controls, and 68 automated Vitest unit/integration tests.",
     executiveHighlights: [
       {
         icon: "🧠",
-        title: "Autonomous AI Copilot",
-        desc: "Proprietary financial health algorithm calculating a 0–100 score, letter grade (A+ to D), and spending velocity anomaly alerts (>25% surge)."
+        title: "Financial Health Scoring & LLM Insights",
+        desc: "0–100 financial health scoring engine with spending velocity anomaly detection (>25% surge) and OpenAI API-assisted insights and statement parsing."
       },
       {
         icon: "🎛️",
@@ -230,41 +230,41 @@ const projectDetailsData: Record<string, ProjectDetails> = {
       {
         icon: "📜",
         title: "Live Activity Audit Stream",
-        desc: "Immutable chronological collaborative audit timeline synchronizing group bill additions, AI splits, and verified bank receipts in real-time."
+        desc: "Chronological collaborative audit timeline synchronizing group bill additions, split allocations, and verified payment slips in real-time."
       },
       {
         icon: "🧮",
-        title: "4 Smart Split Models & Debt Matrix",
-        desc: "Features Equal, Percentage, Exact Amount, and Occupancy Days algorithms settling group debts with the fewest possible cash transfers."
+        title: "Greedy Two-Pointer Debt Simplification",
+        desc: "4 split models (Equal, Percentage, Exact, Occupancy Days) minimizing group cash transfers via a Greedy Two-Pointer algorithm."
       },
       {
         icon: "🧪",
         title: "QA & 68 Automated Vitest Tests",
-        desc: "Rigorous test suite across 11 test files guaranteeing zero debt calculation bugs, auth regressions, or data anomalies."
+        desc: "68 automated unit and integration tests across 11 files covering debt calculation, auth/session controls, health scoring, and PDF exports."
       }
     ],
     problemStatement: "Managing shared expenses across group trips, room rentals, and recurring household bills frequently results in tangled debt webs, uneven payment distributions, and error-prone manual spreadsheet calculations.",
-    solutionOverview: "Engineered an end-to-end type-safe financial intelligence platform featuring:",
+    solutionOverview: "Engineered an end-to-end type-safe personal finance analytics platform and collaborative ledger featuring:",
     solutionPoints: [
-      { label: "Autonomous AI Copilot & Anomaly Alerts", desc: "0–100 Health Score and category velocity surge detection (>25%)." },
-      { label: "Interactive 'What-If' Runway Simulator", desc: "Dynamic stress sliders and 6-month comparative cash-flow curves." },
-      { label: "Real-Time SSE Notification & Audit Stream", desc: "Live event broadcasting for bills, debts, and evidence slips." },
-      { label: "4 Debt-Minimization Split Models", desc: "Equal, Percentage, Exact, and Occupancy Days with net balance matrix." },
-      { label: "Dynamic In-Memory PDF Settlement Engine", desc: "Direct binary streaming via backend PDFKit." },
-      { label: "Rigorous 68-Test QA Pipeline", desc: "100% passing Vitest test suite running on GitHub Actions CI." }
+      { label: "Financial Health Scoring & Anomaly Detection", desc: "0–100 Health Score, spending velocity surge detection (>25%), and OpenAI API-assisted insights and statement parsing." },
+      { label: "Interactive 'What-If' Runway Simulator", desc: "Dynamic stress sliders and 6-month comparative Recharts cash-flow curves." },
+      { label: "Real-Time SSE Alerts & Audit Stream", desc: "Live Server-Sent Events notifications for bills, debts, and settlements." },
+      { label: "Greedy Two-Pointer Debt Simplification", desc: "4 split models (Equal, Percentage, Exact, Occupancy Days) minimizing settlement transfers." },
+      { label: "Dynamic In-Memory PDF Settlement Exports", desc: "Direct binary streaming via backend PDFKit." },
+      { label: "68 Automated Vitest Tests", desc: "Unit and integration test suite running on GitHub Actions CI." }
     ],
     architecture: `+-----------------------------------------------------------------------------------+
-|                        Client (React 19, TypeScript, Vite)                        |
+|                        Client (React, TypeScript, Vite)                           |
 |       UI Components + TailwindCSS + Recharts Charts + Live Notification Bell      |
 +-----------------------------------------------------------------------------------+
                                           |
-            tRPC 11 / Typesafe RPC API   <--->   Server-Sent Events (SSE) Bus
+            tRPC / Typesafe API           <--->   Server-Sent Events (SSE) Bus
                                           v
 +-----------------------------------------------------------------------------------+
-|                        Server (Node.js & Express.js, tRPC)                        |
-|   Autonomous AI Financial Intelligence Engine | Spending Anomaly & Runway Sim     |
-|   Real-Time Notification & Audit Services     | PDF Settlement Reporter (PDFKit)  |
-|   Auth & Session Cookies (bcryptjs)           | Zod Input Validation              |
+|                        Server (Node.js & Express, tRPC)                           |
+|   Health Scoring & Velocity Anomaly Engine    | OpenAI API Insights & Parser      |
+|   Greedy Two-Pointer Debt Simplifier          | PDF Settlement Reporter (PDFKit)  |
+|   OWASP Session Controls (bcryptjs)           | Zod Input Validation              |
 +-----------------------------------------------------------------------------------+
                                           |
                         Drizzle ORM (Type-Safe Query Layer)
@@ -275,9 +275,9 @@ const projectDetailsData: Record<string, ProjectDetails> = {
 +-----------------------------------------------------------------------------------+`,
     modules: [
       {
-        name: "🧠 Autonomous AI Copilot & Health Scoring",
-        desc: "Algorithmic financial health engine calculating a 0–100 score, letter grade (A+ to D), burn stability, budget breach extrapolations, and spending velocity anomaly alerts (>25% spike).",
-        highlights: ["0–100 Health Score & Grade", "Spending Velocity Anomaly Alerts", "Budget Breach Extrapolations", "Natural Language Financial Copilot"]
+        name: "🧠 Financial Health Scoring & LLM Insights",
+        desc: "Calculates a 0–100 financial health score with spending velocity anomaly detection (>25% spike), budget breach alerts, and OpenAI API-assisted insights and statement parsing.",
+        highlights: ["0–100 Health Score", "Spending Velocity Anomaly Detection", "OpenAI API Insights & Statement Parsing", "Budget Breach Alerts"]
       },
       {
         name: "🎛️ Interactive 'What-If' Runway Simulator",
@@ -423,36 +423,36 @@ const projectDetailsData: Record<string, ProjectDetails> = {
     liveDemo: "https://ledgerly-nine-rust.vercel.app"
   },
   careerflow: {
-    title: "CareerFlow Enterprise — Distributed ATS Resume Optimizer & AI Interview Platform",
-    category: "Cloud-Native Distributed Systems • AI/NLP Talent Engineering",
-    typeLabel: "Individual Distributed Systems & AI Project | 2026",
-    statusLabel: "Live in Production (Render Cloud)",
+    title: "CareerFlow — Full-Stack ATS Resume Analyzer & Mock Interview Platform",
+    category: "Decoupled Microservices • ATS Resume Analytics & Mock Interview Studio",
+    typeLabel: "Individual Project | 2025 – 2026",
+    statusLabel: "Live in Production (Vercel & Render)",
     executiveHighlights: [
       {
         icon: "fa-solid fa-server",
         title: "Decoupled Microservices",
-        desc: "Java 21 Spring Boot 3 core gateway, Python 3.12 FastAPI NLP worker, and Next.js 14 web client."
+        desc: "Java 21 Spring Boot 3 gateway, Python 3.12 FastAPI worker, and Next.js 14 web client."
       },
       {
         icon: "fa-solid fa-brain",
-        title: "TF-IDF & Cosine NLP Engine",
-        desc: "Automated semantic scoring, missing keyword taxonomy extraction, and Google XYZ bullet re-writing."
+        title: "Scikit-learn TF-IDF & Cosine Scoring",
+        desc: "Dual-scoring ATS resume audit engine computing 0–100% job match scores and bullet rewrite suggestions."
       },
       {
         icon: "fa-solid fa-comments",
-        title: "5-Round Mock Interview Studio",
-        desc: "Tailored technical & behavioral simulation with instant scoring, intent breakdowns, and model answers."
+        title: "5-Round Mock Interview Simulator",
+        desc: "Interactive 5-round technical mock interviews using the Google Gemini API to evaluate answers against STAR rubrics."
       },
       {
         icon: "fa-solid fa-shield-halved",
-        title: "Production Rate Limiting & Swagger UI",
-        desc: "Token-bucket sliding window rate limiting (10 req/min) with OpenAPI 3.0 interactive documentation."
+        title: "Rate Limiting, Docker CI/CD & 26 Tests",
+        desc: "Token-bucket rate limiting (10 req/min), multi-stage Docker GitHub Actions CI/CD, and 26 automated JUnit 5 & Pytest tests."
       }
     ],
-    role: "Full-Stack & Cloud Systems Engineer",
+    role: "Full-Stack Software Engineer",
     methodology: "Microservices Architecture & Automated CI/CD",
-    tags: ["Java 21", "Spring Boot 3", "Python 3.12", "FastAPI", "Next.js 14", "PostgreSQL", "Docker", "Render Cloud", "Playwright", "Scikit-learn"],
-    description: "CareerFlow is an enterprise-grade ATS resume optimization and technical interview preparation platform engineered to eliminate resume filtering rejections. Designed with a decoupled microservices architecture, it unites a Java 21 Spring Boot 3 core gateway, a Python 3.12 FastAPI NLP worker utilizing TF-IDF vectorization and Cosine Similarity, and a Next.js 14 App Router web client. The platform features an industrial ATS dual-scoring scanner, an ATS-safe 1-page CV builder with real-time A4 overflow guard and Google XYZ bullet rewriting, an interactive 5-round AI mock interview studio, and persistent candidate history on serverless PostgreSQL.",
+    tags: ["Java 21", "Spring Boot 3", "Python 3.12", "FastAPI", "Next.js 14", "Google Gemini API", "Scikit-learn", "PostgreSQL", "Docker", "GitHub Actions", "JUnit 5", "Pytest"],
+    description: "CareerFlow is a full-stack ATS resume analyzer and mock interview platform engineered with a decoupled microservices architecture uniting a Java 21 Spring Boot 3 gateway, a Python 3.12 FastAPI worker, and a Next.js 14 web client. It features a dual-scoring ATS resume audit engine using Scikit-learn TF-IDF vectorization & Cosine Similarity (0–100% job match scores and bullet rewrite suggestions), an interactive 5-round technical mock interview simulator powered by the Google Gemini API evaluating answers against STAR rubrics, token-bucket rate limiting (10 req/min), multi-stage Docker CI/CD via GitHub Actions, and 26 automated tests.",
     problemStatement: "Over 75% of software engineering applications are rejected by Applicant Tracking Systems (ATS) due to unparsed multi-column layouts, missing job-description keyword density, or weak task-oriented bullet points without quantified impact.",
     solutionOverview: "Engineered a distributed cloud talent platform providing transparent ATS scoring, instant missing-keyword gap analysis, 1-page A4 Taleo-safe CV building, automated Google XYZ bullet point rewriting, and interactive 5-round technical mock interviews backed by persistent PostgreSQL history and client rate limiting.",
     architecture: `+-----------------------------------------------------------------------------------+
@@ -531,17 +531,17 @@ const projectDetailsData: Record<string, ProjectDetails> = {
       },
       {
         layer: "🐍 AI / NLP Worker",
-        technologies: ["Python 3.12", "FastAPI", "Scikit-learn", "Uvicorn", "TF-IDF Vectorizer"],
-        role: "Asynchronous NLP microservice computing semantic cosine similarity, keyword frequency, and XYZ transformations."
+        technologies: ["Python 3.12", "FastAPI", "Google Gemini API", "Scikit-learn", "Uvicorn", "Pytest"],
+        role: "Asynchronous microservice computing TF-IDF & cosine similarity job match scores, bullet rewrites, and STAR-rubric mock interview evaluations via the Google Gemini API."
       },
       {
         layer: "🗄️ Database & Cloud DevOps",
-        technologies: ["PostgreSQL (Neon Serverless)", "Docker", "Render Cloud", "GitHub Actions CI/CD", "Playwright"],
-        role: "Automated multi-service CI/CD pipelines, containerization, and 24/7 serverless relational storage."
+        technologies: ["PostgreSQL", "Docker", "GitHub Actions (CI/CD)", "Vercel & Render", "JUnit 5", "Playwright"],
+        role: "Multi-stage Docker CI/CD pipelines, 26 automated tests, and persistent relational storage."
       }
     ],
     databaseSchema: {
-      title: "Relational Enterprise Schema (PostgreSQL)",
+      title: "Relational Candidate & Audit Schema (PostgreSQL)",
       tables: ["user_accounts", "candidate_profiles", "job_postings", "ats_audits", "user_scan_records", "user_cv_drafts"],
       description: "Normalized relational schema with foreign-key referential integrity, candidate scan audit history, and JSONB cloud draft storage."
     },
@@ -550,16 +550,16 @@ const projectDetailsData: Record<string, ProjectDetails> = {
     liveDemo: "https://careerflow-pink.vercel.app"
   },
   'pulse-ai': {
-    title: "Pulse AI Blog Engine",
-    category: "Generative AI Content Publishing Platform & Secure MVC Engine",
-    typeLabel: "Individual Software Project | 2026",
-    statusLabel: "Open Source (GitHub)",
-    role: "Full-Stack & Generative AI Architect",
-    methodology: "Clean MVC Pattern & DevSecOps Automated CI/CD",
-    tags: ["PHP 8", "MySQL", "Google Gemini AI 1.5 Flash", "Tailwind CSS", "Web Speech API (TTS)", "MVC Architecture", "CSRF Protection", "XSS Sanitization", "CodeQL Security", "GitHub Actions"],
-    description: "Pulse AI Blog Engine is an AI-powered content publishing platform engineered with modern PHP 8, MySQL, Tailwind CSS, and Google Gemini 1.5 Flash AI. Built from first principles using a clean Model-View-Controller (MVC) architecture, it delivers 1-click executive summaries, AI-assisted drafting, tone polishing, and automated taxonomy tagging. The platform also features an in-browser podcast audio mode via the Web Speech API, enterprise-grade OWASP security (PDO prepared statements, CSRF tokens, XSS HTML filters, bcrypt hashing), and automated CodeQL security scanning via GitHub Actions CI.",
-    problemStatement: "Traditional content management systems (CMS) and blogging engines are static and vulnerable to common web injection attacks. Authors struggle with content ideation and editing, while readers lack quick executive digests or accessibility-first listening modes.",
-    solutionOverview: "Engineered an AI-native publishing platform with deep Google Gemini 1.5 Flash API integration for instant TL;DR summaries, auto-drafting, and SEO headline generation. Integrated the native Web Speech API for variable-speed audio reading, structured the backend in modular MVC with a PDO singleton, and fortified all endpoints against CSRF, SQLi, and XSS attacks verified by automated CodeQL quality gates.",
+    title: "Pulse AI Blog Engine — Content Publishing Platform & MVC Architecture",
+    category: "Content Publishing Platform & MVC Architecture",
+    typeLabel: "Individual Project | 2025 – 2026",
+    statusLabel: "Live in Production (Render)",
+    role: "Full-Stack Software Engineer",
+    methodology: "Clean MVC Pattern & Automated CodeQL CI/CD",
+    tags: ["PHP 8", "MySQL", "SQLite (PDO)", "Google Gemini API", "Docker", "GitHub Actions", "CodeQL", "Tailwind CSS", "Web Speech API"],
+    description: "Pulse AI Blog Engine is a PHP 8 MVC content publishing platform integrating the Google Gemini API for one-click summaries, article drafting, and automated taxonomy tagging. It includes an in-browser audio narration player with variable speed controls via the Web Speech API, and is secured against SQL injection and XSS using PDO prepared statements, session-based form protection, HTML sanitization, and automated CodeQL scanning via GitHub Actions.",
+    problemStatement: "Traditional content management systems (CMS) and blogging engines are static and vulnerable to common web injection attacks. Authors need faster drafting and tagging workflows, while readers benefit from quick summaries and accessible audio narration.",
+    solutionOverview: "Built a clean PHP 8 MVC content publishing platform integrating the Google Gemini API for one-click summaries, article drafting, and automated taxonomy tagging. Integrated the Web Speech API for variable-speed audio narration, supported MySQL and SQLite via PDO prepared statements, and hardened forms against SQLi, CSRF, and XSS with automated GitHub Actions CodeQL scanning.",
     architecture: `+-----------------------------------------------------------------------------------+
 |                         CLIENT BROWSER INTERFACE                                   |
 |   Tailwind CSS UI • LocalStorage Dark/Light Mode • Web Speech API TTS • AJAX Feeds |
@@ -575,83 +575,82 @@ const projectDetailsData: Record<string, ProjectDetails> = {
 +-----------------------------------------------------------------------------------+
 |                          MVC CONTROLLERS & SERVICES                               |
 |   PostController • AuthController • CommentController • AIController (JSON API)   |
-|   GeminiService (cURL REST to Gemini 1.5 Flash) • Markdown XSS Filter Helper      |
+|   GeminiService (REST to Google Gemini API) • Markdown XSS Filter Helper          |
 +--------------------+------------------------------------+-------------------------+
                      |                                    |
                      v                                    v
 +--------------------+-------------------+   +------------+-------------------------+
-|     DATA PERSISTENCE LAYER             |   |       EXTERNAL AI CLOUD              |
-|   Database.php (PDO Singleton)         |   |   Google Gemini 1.5 Flash API        |
-|   MySQL Relational Schema (InnoDB)     |   |   (Summaries, Drafting, Ideation)    |
+|     DATA PERSISTENCE LAYER             |   |       EXTERNAL AI SERVICE            |
+|   Database.php (PDO Singleton)         |   |       Google Gemini API              |
+|   MySQL / SQLite (PDO Prepared)        |   |   (Summaries, Drafting, Tagging)     |
 +----------------------------------------+   +--------------------------------------+`,
     modules: [
       {
-        name: "Google Gemini 1.5 Flash AI Copilot",
-        desc: "Built a dedicated GeminiService communicating directly with Google Gemini AI REST endpoints over cURL.",
+        name: "Google Gemini API Publishing Assistant",
+        desc: "Built a dedicated GeminiService communicating directly with Google Gemini API endpoints over REST.",
         highlights: [
-          "1-Click Executive Summary: Generates instant 3-bullet TL;DR insight boxes for readers.",
-          "AI Auto-Drafting: Generates structured, professional technical blog drafts from a single title prompt.",
-          "Tone & Grammar Polish: Refines active voice, readability, and formatting directly inside the editor.",
-          "Taxonomy & Tagging: Automatically scans body content and extracts trending SEO tags."
+          "1-Click Summaries: Generates concise article summaries for readers.",
+          "Article Drafting: Generates structured blog drafts from a title prompt.",
+          "Tone & Grammar Polish: Refines readability and formatting inside the editor.",
+          "Automated Taxonomy Tagging: Extracts relevant category and SEO tags from article content."
         ]
       },
       {
-        name: "In-Browser Web Speech Audio Player",
-        desc: "Integrated the HTML5 Web Speech Synthesis API to transform written articles into an interactive podcast experience.",
+        name: "In-Browser Web Speech Audio Narration Player",
+        desc: "Integrated the browser Web Speech API to provide accessible, hands-free article narration.",
         highlights: [
-          "Podcast Mode: Reads article content aloud directly in the browser with zero external latency or API cost.",
-          "Adjustable Playback: Supports multi-speed controls (1.0x, 1.25x, 1.5x) and play/pause/reset states.",
-          "Accessibility First: Enables audio listening for visually impaired readers or on-the-go consumption."
+          "Hands-Free Listening: Reads article content aloud directly in the browser with zero external audio latency.",
+          "Variable Speed Controls: Supports adjustable playback speeds (1.0x, 1.25x, 1.5x) with play/pause/reset.",
+          "Accessibility First: Enables audio listening for visually impaired readers or on-the-go reading."
         ]
       },
       {
-        name: "OWASP Hardened Security Architecture",
-        desc: "Implemented comprehensive defenses against common web application vulnerabilities.",
+        name: "Security & OWASP Defenses",
+        desc: "Secured against SQL injection, CSRF, and XSS attacks across all controllers and forms.",
         highlights: [
-          "Full PDO Prepared Statements: Parameterized queries across all database operations, eliminating SQL injection.",
-          "Automated CSRF Protection: Cryptographic token generation and strict validation on all state-mutating requests.",
-          "Markdown to HTML Sanitization: Custom parser filtering dangerous script vectors to prevent Stored XSS.",
-          "Bcrypt Password Security: Secure hashing via PHP's native password_hash() with high work factor.",
-          "Tokenized Password Reset: Cryptographically secure 15-minute expiring tokens with single-use replay protection."
+          "PDO Prepared Statements: Parameterized queries across MySQL and SQLite preventing SQL injection.",
+          "Session-Based Form Protection: Cryptographic CSRF token verification on all state-changing forms.",
+          "HTML Sanitization: Filters unsafe markup and script vectors to prevent Stored XSS.",
+          "Bcrypt Password Hashing: Secure hashing via PHP's native password_hash()."
         ]
       },
       {
-        name: "DevSecOps & CI Quality Gate",
-        desc: "Automated continuous integration and security scanning pipelines via GitHub Actions.",
+        name: "Docker & CodeQL CI Pipeline",
+        desc: "Containerized with Docker and protected by automated GitHub Actions CodeQL security scanning.",
         highlights: [
-          "CodeQL Static Security Analysis: Automated semantic code scanning on every commit and pull request.",
-          "CI Quality Pipeline: Automated PHP linting, syntax verification, and schema validation."
+          "CodeQL Static Security Analysis: Automated semantic scanning on every commit and pull request.",
+          "Dockerized Deployment: Portable container deployment live on Render."
         ]
       }
     ],
     techLayers: [
       {
         layer: "Presentation & Browser",
-        technologies: ["Tailwind CSS 3.4", "Web Speech API (TTS)", "Vanilla JS", "AJAX", "Plus Jakarta Sans"],
-        role: "Delivers responsive mobile-first views, dark/light theme persistence, interactive modals, and real-time audio playback."
+        technologies: ["Tailwind CSS", "Web Speech API", "JavaScript", "AJAX"],
+        role: "Responsive mobile-first views, theme persistence, interactive modals, and variable-speed audio narration."
       },
       {
         layer: "Application & Routing",
-        technologies: ["PHP 8.0+", "Apache / .htaccess", "MVC Pattern", "Composer Autoloading"],
-        role: "Dispatches requests to dedicated controllers (Post, Auth, AI, Comment) with session guards and CSRF middleware."
+        technologies: ["PHP 8", "MVC Pattern", "Session-Based CSRF Guard"],
+        role: "Dispatches requests to dedicated controllers (Post, Auth, AI, Comment) with session protection and HTML sanitization."
       },
       {
-        layer: "AI & External Services",
-        technologies: ["Google Gemini 1.5 Flash API", "RESTful cURL Client", "JSON Serialization"],
-        role: "Executes LLM prompts for executive summaries, structured drafting, grammar polish, and taxonomy classification."
+        layer: "AI Integration",
+        technologies: ["Google Gemini API", "RESTful cURL Client", "JSON"],
+        role: "One-click article summaries, assisted drafting, and automated taxonomy tagging."
       },
       {
-        layer: "Data & Security",
-        technologies: ["MySQL 8.0", "PDO Database Helper (Singleton)", "Bcrypt Hashing", "CodeQL Security"],
-        role: "Provides normalized relational persistence with parameterized queries, encrypted passwords, and automated vulnerability scanning."
+        layer: "Data, Security & DevOps",
+        technologies: ["MySQL", "SQLite (PDO)", "Docker", "GitHub Actions", "CodeQL"],
+        role: "PDO prepared statements, containerized Render deployment, and automated CodeQL security scanning."
       }
     ],
     databaseSchema: {
-      title: "Relational Content & User Schema (MySQL)",
+      title: "Relational Content & User Schema (MySQL / SQLite via PDO)",
       tables: ["users (id, username, email, password_hash, role, created_at)", "posts (id, user_id, title, slug, content, summary, category, status, created_at)", "comments (id, post_id, user_id, comment, created_at)", "tags (id, name, slug)", "post_tags (post_id, tag_id)"],
-      description: "Normalized 3NF relational database schema with foreign key constraints, indexing on slugs and user IDs, and cascading comment deletes."
+      description: "Normalized relational schema supporting MySQL and SQLite via PDO prepared statements with foreign key constraints."
     },
-    liveDemo: "https://pulse-ai-blog-engine-enh6hzeebedkgpag.eastasia-01.azurewebsites.net",
+    liveDemo: "https://pulse-ai-blog-engine.onrender.com",
     github: "https://github.com/SithumManusha/pulse-ai-blog-engine"
   },
   'robotic-sorting': {
@@ -781,15 +780,15 @@ const projectDetailsData: Record<string, ProjectDetails> = {
     github: "https://github.com/SithumManusha/robotic-sorting-system"
   },
   'swiftdrop': {
-    title: "SwiftDrop — Enterprise Microservices Courier & Logistics Management System",
-    category: "Distributed Systems • Enterprise Architecture • Event-Driven Microservices",
-    typeLabel: "Level 3 Enterprise Application Development (IN3101) | 2026",
-    statusLabel: "Validated Production Microservices Stack (UoM FIT Group 03 Zentrix)",
+    title: "SwiftDrop — Microservices Logistics Platform",
+    category: "Microservices Architecture • Booking & Spatial Quoting",
+    typeLabel: "Group Project — Booking & Spatial Quoting (UoM FIT Group 03 Zentrix) | 2026",
+    statusLabel: "Validated Microservices Stack (GitHub)",
     executiveHighlights: [
       {
         icon: "fa-solid fa-server",
-        title: "Distributed Microservices Architecture",
-        desc: "Java 21 & Spring Boot 3.5 microservices behind Spring Cloud Gateway with unified JWT auth, rate limiting, and centralized error handling."
+        title: "Java 21 & Spring Boot 3.5 Microservices",
+        desc: "Customer booking & parcel lifecycle microservices with Spring Data JPA, state machine transitions, and idempotency key handling."
       },
       {
         icon: "fa-solid fa-diagram-project",
@@ -798,18 +797,18 @@ const projectDetailsData: Record<string, ProjectDetails> = {
       },
       {
         icon: "fa-solid fa-map-location-dot",
-        title: "PostGIS Spatial Dynamic Quoting",
-        desc: "Point-in-polygon spatial zone matching with volumetric weight pricing (L×W×H/5000) and dynamic surcharge matrices across 25 island-wide municipal zones."
+        title: "PostGIS Spatial Quoting & QR Tracking",
+        desc: "Dynamic volumetric quoting engine and automated SVG QR code tracking in Next.js 15 & TypeScript across 25 island-wide municipal zones with PostGIS spatial queries."
       },
       {
         icon: "fa-solid fa-tower-broadcast",
         title: "Transactional Outbox & RabbitMQ Bus",
-        desc: "Guaranteed at-least-once event delivery publishing parcel.status.changed to RabbitMQ topic exchanges with idempotent consumer deduplication."
+        desc: "Asynchronous event publishing via RabbitMQ topic exchanges with transactional outbox guarantees, backed by 31 backend JUnit tests and 97 frontend Vitest tests."
       }
     ],
-    role: "Core Backend & Parcel Lifecycle Architect (M3)",
-    methodology: "Domain-Driven Design (DDD), Contract-First API Development & Agile Microservices",
-    tags: ["Java 21", "Spring Boot 3.5", "Next.js 15", "TypeScript", "PostgreSQL 16", "PostGIS", "RabbitMQ", "Docker Compose", "Flyway", "JUnit 5", "Vitest", "Playwright", "Tailwind CSS"],
+    role: "Booking & Spatial Quoting (Module 3)",
+    methodology: "Microservices Architecture, Contract-First APIs & Agile Teamwork",
+    tags: ["Java 21", "Spring Boot 3.5", "Spring Data JPA", "Next.js 15", "TypeScript", "PostgreSQL (PostGIS)", "RabbitMQ", "Docker Compose", "JUnit 5", "Vitest", "Tailwind CSS"],
     description: "SwiftDrop is an enterprise-grade island-wide parcel delivery and courier logistics management system designed and engineered to replace legacy manual dispatch operations. Built as a collaborative 10-person enterprise microservices platform, the system supports multi-role access (Customers, Approved Merchants, Couriers, and Dispatchers) with real-time tracking, automated assignment, and asynchronous notification workflows.",
     problemStatement: "Traditional courier operations suffer from manual phone bookings, lack of package visibility, uncoordinated courier dispatches, and loss of revenue due to inaccurate volumetric weight calculations and un-audited parcel status updates.",
     solutionOverview: "Architected a decoupled microservices platform. Implemented a robust parcel service enforcing legal lifecycle transitions, volumetric pricing with PostGIS spatial geometry, instant SVG QR codes for mobile tracking, and transactional outbox event publishing to RabbitMQ for asynchronous notifications and webhooks.",
@@ -1155,10 +1154,10 @@ const skillsCategories: SkillCategory[] = [
     skills: [
       { name: 'Java (21)', icon: 'fa-brands fa-java', color: '#ea580c' },
       { name: 'Python (3.12)', icon: 'fa-brands fa-python', color: '#3776ab' },
-      { name: 'TypeScript', icon: 'fa-solid fa-file-code', color: '#3b82f6' },
       { name: 'JavaScript', icon: 'fa-brands fa-js', color: '#eab308' },
-      { name: 'C', icon: 'fa-solid fa-c', color: '#659ad2' },
+      { name: 'TypeScript', icon: 'fa-solid fa-file-code', color: '#3b82f6' },
       { name: 'PHP (8)', icon: 'fa-brands fa-php', color: '#777bb4' },
+      { name: 'C / C++', icon: 'fa-solid fa-c', color: '#659ad2' },
       { name: 'SQL', icon: 'fa-solid fa-database', color: '#06b6d4' }
     ]
   },
@@ -1167,63 +1166,66 @@ const skillsCategories: SkillCategory[] = [
     title: 'Front-end Development',
     icon: 'fa-solid fa-globe',
     skills: [
-      { name: 'React (19)', icon: 'fa-brands fa-react', color: '#06b6d4' },
-      { name: 'Next.js 14/16', icon: 'fa-solid fa-layer-group', color: '#ffffff' },
+      { name: 'React', icon: 'fa-brands fa-react', color: '#06b6d4' },
+      { name: 'Next.js', icon: 'fa-solid fa-layer-group', color: '#ffffff' },
       { name: 'Tailwind CSS', icon: 'fa-solid fa-wind', color: '#38bdf8' },
-      { name: 'HTML5 & CSS3', icon: 'fa-brands fa-html5', color: '#f97316' },
-      { name: 'IndexedDB API', icon: 'fa-solid fa-hard-drive', color: 'var(--primary-color)' },
-      { name: 'Recharts', icon: 'fa-solid fa-chart-line', color: '#8884d8' }
+      { name: 'Recharts', icon: 'fa-solid fa-chart-line', color: '#8884d8' },
+      { name: 'IndexedDB', icon: 'fa-solid fa-hard-drive', color: 'var(--primary-color)' },
+      { name: 'Turborepo', icon: 'fa-solid fa-cubes', color: '#ef4444' }
     ]
   },
   {
     id: 'backend',
-    title: 'Back-end & Microservices',
+    title: 'Back-end & Messaging',
     icon: 'fa-solid fa-server',
     skills: [
       { name: 'Spring Boot 3', icon: 'fa-solid fa-leaf', color: '#6db33f' },
       { name: 'FastAPI', icon: 'fa-solid fa-bolt', color: '#009688' },
       { name: 'Node.js & Express', icon: 'fa-brands fa-node-js', color: '#22c55e' },
       { name: 'NestJS', icon: 'fa-solid fa-fire', color: '#e0234e' },
-      { name: 'RESTful APIs', icon: 'fa-solid fa-network-wired', color: '#38bdf8' },
-      { name: 'PHP (OOP / MVC)', icon: 'fa-brands fa-php', color: '#777bb4' },
-      { name: 'Prisma & Drizzle ORM', icon: 'fa-solid fa-gem', color: '#c5f74f' }
+      { name: 'PHP (MVC)', icon: 'fa-brands fa-php', color: '#777bb4' },
+      { name: 'RabbitMQ', icon: 'fa-solid fa-tower-broadcast', color: '#ff6600' },
+      { name: 'WebSockets (Socket.io)', icon: 'fa-solid fa-plug', color: '#38bdf8' },
+      { name: 'RESTful APIs', icon: 'fa-solid fa-network-wired', color: '#38bdf8' }
     ]
   },
   {
     id: 'databases',
-    title: 'Databases & Storage',
+    title: 'Databases & ORM',
     icon: 'fa-solid fa-database',
     skills: [
-      { name: 'PostgreSQL', icon: 'fa-solid fa-database', color: '#336791' },
+      { name: 'PostgreSQL (PostGIS, Supabase)', icon: 'fa-solid fa-database', color: '#336791' },
       { name: 'MySQL', icon: 'fa-solid fa-server', color: '#00758f' },
       { name: 'SQLite & PDO', icon: 'fa-solid fa-hard-drive', color: '#003B57' },
-      { name: 'SQL Schema & ACID Design', icon: 'fa-solid fa-table', color: '#818cf8' }
+      { name: 'Spring Data JPA & Hibernate', icon: 'fa-solid fa-table', color: '#6db33f' },
+      { name: 'Prisma ORM', icon: 'fa-solid fa-gem', color: '#818cf8' },
+      { name: 'Drizzle ORM', icon: 'fa-solid fa-droplet', color: '#c5f74f' }
     ]
   },
   {
     id: 'testing',
-    title: 'Testing & QA Automation',
+    title: 'Testing & Security Analysis',
     icon: 'fa-solid fa-vial-circle-check',
     skills: [
-      { name: 'Vitest (68 Tests)', icon: 'fa-solid fa-bolt', color: '#facc15' },
-      { name: 'Playwright (E2E)', icon: 'fa-solid fa-masks-theater', color: '#2e64b7' },
       { name: 'JUnit 5', icon: 'fa-solid fa-vial', color: '#25a162' },
       { name: 'Pytest', icon: 'fa-solid fa-vial-virus', color: '#0a9edc' },
-      { name: 'API Testing (Postman)', icon: 'fa-solid fa-paper-plane', color: '#f97316' },
-      { name: 'Jira & STLC', icon: 'fa-brands fa-jira', color: '#0052cc' }
+      { name: 'Vitest', icon: 'fa-solid fa-bolt', color: '#facc15' },
+      { name: 'Playwright', icon: 'fa-solid fa-masks-theater', color: '#2e64b7' },
+      { name: 'Postman', icon: 'fa-solid fa-paper-plane', color: '#f97316' },
+      { name: 'CodeQL', icon: 'fa-solid fa-shield-halved', color: '#10b981' }
     ]
   },
   {
     id: 'tools',
-    title: 'DevOps, Tools & Platforms',
+    title: 'DevOps & Integrations',
     icon: 'fa-solid fa-toolbox',
     skills: [
       { name: 'Docker & Compose', icon: 'fa-brands fa-docker', color: '#2496ed' },
-      { name: 'GitHub Actions (CI/CD)', icon: 'fa-solid fa-gears', color: '#2088ff' },
       { name: 'Git & GitHub', icon: 'fa-brands fa-git-alt', color: '#f05032' },
-      { name: 'Render Cloud', icon: 'fa-solid fa-cloud', color: '#46e3b7' },
-      { name: 'IntelliJ IDEA & VS Code', icon: 'fa-solid fa-laptop-code', color: '#fe315d' },
-      { name: 'Swagger / OpenAPI', icon: 'fa-solid fa-book', color: '#85ea2d' }
+      { name: 'GitHub Actions (CI/CD)', icon: 'fa-solid fa-gears', color: '#2088ff' },
+      { name: 'Google Gemini API', icon: 'fa-solid fa-sparkles', color: '#60a5fa' },
+      { name: 'OpenAI API', icon: 'fa-solid fa-brain', color: '#34d399' },
+      { name: 'Scikit-learn', icon: 'fa-solid fa-chart-simple', color: '#f59e0b' }
     ]
   }
 ];
@@ -1232,54 +1234,54 @@ const skillsCategories: SkillCategory[] = [
 const skillsMetrics = [
   {
     icon: 'fa-solid fa-code',
-    num: '4',
-    label: 'Core Languages',
-    sub: 'Java, TypeScript, Python, SQL'
+    num: '7',
+    label: 'Languages',
+    sub: 'Java, Python, JS/TS, PHP, C/C++, SQL'
   },
   {
     icon: 'fa-solid fa-server',
-    num: '3',
-    label: 'Full-Stack Systems',
-    sub: 'Distributed Cloud & Offline Sync'
+    num: '5',
+    label: 'Featured Systems',
+    sub: 'Full-Stack, Microservices & Offline Sync'
   },
   {
     icon: 'fa-solid fa-vial-circle-check',
-    num: '94+',
+    num: '222+',
     label: 'Automated Tests',
-    sub: '68 Vitest + 26 JUnit, Pytest & Playwright'
+    sub: '31 JUnit + 97 & 68 Vitest + 26 CI Tests'
   },
   {
     icon: 'fa-solid fa-shield-halved',
-    num: '100%',
-    label: 'Type-Safe & ACID',
-    sub: 'Strict TypeScript & PostgreSQL'
+    num: 'CI/CD',
+    label: 'Docker & CodeQL',
+    sub: 'GitHub Actions, Type Safety & ACID SQL'
   }
 ];
 
 const marqueeSkillsRow1 = [
-  { name: 'Java 21', tag: 'Enterprise Core', color: '#f89820' },
+  { name: 'Java 21', tag: 'Backend Core', color: '#f89820' },
   { name: 'Spring Boot 3', tag: 'Microservices & REST', color: '#6db33f' },
-  { name: 'Next.js 14', tag: 'Full-Stack React', color: '#38bdf8' },
-  { name: 'TypeScript', tag: 'Type-Safe Architecture', color: '#3178c6' },
-  { name: 'PostgreSQL', tag: 'Relational ACID DB', color: '#336791' },
-  { name: 'Docker', tag: 'Containerization', color: '#2496ed' },
-  { name: 'Tailwind CSS', tag: 'Modern UI System', color: '#06b6d4' },
-  { name: 'React 19', tag: 'Component Engineering', color: '#61dafb' },
-  { name: 'Node.js & Express', tag: 'Backend Services', color: '#22c55e' },
-  { name: 'Drizzle ORM', tag: 'Database Persistence', color: '#c5f74f' },
+  { name: 'Next.js', tag: 'Full-Stack React', color: '#38bdf8' },
+  { name: 'TypeScript', tag: 'End-to-End Type Safety', color: '#3178c6' },
+  { name: 'PostgreSQL & PostGIS', tag: 'Relational & Spatial DB', color: '#336791' },
+  { name: 'RabbitMQ', tag: 'Outbox & Event Bus', color: '#ff6600' },
+  { name: 'Docker & Compose', tag: 'Containerization', color: '#2496ed' },
+  { name: 'React', tag: 'Component UI', color: '#61dafb' },
+  { name: 'NestJS & Node.js', tag: 'Backend Services', color: '#22c55e' },
+  { name: 'Prisma & Drizzle ORM', tag: 'Type-Safe SQL', color: '#c5f74f' },
 ];
 
 const marqueeSkillsRow2 = [
-  { name: 'Playwright', tag: 'End-to-End Testing', color: '#2e64b7' },
-  { name: 'Vitest', tag: '68 Unit & Integration Tests', color: '#facc15' },
-  { name: 'JUnit 5', tag: 'Java Backend TDD', color: '#25a162' },
-  { name: 'IndexedDB', tag: 'Offline Client Cache', color: '#6366f1' },
-  { name: 'FastAPI & Python 3.12', tag: 'AI & NLP Services', color: '#3776ab' },
-  { name: 'Git & GitHub', tag: 'CI/CD & Workflows', color: '#f05032' },
-  { name: 'Render Cloud', tag: 'Production Deployment', color: '#46e3b7' },
-  { name: 'Postman & Swagger', tag: 'API Validation', color: '#ff6c37' },
-  { name: 'JWT & RBAC', tag: 'Role Security & Auth', color: '#10b981' },
-  { name: 'Manual & Functional QA', tag: 'Bug Audits & STLC', color: '#ec4899' },
+  { name: 'Python & FastAPI', tag: 'Microservices & NLP', color: '#3776ab' },
+  { name: 'JUnit 5 & Pytest', tag: 'Backend Testing', color: '#25a162' },
+  { name: 'Vitest & Playwright', tag: 'Frontend & E2E Tests', color: '#facc15' },
+  { name: 'IndexedDB & Socket.io', tag: 'Offline Sync & Telemetry', color: '#6366f1' },
+  { name: 'Google Gemini API', tag: 'LLM Integrations', color: '#60a5fa' },
+  { name: 'OpenAI API & Scikit-learn', tag: 'Analytics & TF-IDF', color: '#34d399' },
+  { name: 'GitHub Actions & CodeQL', tag: 'CI/CD & Security', color: '#f05032' },
+  { name: 'Spring Data JPA', tag: 'Hibernate & ACID SQL', color: '#6db33f' },
+  { name: 'Turborepo', tag: 'Monorepo Tooling', color: '#ef4444' },
+  { name: 'PHP 8 (MVC & PDO)', tag: 'Web Publishing', color: '#777bb4' },
 ];
 
 // Certifications Data Structure
@@ -1505,118 +1507,118 @@ const projectsData: ProjectItem[] = [
   {
     id: 'ryzera',
     title: 'Super POS',
-    category: 'Multi-Branch Enterprise Retail POS & Offline Sync · 2026',
+    category: 'Multi-Branch Offline-First Retail POS · 2025 – 2026',
     teamBadge: {
       type: 'duo',
-      label: 'Group Project (Ryzera Technologies)',
-      role: 'Offline Sync & Conflict Resolution Architect'
+      label: 'Group Project — Offline Sync & Telemetry',
+      role: 'Offline Sync & Telemetry'
     },
-    desc: 'A multi-branch Point of Sale (POS) system developed as a 2nd-year software project at the University of Moratuwa under the industry mentorship of Ryzera Technologies Pvt Ltd. Engineered as a Turborepo monorepo supporting multi-tenant retail operations, RBAC, and end-to-end offline-first synchronization, Last-Write-Wins (LWW) conflict resolution, Recharts latency analytics, Socket.io regional node telemetry, and remote device access control.',
+    desc: 'A multi-branch offline-first retail POS system developed as a University of Moratuwa group project mentored by Ryzera Technologies Pvt Ltd. Engineered as a Turborepo monorepo with an IndexedDB offline transaction queue, Last-Write-Wins (LWW) conflict detection with an interactive three-way resolver, and a real-time Socket.io node fleet monitor with broadcast alerts and audit report exports.',
     myContributions: [
-      'Client-Side Offline Queue & Batch Recovery: Built useOfflineSync (IndexedDB offlineQueue) and batch retry pipelines (/sync/push, /sync/retry, /sync/batch-retry) to buffer offline sales, stock updates, and price changes with auto-reconnection sync to PostgreSQL.',
-      'Conflict Resolution & Sync Analytics: Implemented Last-Write-Wins (LWW) conflict checks, an interactive 3-way resolver (Trust Local, Trust Cloud, Smart Merge), and Recharts dashboards tracking P50/P95/P99 latency and throughput.',
-      'Network Topology, Fleet Broadcasts & Device Control: Developed a live regional node monitor and fleet broadcast system with Socket.io WebSockets, remote device access revocation, entity sync policies, and an audit trail with PDF health report exports.'
+      'Offline-First Transaction Queue: Built a client-side IndexedDB buffer allowing branch cashiers to continue sales during network disruptions with automatic reconnection sync to PostgreSQL.',
+      'Background Sync & Three-Way Conflict Resolution: Implemented Last-Write-Wins (LWW) conflict detection and an interactive three-way resolver for cross-branch consistency.',
+      'Real-Time Node Fleet Monitor: Developed Socket.io telemetry for regional status tracking, fleet-wide broadcast alerts, and automated audit report exports.'
     ],
     image: '/ryzera_real_showcase.png?v=3d',
-    alt: 'Super POS Multi-Branch Retail Enterprise Showcase',
-    tags: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'IndexedDB', 'Recharts', 'NestJS', 'Prisma ORM', 'Socket.io', 'Zod', 'PostgreSQL (Supabase)', 'Turborepo'],
+    alt: 'Super POS Multi-Branch Offline-First Retail POS Showcase',
+    tags: ['Next.js', 'React', 'TypeScript', 'NestJS', 'Node.js', 'PostgreSQL', 'Prisma ORM', 'Socket.io', 'IndexedDB', 'Tailwind CSS', 'Turborepo'],
     liveUrl: 'https://pos-system-pos-web-app.vercel.app',
     githubUrl: 'https://github.com/Ryzera/Ryzera-POS',
     detailsId: 'ryzera',
     featurePills: [
-      { icon: 'fa-solid fa-wifi-slash', text: 'OFFLINE INDEXEDDB SYNC' },
-      { icon: 'fa-solid fa-tower-broadcast', text: 'SOCKET.IO TELEMETRY & LWW' }
-    ]
-  },
-  {
-    id: 'ledgerly',
-    title: 'Ledgerly',
-    category: 'Autonomous AI Financial Copilot & Collaborative Ledger · 2026',
-    teamBadge: {
-      type: 'solo',
-      label: 'Individual Project',
-      role: 'Full-Stack Software & AI Systems Engineer'
-    },
-    desc: 'An enterprise-grade financial intelligence engine and collaborative ledger featuring an Autonomous AI Copilot (0–100 health scoring, velocity anomaly alerts), interactive "What-If" cash-flow runway simulations with Recharts, real-time Server-Sent Events (SSE) activity audit stream, and 4 debt-minimization split models with in-memory PDF settlements. Fortified by 68 automated Vitest tests.',
-    image: '/ledgerly_showcase.png?v=3d',
-    alt: 'Ledgerly Workspace & Dashboard Showcase',
-    tags: ['React 19', 'TypeScript', 'tRPC 11', 'PostgreSQL', 'Server-Sent Events', 'Tailwind CSS', 'Recharts', 'Vitest (68 Tests)'],
-    liveUrl: 'https://ledgerly-nine-rust.vercel.app/',
-    githubUrl: 'https://github.com/SithumManusha/Ledgerly',
-    detailsId: 'ledgerly',
-    featurePills: [
-      { icon: 'fa-solid fa-brain', text: 'AUTONOMOUS AI COPILOT' },
-      { icon: 'fa-solid fa-sliders', text: 'WHAT-IF RUNWAY SIMULATOR' },
-      { icon: 'fa-solid fa-clock-rotate-left', text: 'REAL-TIME SSE AUDIT' }
-    ]
-  },
-  {
-    id: 'careerflow',
-    title: 'CareerFlow',
-    category: 'AI Resume Optimizer & ATS Technical Interview Platform · 2026',
-    teamBadge: {
-      type: 'solo',
-      label: 'Individual Project',
-      role: 'Full-Stack & AI Systems Engineer'
-    },
-    desc: 'A full-stack ATS resume optimization and technical interview platform engineered with Next.js 14, Java 21 Spring Boot 3, and Python 3.12 FastAPI microservices. Features dual-score ATS analysis, Google XYZ bullet rewriting, 5-round AI mock interviews, and PostgreSQL persistence.',
-    image: '/careerflow_showcase.png?v=3d',
-    alt: 'CareerFlow Enterprise ATS Optimizer & AI Interview Platform',
-    tags: ['Next.js 14', 'Java 21', 'Spring Boot 3', 'Python 3.12', 'FastAPI', 'PostgreSQL', 'Render', 'Playwright'],
-    liveUrl: 'https://careerflow-pink.vercel.app',
-    githubUrl: 'https://github.com/SithumManusha/careerflow',
-    detailsId: 'careerflow',
-    featurePills: [
-      { icon: 'fa-solid fa-brain', text: 'TF-IDF & COSINE NLP' },
-      { icon: 'fa-solid fa-server', text: 'JAVA 21 & SPRING BOOT 3' }
-    ]
-  },
-  {
-    id: 'pulse-ai',
-    title: 'Pulse AI Blog Engine',
-    category: 'Generative AI Content Platform & Secure MVC Engine · 2026',
-    teamBadge: {
-      type: 'solo',
-      label: 'Individual Project',
-      role: 'Full-Stack & Generative AI Architect'
-    },
-    desc: 'An AI-native content publishing platform and blog engine engineered with modern PHP 8, MySQL, Tailwind CSS, and Google Gemini 1.5 Flash AI. Built using a clean Model-View-Controller (MVC) architecture, it features 1-click executive TL;DR summaries, dynamic post drafting from title prompts, in-browser Text-to-Speech podcast audio playback, and enterprise-grade OWASP security verified by automated CodeQL scanning.',
-    image: '/pulse_ai_3d_showcase.png?v=3d',
-    alt: 'Pulse AI Blog Engine Generative AI & MVC Architecture 3D Interface Showcase',
-    tags: ['PHP 8', 'Microsoft Azure', 'Docker', 'Google Gemini AI', 'SQLite', 'Tailwind CSS', 'Web Speech API', 'CodeQL'],
-    liveUrl: 'https://pulse-ai-blog-engine-enh6hzeebedkgpag.eastasia-01.azurewebsites.net',
-    githubUrl: 'https://github.com/SithumManusha/pulse-ai-blog-engine',
-    detailsId: 'pulse-ai',
-    featurePills: [
-      { icon: 'fa-solid fa-brain', text: 'GEMINI 1.5 FLASH AI' },
-      { icon: 'fa-solid fa-headphones', text: 'WEB SPEECH PODCAST TTS' },
-      { icon: 'fa-solid fa-shield-halved', text: 'OWASP & CODEQL SECURITY' }
+      { icon: 'fa-solid fa-wifi-slash', text: 'OFFLINE INDEXEDDB QUEUE' },
+      { icon: 'fa-solid fa-tower-broadcast', text: 'LWW SYNC & SOCKET.IO' }
     ]
   },
   {
     id: 'swiftdrop',
     title: 'SwiftDrop',
-    category: 'Enterprise Microservices & Courier Logistics Platform · 2026',
+    category: 'Microservices Logistics Platform · 2026',
     teamBadge: {
       type: 'duo',
-      label: 'Group Project (UoM FIT - Group 03 Zentrix)',
-      role: 'Core Backend & Parcel Lifecycle Architect'
+      label: 'Group Project — Booking & Spatial Quoting',
+      role: 'Booking & Spatial Quoting (Module 3)'
     },
-    desc: 'An island-wide enterprise courier and logistics platform engineered as a distributed microservices system with Java 21, Spring Boot 3.5, Next.js 15, PostgreSQL (PostGIS), and RabbitMQ. Features an automated parcel lifecycle state machine with status history audit trails, dynamic volumetric quoting across 25 municipal zones, instant SVG QR code generation for mobile tracking, and transactional outbox event publishing with idempotent consumers.',
+    desc: 'A microservices logistics platform built with Java 21, Spring Boot 3.5, Spring Data JPA, Next.js 15, TypeScript, PostgreSQL (PostGIS), and RabbitMQ. Features customer booking and parcel lifecycle state machine transitions with idempotency keys, dynamic volumetric quoting across 25 island-wide municipal zones with PostGIS spatial queries, automated SVG QR code tracking, and transactional outbox event publishing backed by 31 backend JUnit tests and 97 frontend Vitest tests.',
     myContributions: [
-      'Customer Booking & Lifecycle APIs: Architected parcel-service endpoints (POST /api/v1/parcels, GET /track/{no}) with idempotency key deduplication, status history tracking, and strict state machine transition validation.',
-      'Dynamic Quoting & PostGIS Spatial Rules: Implemented volumetric pricing algorithms (L×W×H/5000) and point-in-polygon zone lookups across 25 Sri Lankan cities with automated fallback base rates.',
-      'Live SVG QR Tracking & Outbox Relay: Developed automated QR code generation in Next.js 15, public mobile tracking screens, and transactional outbox event publishing to RabbitMQ topic exchanges.'
+      'Customer Booking & Parcel Lifecycle Microservices: Built Java 21 & Spring Boot 3.5 services implementing state machine transitions, status history audit trails, and idempotency key handling.',
+      'Dynamic Volumetric Quoting & SVG QR Tracking: Developed volumetric pricing and automated SVG QR code tracking in Next.js 15 & TypeScript across 25 island-wide municipal zones with PostGIS spatial queries.',
+      'Transactional Outbox & Automated Tests: Integrated asynchronous event publishing via RabbitMQ topic exchanges with transactional outbox guarantees, backed by 31 backend JUnit tests and 97 frontend Vitest tests.'
     ],
     image: '/swiftdrop_3d_showcase.png?v=real_home_v3',
-    alt: 'SwiftDrop Enterprise Microservices Courier & Logistics Platform 3D Interface Showcase',
-    tags: ['Java 21', 'Spring Boot 3.5', 'Next.js 15', 'TypeScript', 'PostgreSQL (PostGIS)', 'RabbitMQ', 'Docker Compose', 'JUnit 5', 'Vitest', 'Tailwind CSS'],
+    alt: 'SwiftDrop Microservices Logistics Platform 3D Interface Showcase',
+    tags: ['Java 21', 'Spring Boot 3.5', 'Spring Data JPA', 'Next.js 15', 'TypeScript', 'PostgreSQL (PostGIS)', 'RabbitMQ', 'Docker Compose', 'JUnit 5', 'Vitest', 'Tailwind CSS'],
     githubUrl: 'https://github.com/RJSoori/SwiftDrop',
     detailsId: 'swiftdrop',
     featurePills: [
-      { icon: 'fa-solid fa-server', text: 'SPRING BOOT 3 & JAVA 21' },
-      { icon: 'fa-solid fa-route', text: 'POSTGIS & RABBITMQ' },
-      { icon: 'fa-solid fa-qrcode', text: 'SVG QR TRACKING' }
+      { icon: 'fa-solid fa-server', text: 'JAVA 21 & SPRING BOOT 3.5' },
+      { icon: 'fa-solid fa-route', text: 'POSTGIS & RABBITMQ OUTBOX' },
+      { icon: 'fa-solid fa-qrcode', text: 'SVG QR & 128 TESTS' }
+    ]
+  },
+  {
+    id: 'careerflow',
+    title: 'CareerFlow',
+    category: 'Full-Stack ATS Resume Analyzer & Mock Interview Platform · 2025 – 2026',
+    teamBadge: {
+      type: 'solo',
+      label: 'Individual Project',
+      role: 'Full-Stack Software Engineer'
+    },
+    desc: 'A full-stack ATS resume analyzer and mock interview platform with a decoupled microservices backend: a Java 21 Spring Boot 3 gateway with token-bucket rate limiting (10 req/min), a Python 3.12 FastAPI worker computing 0–100% job match scores via Scikit-learn TF-IDF & Cosine Similarity, an interactive 5-round technical mock interview simulator using the Google Gemini API against STAR rubrics, multi-stage Docker CI/CD, and 26 automated tests.',
+    image: '/careerflow_showcase.png?v=3d',
+    alt: 'CareerFlow Full-Stack ATS Resume Analyzer & Mock Interview Platform',
+    tags: ['Java 21', 'Spring Boot 3', 'Python 3.12', 'FastAPI', 'Next.js 14', 'Google Gemini API', 'Scikit-learn', 'PostgreSQL', 'Docker', 'GitHub Actions', 'JUnit 5', 'Pytest'],
+    liveUrl: 'https://careerflow-pink.vercel.app',
+    githubUrl: 'https://github.com/SithumManusha/careerflow',
+    detailsId: 'careerflow',
+    featurePills: [
+      { icon: 'fa-solid fa-brain', text: 'TF-IDF & GOOGLE GEMINI API' },
+      { icon: 'fa-solid fa-server', text: 'JAVA 21, FASTAPI & 26 TESTS' }
+    ]
+  },
+  {
+    id: 'ledgerly',
+    title: 'Ledgerly',
+    category: 'Personal Finance Analytics & Collaborative Ledger · 2025 – 2026',
+    teamBadge: {
+      type: 'solo',
+      label: 'Individual Project',
+      role: 'Full-Stack Software Engineer'
+    },
+    desc: 'A personal finance analytics platform and collaborative ledger featuring a 0–100 financial health scoring engine with spending velocity anomaly detection and LLM-assisted insights and statement parsing (OpenAI API), an interactive Recharts 6-month runway simulator, Greedy Two-Pointer debt simplification across 4 split models (Equal, Percentage, Exact, Occupancy Days) with real-time SSE alerts and PDF settlement exports, OWASP session controls, and 68 automated Vitest tests.',
+    image: '/ledgerly_showcase.png?v=3d',
+    alt: 'Ledgerly Personal Finance Analytics & Collaborative Ledger Showcase',
+    tags: ['React', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'Drizzle ORM', 'OpenAI API', 'SSE', 'Recharts', 'Vitest (68 Tests)', 'Render'],
+    liveUrl: 'https://ledgerly-nine-rust.vercel.app',
+    githubUrl: 'https://github.com/SithumManusha/Ledgerly',
+    detailsId: 'ledgerly',
+    featurePills: [
+      { icon: 'fa-solid fa-brain', text: 'HEALTH SCORING & OPENAI API' },
+      { icon: 'fa-solid fa-sliders', text: 'RECHARTS RUNWAY SIMULATOR' },
+      { icon: 'fa-solid fa-clock-rotate-left', text: 'SSE ALERTS & 68 TESTS' }
+    ]
+  },
+  {
+    id: 'pulse-ai',
+    title: 'Pulse AI Blog Engine',
+    category: 'Content Publishing Platform & MVC Architecture · 2025 – 2026',
+    teamBadge: {
+      type: 'solo',
+      label: 'Individual Project',
+      role: 'Full-Stack Software Engineer'
+    },
+    desc: 'A PHP 8 MVC content publishing platform integrating the Google Gemini API for one-click summaries, article drafting, and automated taxonomy tagging. Includes an in-browser audio narration player with variable speed controls via the Web Speech API, and is secured against SQL injection and XSS using PDO prepared statements, session-based form protection, HTML sanitization, and automated CodeQL scanning.',
+    image: '/pulse_ai_3d_showcase.png?v=3d',
+    alt: 'Pulse AI Blog Engine Content Publishing Platform & MVC Showcase',
+    tags: ['PHP 8', 'MySQL', 'SQLite (PDO)', 'Google Gemini API', 'Docker', 'GitHub Actions', 'CodeQL', 'Tailwind CSS', 'Web Speech API'],
+    liveUrl: 'https://pulse-ai-blog-engine.onrender.com',
+    githubUrl: 'https://github.com/SithumManusha/pulse-ai-blog-engine',
+    detailsId: 'pulse-ai',
+    featurePills: [
+      { icon: 'fa-solid fa-brain', text: 'GOOGLE GEMINI API' },
+      { icon: 'fa-solid fa-headphones', text: 'WEB SPEECH AUDIO PLAYER' },
+      { icon: 'fa-solid fa-shield-halved', text: 'PDO, OWASP & CODEQL' }
     ]
   },
   {
@@ -2004,20 +2006,20 @@ function App() {
     showToast("Downloading Sithum's Official CV... 📥", "info");
 
     try {
-      const response = await fetch('/Sithum_Manusha_CV.pdf');
+      const response = await fetch('/Sithum_Manusha_SE_CV.pdf');
       if (!response.ok) throw new Error('File not found');
       const blob = await response.blob();
       const blobUrl = window.URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = blobUrl;
-      link.download = 'Sithum_Manusha_CV.pdf';
+      link.download = 'Sithum_Manusha_SE_CV.pdf';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
       window.URL.revokeObjectURL(blobUrl);
     } catch (err) {
       console.error('Download error:', err);
-      window.open('/Sithum_Manusha_CV.pdf', '_blank');
+      window.open('/Sithum_Manusha_SE_CV.pdf', '_blank');
     }
   };
 
@@ -2243,8 +2245,8 @@ function App() {
               View Projects <i className="fa-solid fa-arrow-down"></i>
             </a>
             <a 
-              href="/Sithum_Manusha_CV.pdf" 
-              download="Sithum_Manusha_CV.pdf" 
+              href="/Sithum_Manusha_SE_CV.pdf" 
+              download="Sithum_Manusha_SE_CV.pdf" 
               className="btn btn-secondary" 
               onClick={handleDownloadCV}
             >
@@ -2300,6 +2302,7 @@ function App() {
             </div>
             <div className="edu-meta">
               <span>2024 - Present (3rd Year)</span>
+              <span>CGPA: 3.23 / 4.0</span>
             </div>
           </div>
 
@@ -2315,7 +2318,7 @@ function App() {
               </div>
               <div className="edu-head-copy">
                 <span className="edu-kicker">Undergraduate Law Degree</span>
-                <h3 className="edu-degree">Bachelor of Laws Honours (LL.B.)</h3>
+                <h3 className="edu-degree">Bachelor of Laws Honours Degree Programme (LL.B.)</h3>
                 <p className="edu-org">Open University of Sri Lanka (OUSL)</p>
               </div>
             </div>
@@ -2342,7 +2345,7 @@ function App() {
             </div>
             <div className="edu-meta">
               <span>2009 - 2022</span>
-              <span>G.C.E. O/L &amp; A/L Commerce</span>
+              <span>A/L (2 A's &amp; 1 B) &bull; O/L (8 A's &amp; 1 B)</span>
             </div>
           </div>
         </div>
@@ -3598,7 +3601,7 @@ function App() {
                 </div>
                 <p style={{ margin: '3px 0 0 0', fontWeight: 600, color: 'var(--text-primary)' }}>Moratuwa, Sri Lanka</p>
                 <p style={{ margin: '2px 0 0 0', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                  Open for On-site, Hybrid &amp; Remote Software Engineering &amp; QA roles
+                  Open for On-site, Hybrid &amp; Remote Software Engineering Internships
                 </p>
               </div>
             </div>
@@ -3861,10 +3864,10 @@ function App() {
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '14px', marginBottom: '14px' }}>
                       <div style={{ flex: '1 1 360px' }}>
                         <h3 className="modal-project-title" style={{ margin: '0 0 6px 0', fontSize: '1.75rem', fontWeight: 800, color: 'var(--text-primary)' }}>
-                          CareerFlow Enterprise
+                          CareerFlow
                         </h3>
                         <p style={{ margin: 0, fontSize: '0.98rem', color: 'var(--primary-color)', fontWeight: 600, lineHeight: 1.4 }}>
-                          Distributed ATS Talent Pipeline, Scikit-learn NLP Engine &amp; AI Mock Interview Studio
+                          Full-Stack ATS Resume Analyzer &amp; Mock Interview Platform (Individual Project &bull; 2025 – 2026)
                         </p>
                       </div>
                       <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center' }}>
@@ -3881,18 +3884,17 @@ function App() {
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '22px' }}>
                       {[
                         "Java 21",
-                        "Spring Boot 3.3.4",
+                        "Spring Boot 3",
                         "Python 3.12",
                         "FastAPI",
-                        "Next.js 14 (App Router)",
-                        "PostgreSQL (Neon)",
-                        "Scikit-learn (TF-IDF & Cosine)",
-                        "Docker & Compose",
-                        "Render Cloud",
-                        "Playwright (E2E)",
+                        "Next.js 14",
+                        "Google Gemini API",
+                        "Scikit-learn",
+                        "PostgreSQL",
+                        "Docker",
+                        "GitHub Actions",
                         "JUnit 5",
-                        "Pytest",
-                        "OpenAPI / Swagger 3.0"
+                        "Pytest"
                       ].map(tech => (
                         <span key={tech} style={{ 
                           fontSize: '0.8rem', 
@@ -3931,13 +3933,13 @@ function App() {
                       boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)'
                     }}>
                       <p style={{ margin: 0 }}>
-                        Candidate rejection in technical recruitment frequently stems from automated Applicant Tracking Systems (ATS) filtering out resumes before human recruiters even see them. To solve this, I designed <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>CareerFlow Enterprise</strong>—a decoupled cloud-native microservices platform providing instant, transparent ATS resume scoring, automated Google XYZ bullet point rewriting, and 5-round tailored technical mock interview simulations.
+                        Candidate rejection in technical recruitment frequently stems from automated Applicant Tracking Systems (ATS) filtering out resumes before human recruiters see them. To address this, I built <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>CareerFlow</strong>—a full-stack ATS resume analyzer and mock interview platform with a decoupled microservices backend providing 0–100% job match scoring, bullet rewrite suggestions, and interactive 5-round technical mock interviews.
                       </p>
                       <p style={{ margin: 0 }}>
-                        The core backend is powered by <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>Java 21 and Spring Boot 3.3.4</strong>, optimized for low memory overhead (~48MB RAM) with a token-bucket sliding-window rate limiter (10 req/min per IP), OpenAPI 3.0 Swagger documentation, and connection pooling to serverless <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>PostgreSQL (Neon)</strong>.
+                        The core gateway is built in <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>Java 21 and Spring Boot 3</strong>, featuring token-bucket rate limiting (10 req/min), OpenAPI/Swagger documentation, and persistent storage on <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>PostgreSQL</strong>.
                       </p>
                       <p style={{ margin: 0 }}>
-                        Complex natural language processing is delegated to an asynchronous <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>Python 3.12 FastAPI</strong> microservice using <code style={{ background: theme === 'light' ? 'rgba(var(--primary-rgb), 0.1)' : 'rgba(255,255,255,0.08)', padding: '2px 6px', borderRadius: '4px', fontSize: '0.84rem', fontFamily: 'monospace', color: theme === 'light' ? '#059669' : '#a7f3d0' }}>Scikit-learn</code> for TF-IDF vectorization and Cosine Similarity, while the user interface is built on <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Next.js 14 (App Router) and Tailwind CSS</strong> with real-time A4 height overflow detection. The entire system is validated by <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>26 automated tests (JUnit 5, Pytest, Playwright)</strong> and deployed 24/7 across Vercel Edge &amp; Render Cloud.
+                        Resume analysis and interview evaluation run in an asynchronous <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>Python 3.12 FastAPI</strong> worker using <code style={{ background: theme === 'light' ? 'rgba(var(--primary-rgb), 0.1)' : 'rgba(255,255,255,0.08)', padding: '2px 6px', borderRadius: '4px', fontSize: '0.84rem', fontFamily: 'monospace', color: theme === 'light' ? '#059669' : '#a7f3d0' }}>Scikit-learn</code> TF-IDF vectorization &amp; Cosine Similarity alongside the <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>Google Gemini API</strong> for STAR-rubric mock interview evaluation. The <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Next.js 14</strong> frontend connects to a multi-stage <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Docker &amp; GitHub Actions CI/CD</strong> pipeline verified by <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>26 automated tests (JUnit 5 &amp; Pytest)</strong>.
                       </p>
                     </div>
 
@@ -3947,12 +3949,12 @@ function App() {
                     </h4>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                       {[
-                        { icon: "🎯", title: "Dual-Scoring ATS Engine", desc: "Instant Job Match % via Scikit-learn TF-IDF & Cosine Similarity + ATS Format Health score" },
-                        { icon: "📝", title: "1-Page Smart A4 CV Builder", desc: "Taleo-safe single column layout with real-time height overflow guard & Google XYZ rewriter" },
-                        { icon: "🤖", title: "5-Round AI Technical Mock Interview", desc: "JVM internals, distributed architecture, database tuning, resilience, and STAR behavioral with scoring" },
-                        { icon: "🛡️", title: "Core Java 21 Gateway & Rate Limiter", desc: "Spring Boot 3 with token-bucket sliding-window rate limiting (10 req/min) & Swagger UI docs" },
-                        { icon: "🗄️", title: "Cloud Database Persistence", desc: "Automated candidate account authentication, historical scan records, and cloud CV draft storage on PostgreSQL" },
-                        { icon: "🧪", title: "100% Automated Test Coverage", desc: "26 unit, integration, and E2E browser tests across JUnit 5, Pytest, and Playwright" }
+                        { icon: "🎯", title: "Dual-Scoring ATS Resume Audit Engine", desc: "Computes 0–100% job match scores and bullet rewrite suggestions using Scikit-learn TF-IDF vectorization & Cosine Similarity" },
+                        { icon: "🤖", title: "5-Round Technical Mock Interview Simulator", desc: "Uses the Google Gemini API to evaluate candidate answers against structured STAR rubrics with follow-up feedback" },
+                        { icon: "📝", title: "1-Page ATS CV Builder", desc: "Single-column resume editor with A4 overflow checks and Google XYZ bullet rewrite suggestions" },
+                        { icon: "🛡️", title: "Java 21 Spring Boot 3 Gateway", desc: "Decoupled API gateway with token-bucket rate limiting (10 req/min), Swagger docs, and PostgreSQL persistence" },
+                        { icon: "🐳", title: "Multi-Stage Docker & GitHub Actions CI/CD", desc: "Automated container builds, test gates, and cloud deployment across Vercel and Render" },
+                        { icon: "🧪", title: "26 Automated Tests", desc: "Automated unit and integration coverage across JUnit 5 and Pytest" }
                       ].map((cap, capIdx) => (
                         <div key={capIdx} style={{ 
                           display: 'flex', 
@@ -3981,11 +3983,11 @@ function App() {
                           Ledgerly
                         </h3>
                         <p style={{ margin: 0, fontSize: '0.98rem', color: 'var(--primary-color)', fontWeight: 600, lineHeight: 1.4 }}>
-                          Autonomous AI Financial Intelligence &amp; Real-Time Collaborative Ledger
+                          Personal Finance Analytics &amp; Collaborative Ledger (Individual Project &bull; 2025 – 2026)
                         </p>
                       </div>
                       <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center' }}>
-                        <a href="https://ledgerly-nine-rust.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
+                        <a href="https://ledgerly-nine-rust.vercel.app" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
                           <i className="fa-solid fa-rocket" style={{ marginRight: '6px' }}></i> Live Demo
                         </a>
                         <a href="https://github.com/SithumManusha/Ledgerly" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
@@ -3997,18 +3999,17 @@ function App() {
                     {/* Tech Stack Pills */}
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '22px' }}>
                       {[
-                        "React 19",
+                        "React",
                         "TypeScript",
-                        "tRPC 11",
-                        "Tailwind CSS",
                         "Node.js",
-                        "Express.js",
+                        "Express",
                         "PostgreSQL",
-                        "Server-Sent Events (SSE)",
+                        "Drizzle ORM",
+                        "OpenAI API",
+                        "SSE",
                         "Recharts",
                         "Vitest (68 Tests)",
-                        "PDFKit",
-                        "Render Cloud"
+                        "Render"
                       ].map(tech => (
                         <span key={tech} style={{ 
                           fontSize: '0.8rem', 
@@ -4047,13 +4048,13 @@ function App() {
                       boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)'
                     }}>
                       <p style={{ margin: 0 }}>
-                        Managing personal budgets and splitting expenses across roommates or group trips often results in tangled debts, uneven payments, and messy spreadsheet calculation errors. My goal was to build <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Ledgerly</strong>—an enterprise-grade financial intelligence platform and collaborative ledger that acts as an autonomous financial advisor and automated accountant in your pocket.
+                        Managing personal budgets and splitting shared expenses across roommates or group trips often leads to tangled debts and spreadsheet errors. <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Ledgerly</strong> is a personal finance analytics platform and collaborative ledger built with end-to-end TypeScript type safety across React, Node.js, Express, PostgreSQL, and Drizzle ORM.
                       </p>
                       <p style={{ margin: 0 }}>
-                        Beyond basic CRUD bookkeeping, Ledgerly integrates an <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>Autonomous AI Financial Copilot</strong> evaluating composite financial health (0–100 score, A+ to D grade) and alerting users to category spending velocity spikes (&gt;25% surge). An interactive <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>"What-If" Financial Runway Simulator</strong> stress-tests discretionary spending cuts and capital purchases with comparative 6-month Recharts cash-flow trajectories.
+                        It features a <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>financial health scoring engine (0–100 scale)</strong> with spending velocity anomaly detection and <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>OpenAI API-assisted insights and statement parsing</strong>, paired with an interactive <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Recharts runway simulator</strong> to model discretionary spending cuts and major purchases across comparative 6-month cash-flow curves.
                       </p>
                       <p style={{ margin: 0 }}>
-                        For shared households and trips, Ledgerly pairs mathematical debt-minimization algorithms supporting <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>4 distinct split models (Equal, Percentage, Exact, and Occupancy Days)</strong> with a <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>real-time Server-Sent Events (SSE) notification bell and live chronological activity audit stream</strong>. Storing data securely in <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>PostgreSQL with Drizzle ORM</strong> and fortified by <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>68 automated Vitest unit/integration tests</strong>, this project exemplifies production-ready, bank-grade financial engineering balancing complex algorithms with an intuitive user experience.
+                        For shared expenses, Ledgerly implements multi-party debt simplification via a <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Greedy Two-Pointer algorithm across 4 split models (Equal, Percentage, Exact, Occupancy Days)</strong> with real-time <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>SSE alerts and PDF settlement exports</strong>, secured by OWASP session controls and <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>68 automated unit/integration tests (Vitest)</strong>.
                       </p>
                     </div>
 
@@ -4063,14 +4064,13 @@ function App() {
                     </h4>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '11px' }}>
                       {[
-                        { icon: "🧠", title: "Autonomous AI Copilot & Anomaly Alerts", desc: "Proprietary 0–100 health scoring, letter grades (A+ to D), and spending velocity anomaly alerts (>25% surge)" },
-                        { icon: "🎛️", title: "Interactive 'What-If' Runway Simulator", desc: "Dynamic sliders for discretionary spend cuts, capital outlay impacts, and 6-month projected comparative Recharts curves" },
-                        { icon: "🔔", title: "Real-Time Notification Bell & SSE Push", desc: "Global reactive notification center in header pushing live anomaly flags, budget breach warnings, and debt alerts" },
-                        { icon: "📜", title: "Live Activity Audit Stream & Shared Ledger", desc: "Immutable chronological collaborative audit timeline synchronizing group splits and payment proof slips in real-time" },
-                        { icon: "🧮", title: "Mathematical Debt-Minimization", desc: "Across 4 split models (Equal, Percentage, Exact, and Occupancy Days) settling group debts with minimum cash transfers" },
-                        { icon: "📄", title: "Instant In-Memory PDF Settlement Statements", desc: "Streamed dynamically via backend PDFKit with dynamic currency formatting" },
-                        { icon: "🔒", title: "Enterprise-Grade Security", desc: "With Bcryptjs hashing (12 rounds), signed HTTP-only cookies, and PostgreSQL relational data isolation" },
-                        { icon: "🧪", title: "Production-Grade Test Automation", desc: "With 68 passing Vitest unit/integration tests and CI/CD automated deployment on Render Cloud" }
+                        { icon: "🧠", title: "Financial Health Scoring & LLM Insights", desc: "0–100 financial health score with spending velocity anomaly detection and OpenAI API-assisted insights and statement parsing" },
+                        { icon: "🎛️", title: "Interactive Recharts Runway Simulator", desc: "Models discretionary spending cuts and major purchases across comparative 6-month cash-flow curves" },
+                        { icon: "🧮", title: "Greedy Two-Pointer Debt Simplification", desc: "Minimizes multi-party transfers across 4 split models (Equal, Percentage, Exact, Occupancy Days)" },
+                        { icon: "🔔", title: "Real-Time SSE Alerts & Activity Stream", desc: "Server-Sent Events notifications for spending anomalies, group bills, and debt settlements" },
+                        { icon: "📄", title: "PDF Settlement Exports", desc: "Dynamic downloadable settlement statements generated directly from backend ledger data" },
+                        { icon: "🔒", title: "End-to-End Type Safety & OWASP Session Controls", desc: "Drizzle ORM + PostgreSQL persistence with bcryptjs password hashing and signed HTTP-only session cookies" },
+                        { icon: "🧪", title: "68 Automated Vitest Tests", desc: "Unit and integration test suite covering debt simplification, health scoring, session controls, and exports" }
                       ].map((cap, capIdx) => (
                         <div key={capIdx} style={{ 
                           display: 'flex', 
@@ -4112,11 +4112,11 @@ function App() {
                           Pulse AI Blog Engine
                         </h3>
                         <p style={{ margin: 0, fontSize: '0.98rem', color: 'var(--primary-color)', fontWeight: 600, lineHeight: 1.4 }}>
-                          Generative AI Publishing Platform, Google Gemini Copilot &amp; Secure MVC Engine
+                          Content Publishing Platform &amp; MVC Architecture (Individual Project &bull; 2025 – 2026)
                         </p>
                       </div>
                       <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center' }}>
-                        <a href="https://pulse-ai-blog-engine-enh6hzeebedkgpag.eastasia-01.azurewebsites.net" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
+                        <a href="https://pulse-ai-blog-engine.onrender.com" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
                           <i className="fa-solid fa-rocket" style={{ marginRight: '6px' }}></i> Live Demo
                         </a>
                         <a href="https://github.com/SithumManusha/pulse-ai-blog-engine" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
@@ -4128,17 +4128,15 @@ function App() {
                     {/* Tech Stack Pills */}
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '22px' }}>
                       {[
-                        "PHP 8.0+",
-                        "Google Gemini 1.5 Flash",
-                        "MySQL (InnoDB)",
-                        "Tailwind CSS 3.4",
-                        "Web Speech API (TTS)",
-                        "MVC Architecture",
-                        "PDO Prepared Statements",
-                        "CSRF Protection",
-                        "XSS Sanitization",
-                        "CodeQL Security",
-                        "GitHub Actions CI"
+                        "PHP 8",
+                        "MySQL",
+                        "SQLite (PDO)",
+                        "Google Gemini API",
+                        "Docker",
+                        "GitHub Actions",
+                        "CodeQL",
+                        "Tailwind CSS",
+                        "Web Speech API"
                       ].map(tech => (
                         <span key={tech} style={{ 
                           fontSize: '0.8rem', 
@@ -4177,13 +4175,13 @@ function App() {
                       boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)'
                     }}>
                       <p style={{ margin: 0 }}>
-                        Traditional content management systems (CMS) and blogging engines are static, rigid, and vulnerable to common injection attacks. To modernize the digital writing and reading experience, I engineered <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Pulse AI Blog Engine</strong>—an AI-native content publishing platform combining the raw execution speed of modern <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>PHP 8.0+ and MySQL</strong> with real-time generative intelligence powered by <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>Google Gemini 1.5 Flash AI</strong>.
+                        <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Pulse AI Blog Engine</strong> is a <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>PHP 8 MVC</strong> content publishing platform integrating the <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>Google Gemini API</strong> for one-click summaries, article drafting, and automated taxonomy tagging.
                       </p>
                       <p style={{ margin: 0 }}>
-                        The backend is architected from first principles following the <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Model-View-Controller (MVC)</strong> design pattern. It decouples presentation from business logic through dedicated controllers (<code style={{ background: theme === 'light' ? 'rgba(var(--primary-rgb), 0.1)' : 'rgba(255,255,255,0.08)', padding: '2px 6px', borderRadius: '4px', fontSize: '0.84rem', fontFamily: 'monospace', color: theme === 'light' ? '#059669' : '#a7f3d0' }}>PostController, AuthController, AIController</code>), an asynchronous cURL-based Gemini AI service, and a thread-safe <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>PDO Database Singleton</strong> enforcing parameterized prepared queries.
+                        The backend follows a clean <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Model-View-Controller (MVC)</strong> design pattern with dedicated controllers (<code style={{ background: theme === 'light' ? 'rgba(var(--primary-rgb), 0.1)' : 'rgba(255,255,255,0.08)', padding: '2px 6px', borderRadius: '4px', fontSize: '0.84rem', fontFamily: 'monospace', color: theme === 'light' ? '#059669' : '#a7f3d0' }}>PostController, AuthController, AIController</code>) and a database layer supporting <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>MySQL and SQLite via PDO prepared statements</strong>.
                       </p>
                       <p style={{ margin: 0 }}>
-                        For readers, the platform delivers an in-browser <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>Web Speech API Audio Podcast Player</strong> supporting variable playback speeds (1.0x, 1.25x, 1.5x) with zero third-party audio latency. The entire codebase is protected by enterprise OWASP security controls (cryptographic CSRF tokens, Markdown-to-HTML XSS filtering, bcrypt hashing) and validated through automated <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>CodeQL static semantic analysis</strong> and an 8-module automated QA integration test suite.
+                        For accessible, hands-free reading, it includes an in-browser <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>Web Speech API audio narration player</strong> with variable speed controls. All endpoints are secured against SQL injection and XSS using PDO prepared statements, session-based form protection, HTML sanitization, containerized <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Docker</strong> deployment on Render, and automated <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>CodeQL scanning</strong> via GitHub Actions.
                       </p>
                     </div>
 
@@ -4193,12 +4191,11 @@ function App() {
                     </h4>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                       {[
-                        { icon: "🧠", title: "Real-Time Google Gemini 1.5 Flash Copilot", desc: "1-Click instant TL;DR executive summaries, automated article drafting from title prompts, tone polishing, and SEO tag taxonomy" },
-                        { icon: "🎧", title: "In-Browser Web Speech Podcast Player", desc: "Native HTML5 Web Speech Synthesis API audio player with multi-speed controls (1.0x, 1.25x, 1.5x) and zero latency" },
-                        { icon: "🏛️", title: "Clean Model-View-Controller (MVC) Pattern", desc: "Decoupled architecture with dedicated controllers, database models, cURL service helpers, and clean URL routing" },
-                        { icon: "🛡️", title: "OWASP Hardened Defense Suite", desc: "Full PDO parameterized statements (Zero SQLi), cryptographic CSRF token verification, and Markdown-to-HTML sanitization (Zero XSS)" },
-                        { icon: "🗄️", title: "Normalized MySQL 8.0 Relational Persistence", desc: "3NF normalized schema across users, posts, comments, categories, and tags with foreign key cascade constraints" },
-                        { icon: "🧪", title: "Automated QA Audit & CodeQL Security Gate", desc: "8-module automated integration test suite with 100% pass rate + GitHub Actions CodeQL semantic security scanning" }
+                        { icon: "🧠", title: "Google Gemini API Integration", desc: "One-click article summaries, assisted article drafting, and automated taxonomy tagging" },
+                        { icon: "🎧", title: "In-Browser Audio Narration Player", desc: "Accessible, hands-free article reading with variable speed controls via the Web Speech API" },
+                        { icon: "🏛️", title: "Clean PHP 8 MVC Architecture", desc: "Decoupled controllers, models, and views with MySQL and SQLite (PDO) support" },
+                        { icon: "🛡️", title: "SQLi & XSS Defense Controls", desc: "PDO prepared statements, session-based form protection (CSRF), and HTML sanitization" },
+                        { icon: "🐳", title: "Docker & GitHub Actions CodeQL", desc: "Containerized Render deployment backed by automated CodeQL static security scanning" }
                       ].map((cap, capIdx) => (
                         <div key={capIdx} style={{ 
                           display: 'flex', 
@@ -4405,7 +4402,7 @@ function App() {
                           SwiftDrop
                         </h3>
                         <p style={{ margin: 0, fontSize: '0.98rem', color: theme === 'light' ? '#0d9488' : '#2dd4bf', fontWeight: 600, lineHeight: 1.4 }}>
-                          Island-Wide Enterprise Microservices Courier &amp; Logistics Management System (UoM FIT &bull; Group 03 Zentrix)
+                          Microservices Logistics Platform (Group Project &mdash; Booking &amp; Spatial Quoting &bull; 2026)
                         </p>
                       </div>
                       <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center' }}>
@@ -4420,16 +4417,13 @@ function App() {
                       {[
                         "Java 21",
                         "Spring Boot 3.5",
-                        "Next.js 15 (App Router)",
+                        "Spring Data JPA",
+                        "Next.js 15",
                         "TypeScript",
-                        "PostgreSQL 16 (PostGIS)",
-                        "RabbitMQ Event Bus",
+                        "PostgreSQL (PostGIS)",
+                        "RabbitMQ",
                         "Docker Compose",
-                        "Spring Cloud Gateway",
-                        "Redis (Rate Limiter)",
-                        "MinIO (S3 Photos)",
-                        "Mailpit (SMTP/SMS)",
-                        "JUnit 5 (458 Tests)",
+                        "JUnit 5 (31 Tests)",
                         "Vitest (97 Tests)",
                         "Tailwind CSS"
                       ].map(tech => (
@@ -4498,29 +4492,29 @@ function App() {
                           <i className="fa-solid fa-crown" style={{ marginRight: '6px' }}></i> My Core Subsystem &amp; Direct Deliverables (Module 3)
                         </span>
                         <span style={{ fontSize: '0.75rem', fontWeight: 700, background: theme === 'light' ? '#ccfbf1' : 'rgba(45, 212, 191, 0.15)', color: theme === 'light' ? '#0f766e' : '#5eead4', padding: '3px 10px', borderRadius: '12px' }}>
-                          Lead Backend &amp; Parcel Lifecycle Architect
+                          Booking &amp; Spatial Quoting (Module 3)
                         </span>
                       </div>
                       <ul className="duo-scope-list" style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
                         <li className="duo-scope-item">
                           <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
-                          <span><strong style={{ color: 'var(--text-primary)' }}>Customer Parcel Booking &amp; Lifecycle APIs:</strong> Architected primary <code>parcel-service</code> REST endpoints (<code>POST /api/v1/parcels</code>, <code>GET /api/v1/parcels/:id</code>) backed by client-provided <code>Idempotency-Key</code> deduplication to prevent duplicate bookings, complete status history audit trails, and strict state machine transition validation (<code>CREATED &rarr; PICKED_UP &rarr; IN_TRANSIT &rarr; OUT_FOR_DELIVERY &rarr; DELIVERED / FAILED</code>).</span>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Customer Parcel Booking &amp; Lifecycle APIs:</strong> Built primary <code>parcel-service</code> REST endpoints (<code>POST /api/v1/parcels</code>, <code>GET /api/v1/parcels/:id</code>) in Java 21 &amp; Spring Boot 3.5 with <code>Idempotency-Key</code> deduplication, status history audit trails, and state machine transitions (<code>CREATED &rarr; PICKED_UP &rarr; IN_TRANSIT &rarr; OUT_FOR_DELIVERY &rarr; DELIVERED / FAILED</code>).</span>
                         </li>
                         <li className="duo-scope-item">
                           <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
-                          <span><strong style={{ color: 'var(--text-primary)' }}>Dynamic Volumetric Quoting Engine (L&times;W&times;H / 5000):</strong> Developed multi-variable pricing algorithms dynamically charging for the maximum of actual mass vs. volumetric weight, integrated with PostGIS point-in-polygon queries across 25 Sri Lankan administrative zones with automated fallback base rates.</span>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Dynamic Volumetric Quoting Engine (L&times;W&times;H / 5000):</strong> Developed dynamic pricing algorithms integrated with PostGIS spatial point-in-polygon queries across 25 island-wide municipal zones with fallback base rates.</span>
                         </li>
                         <li className="duo-scope-item">
                           <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
-                          <span><strong style={{ color: 'var(--text-primary)' }}>Automated SVG QR Code Generation &amp; Public Mobile Tracking:</strong> Built real-time client-side SVG QR code generation in Next.js 15, instant waybill confirmation screens, and responsive public tracking view optimized for mobile couriers and customers.</span>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Automated SVG QR Code Generation &amp; Public Mobile Tracking:</strong> Built client-side SVG QR code tracking in Next.js 15 &amp; TypeScript with instant waybill confirmation and public mobile tracking timelines.</span>
                         </li>
                         <li className="duo-scope-item">
                           <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
-                          <span><strong style={{ color: 'var(--text-primary)' }}>Transactional Outbox Event Publishing:</strong> Integrated database transactional outbox table with Spring Data JPA and RabbitMQ <code>parcel.events</code> topic exchange, atomically publishing <code>parcel.created</code> events with guaranteed delivery.</span>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Transactional Outbox Event Publishing:</strong> Integrated a database transactional outbox table with Spring Data JPA and RabbitMQ <code>parcel.events</code> topic exchanges for reliable asynchronous event publishing.</span>
                         </li>
                         <li className="duo-scope-item">
                           <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
-                          <span><strong style={{ color: 'var(--text-primary)' }}>Comprehensive Enterprise Testing Suite:</strong> Authored 31 backend JUnit tests in <code>parcel-service</code> (122 tests total across module), 97 frontend Vitest tests, and verified complete end-to-end access-control and validation probe immunity.</span>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Automated Testing Suite:</strong> Backed by 31 backend JUnit 5 tests in <code>parcel-service</code> and 97 frontend Vitest tests covering booking flows, validation, and tracking.</span>
                         </li>
                       </ul>
                     </div>
@@ -4531,12 +4525,12 @@ function App() {
                     </h4>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                       {[
-                        { icon: "📦", title: "Automated Parcel Lifecycle State Machine", desc: "Enforces strict monotonic transitions (CREATED, PICKED_UP, IN_TRANSIT, OUT_FOR_DELIVERY, DELIVERED/FAILED), rejecting illegal jumps with RFC 7807 problem details" },
-                        { icon: "📍", title: "PostGIS Spatial GeoJSON Routing & Pricing", desc: "Polygon containment queries mapping coordinates to 25 Sri Lankan municipal zones for instant tariff resolution" },
-                        { icon: "📨", title: "Transactional Outbox Event Relay", desc: "Guarantees zero event loss across RabbitMQ topic exchanges by committing event rows within the same database transaction as parcel updates" },
-                        { icon: "🛡️", title: "Idempotent API Operations", desc: "Zero double-booking guarantee: clients supply Idempotency-Key headers, returning identical parcel payloads on redundant submissions" },
-                        { icon: "📱", title: "Vector SVG QR Tracking Waybills", desc: "Instant vector QR generation in Next.js 15 routing physical parcel labels directly to public tracking timelines" },
-                        { icon: "🧪", title: "Full-Stack Automated Test Rig", desc: "458 backend tests across 11 modules with Testcontainers (real PostgreSQL, PostGIS, RabbitMQ, Redis) + 97 Vitest frontend tests + 14 Playwright E2E scenarios" }
+                        { icon: "📦", title: "Parcel Lifecycle State Machine", desc: "Enforces strict transitions (CREATED, PICKED_UP, IN_TRANSIT, OUT_FOR_DELIVERY, DELIVERED/FAILED) with status history audit trails" },
+                        { icon: "📍", title: "PostGIS Spatial Quoting", desc: "Polygon containment queries mapping coordinates across 25 island-wide municipal zones for dynamic volumetric pricing" },
+                        { icon: "📨", title: "Transactional Outbox & RabbitMQ", desc: "Commits outbox event rows within the same database transaction as parcel updates for reliable RabbitMQ topic exchange publishing" },
+                        { icon: "🛡️", title: "Idempotent API Operations", desc: "Client-supplied Idempotency-Key headers prevent duplicate parcel creation on retried requests" },
+                        { icon: "📱", title: "Automated SVG QR Code Tracking", desc: "Vector QR generation in Next.js 15 & TypeScript linking parcel labels directly to public tracking timelines" },
+                        { icon: "🧪", title: "Automated Test Coverage", desc: "31 backend JUnit 5 tests + 97 frontend Vitest tests verifying booking, quoting, state transitions, and tracking" }
                       ].map((cap, capIdx) => (
                         <div key={capIdx} style={{ 
                           display: 'flex', 
@@ -4562,10 +4556,10 @@ function App() {
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '14px', marginBottom: '14px' }}>
                       <div style={{ flex: '1 1 360px' }}>
                         <h3 className="modal-project-title" style={{ margin: '0 0 6px 0', fontSize: '1.75rem', fontWeight: 800, color: 'var(--text-primary)' }}>
-                          Ryzera POS
+                          Super POS
                         </h3>
                         <p style={{ margin: 0, fontSize: '0.98rem', color: theme === 'light' ? '#0284c7' : '#38bdf8', fontWeight: 600, lineHeight: 1.4 }}>
-                          Enterprise-grade, multi-branch supermarket POS &amp; retail ERP platform with offline-first distributed synchronization.
+                          Multi-Branch Offline-First Retail POS (Group Project &mdash; Offline Sync &amp; Telemetry &bull; 2025 – 2026)
                         </p>
                       </div>
                       <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center' }}>
@@ -4585,15 +4579,17 @@ function App() {
                     {/* Tech Stack Pills */}
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '22px' }}>
                       {[
-                        "Next.js 16",
-                        "React 19",
+                        "Next.js",
+                        "React",
                         "TypeScript",
-                        "Tailwind CSS",
                         "NestJS",
-                        "PostgreSQL (Supabase)",
+                        "Node.js",
+                        "PostgreSQL",
                         "Prisma ORM",
-                        "Socket.io WebSockets",
-                        "IndexedDB"
+                        "Socket.io",
+                        "IndexedDB",
+                        "Tailwind CSS",
+                        "Turborepo"
                       ].map(tech => (
                         <span key={tech} style={{ 
                           fontSize: '0.8rem', 
@@ -4632,10 +4628,10 @@ function App() {
                       boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)'
                     }}>
                       <p style={{ margin: 0 }}>
-                        Modern retail supermarket chains operating across geographically dispersed branches demand high availability, synchronized inventory, and continuous checkout reliability. However, unexpected internet blackouts, network drops, and power cuts frequently paralyze traditional cloud POS counters, causing stranded queues and direct financial losses. Furthermore, naive offline billing systems trigger destructive version collisions upon reconnection—resulting in phantom inventory, inaccurate accounting, and compliance failures. <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Ryzera POS</strong> was engineered as a full-stack, multi-branch enterprise retail platform that unifies point-of-sale billing, centralized inventory management, role-based governance, and an autonomous offline-first synchronization backbone.
+                        Modern retail chains operating across geographically dispersed branches need synchronized inventory and uninterrupted checkout during network disruptions. <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Super POS</strong> (mentored by Ryzera Technologies Pvt Ltd) is a multi-branch offline-first retail POS platform unifying billing, inventory, role-based access control, reporting, and offline-first synchronization.
                       </p>
                       <p style={{ margin: 0 }}>
-                        To bring this enterprise platform to life, we architected an end-to-end type-safe distributed stack: <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>Next.js 16 (App Router), React 19, and Tailwind CSS</strong> for a modular, high-performance UI suite, communicating with a scalable <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>NestJS</strong> backend and an AWS Singapore <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Supabase PostgreSQL</strong> cluster managed via <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Prisma ORM</strong>.
+                        Engineered as a <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Turborepo</strong> monorepo combining <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>Next.js, React, TypeScript, and Tailwind CSS</strong> with a <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>NestJS &amp; Node.js</strong> backend, <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>PostgreSQL (Supabase)</strong> via <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Prisma ORM</strong>, client-side <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>IndexedDB</strong>, and real-time <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Socket.io</strong> telemetry.
                       </p>
 
                       {/* 5 Core Enterprise Modules Breakdown */}
@@ -4729,7 +4725,7 @@ function App() {
                           <span>My Core Subsystem &amp; Direct Deliverables (Sync Module)</span>
                         </div>
                         <span style={{ fontSize: '0.8rem', fontWeight: 700, color: '#10b981', background: 'rgba(16, 185, 129, 0.12)', padding: '3px 10px', borderRadius: '6px', border: '1px solid rgba(16, 185, 129, 0.3)' }}>
-                          Lead Backend, Data &amp; Offline Sync Architect
+                          Offline Sync &amp; Telemetry
                         </span>
                       </div>
 

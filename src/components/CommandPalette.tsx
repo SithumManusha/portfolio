@@ -61,15 +61,15 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
 
   // Master commands list
   const commands: CommandItem[] = useMemo(() => [
-    // 1. Projects
+    // 1. Projects (exact Master CV order)
     {
       id: 'proj-ryzera',
-      title: 'Super POS — Multi-Branch Enterprise Offline-First Retail System',
-      subtitle: 'IndexedDB, LWW Sync, Socket.io telemetry, Next.js, NestJS',
+      title: 'Super POS — Multi-Branch Offline-First Retail POS',
+      subtitle: 'IndexedDB, LWW Sync, Socket.io telemetry, Next.js, NestJS, Turborepo',
       category: 'Projects',
       icon: 'fa-solid fa-cash-register',
       badge: 'Group Project',
-      keywords: ['pos', 'offline', 'indexeddb', 'nest', 'nextjs', 'socket', 'retail'],
+      keywords: ['pos', 'offline', 'indexeddb', 'nest', 'nextjs', 'socket', 'retail', 'turborepo'],
       action: () => {
         onClose();
         onSelectProject('ryzera');
@@ -77,13 +77,27 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       }
     },
     {
+      id: 'proj-swiftdrop',
+      title: 'SwiftDrop — Microservices Logistics Platform',
+      subtitle: 'Java 21, Spring Boot 3.5, Spring Data JPA, Next.js 15, PostGIS, RabbitMQ',
+      category: 'Projects',
+      icon: 'fa-solid fa-truck-fast',
+      badge: 'Group Project',
+      keywords: ['swiftdrop', 'courier', 'logistics', 'spring boot', 'java', 'microservices', 'rabbitmq', 'postgis', 'qr'],
+      action: () => {
+        onClose();
+        onSelectProject('swiftdrop');
+        navigateTo('#projects');
+      }
+    },
+    {
       id: 'proj-careerflow',
-      title: 'CareerFlow — Full-Stack ATS Resume Optimizer & AI Interview Platform',
-      subtitle: 'TF-IDF Vectorization, Gemini 4 Hydrogen, Spring Boot 3, FastAPI, Docker',
+      title: 'CareerFlow — Full-Stack ATS Resume Analyzer & Mock Interview Platform',
+      subtitle: 'Scikit-learn TF-IDF, Google Gemini API, Java 21 Spring Boot 3, FastAPI, Docker',
       category: 'Projects',
       icon: 'fa-solid fa-file-invoice',
-      badge: 'Microservices',
-      keywords: ['careerflow', 'ats', 'resume', 'spring boot', 'java', 'gemini', 'interview'],
+      badge: 'Individual',
+      keywords: ['careerflow', 'ats', 'resume', 'spring boot', 'java', 'gemini', 'interview', 'fastapi'],
       action: () => {
         onClose();
         onSelectProject('careerflow');
@@ -93,11 +107,11 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
     {
       id: 'proj-ledgerly',
       title: 'Ledgerly — Personal Finance Analytics & Collaborative Ledger',
-      subtitle: 'Greedy Two-Pointer algorithm, Recharts cash-flow, Vitest, PostgreSQL',
+      subtitle: 'Greedy Two-Pointer, Recharts, Drizzle ORM, OpenAI API, SSE, 68 Vitest tests',
       category: 'Projects',
       icon: 'fa-solid fa-wallet',
-      badge: 'FinTech AI',
-      keywords: ['ledgerly', 'finance', 'recharts', 'debt', 'algorithm', 'vitest'],
+      badge: 'Individual',
+      keywords: ['ledgerly', 'finance', 'recharts', 'debt', 'algorithm', 'vitest', 'drizzle', 'openai'],
       action: () => {
         onClose();
         onSelectProject('ledgerly');
@@ -106,29 +120,15 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
     },
     {
       id: 'proj-pulse',
-      title: 'Pulse AI Blog Engine — AI Content Platform & MVC Architecture',
-      subtitle: 'PHP 8 MVC, SQLite PDO, Gemini AI summaries, CodeQL scanning',
+      title: 'Pulse AI Blog Engine — Content Publishing Platform & MVC Architecture',
+      subtitle: 'PHP 8 MVC, MySQL, SQLite (PDO), Google Gemini API, Web Speech API, CodeQL',
       category: 'Projects',
       icon: 'fa-solid fa-newspaper',
-      badge: 'PHP 8 MVC',
-      keywords: ['pulse', 'blog', 'php', 'mvc', 'pdo', 'codeql', 'render'],
+      badge: 'Individual',
+      keywords: ['pulse', 'blog', 'php', 'mvc', 'pdo', 'codeql', 'render', 'gemini'],
       action: () => {
         onClose();
         onSelectProject('pulse-ai');
-        navigateTo('#projects');
-      }
-    },
-    {
-      id: 'proj-swiftdrop',
-      title: 'SwiftDrop — Enterprise Microservices Courier & Logistics Platform',
-      subtitle: 'Java 21, Spring Boot 3.5, Next.js 15, PostGIS, RabbitMQ, Docker Compose',
-      category: 'Projects',
-      icon: 'fa-solid fa-truck-fast',
-      badge: 'Microservices',
-      keywords: ['swiftdrop', 'courier', 'logistics', 'spring boot', 'java', 'microservices', 'rabbitmq', 'postgis', 'qr'],
-      action: () => {
-        onClose();
-        onSelectProject('swiftdrop');
         navigateTo('#projects');
       }
     },
@@ -200,11 +200,11 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
     // 3. Actions
     {
       id: 'act-download-cv',
-      title: 'Download Master SE CV (PDF)',
-      subtitle: '100/100 ATS Score verified, 2-Page Software Engineering Resume',
+      title: 'Download Software Engineering CV (PDF)',
+      subtitle: '2-Page Software Engineering Intern Resume (Sithum_Manusha_SE_CV.pdf)',
       category: 'Actions',
       icon: 'fa-solid fa-file-arrow-down',
-      badge: '100/100 ATS',
+      badge: '2-Page PDF',
       action: (e?: any) => {
         onClose();
         onDownloadCV(e || { preventDefault: () => {} });
