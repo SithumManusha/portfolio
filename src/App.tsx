@@ -210,7 +210,7 @@ const projectDetailsData: Record<string, ProjectDetails> = {
     role: "Full-Stack Software Engineer",
     methodology: "Agile Scrum & Automated CI/CD Pipeline",
     tags: ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "Drizzle ORM", "OpenAI API", "SSE", "Recharts", "Vitest (68 Tests)", "Render"],
-    description: "Managing personal budgets and splitting expenses across roommates or group trips often results in tangled debts, uneven payments, and error-prone spreadsheet calculations. Ledgerly is a personal finance analytics platform and collaborative ledger featuring a financial health scoring engine (0–100 scale) with spending velocity anomaly detection and LLM-assisted insights and statement parsing via the OpenAI API. It includes an interactive Recharts runway simulator to model discretionary spending cuts and major purchases across comparative 6-month cash-flow curves, plus multi-party debt simplification using a Greedy Two-Pointer algorithm across 4 split models (Equal, Percentage, Exact, Occupancy Days) with real-time SSE alerts and PDF settlement exports. Secured with end-to-end type safety, OWASP session controls, and 68 automated Vitest unit/integration tests.",
+    description: "Managing personal budgets and splitting expenses across roommates or group trips often results in tangled debts, uneven payments, and error-prone spreadsheet calculations. Ledgerly is a personal finance analytics platform and collaborative ledger featuring a financial health scoring engine (0–100 scale) with spending velocity anomaly detection and LLM-assisted insights and statement parsing via the OpenAI API. It includes an interactive Recharts runway simulator to model discretionary spending cuts and major purchases across comparative 6-month cash-flow curves, plus multi-party debt simplification using a Greedy Two-Pointer algorithm across 4 split models (Equal, Percentage, Exact, Occupancy Days) with real-time SSE alerts and PDF settlement exports. Implemented JWT authentication with HttpOnly cookies, bcrypt hashing, and login rate limiting alongside end-to-end TypeScript / Drizzle ORM type safety and 68 automated Vitest unit/integration tests.",
     executiveHighlights: [
       {
         icon: "🧠",
@@ -1586,7 +1586,7 @@ const projectsData: ProjectItem[] = [
       label: 'Individual Project',
       role: 'Full-Stack Software Engineer'
     },
-    desc: 'A personal finance analytics platform and collaborative ledger featuring a 0–100 financial health scoring engine with spending velocity anomaly detection and LLM-assisted insights and statement parsing (OpenAI API), an interactive Recharts 6-month runway simulator, Greedy Two-Pointer debt simplification across 4 split models (Equal, Percentage, Exact, Occupancy Days) with real-time SSE alerts and PDF settlement exports, OWASP session controls, and 68 automated Vitest tests.',
+    desc: 'A personal finance analytics platform and collaborative ledger featuring a 0–100 financial health scoring engine with spending velocity anomaly detection and LLM-assisted insights and statement parsing (OpenAI API), an interactive Recharts 6-month runway simulator, Greedy Two-Pointer debt simplification across 4 split models (Equal, Percentage, Exact, Occupancy Days) with real-time SSE alerts and PDF settlement exports, JWT authentication (HttpOnly cookies & bcrypt hashing), and 68 automated Vitest tests.',
     image: '/ledgerly_showcase.png?v=3d',
     alt: 'Ledgerly Personal Finance Analytics & Collaborative Ledger Showcase',
     tags: ['React', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'Drizzle ORM', 'OpenAI API', 'SSE', 'Recharts', 'Vitest (68 Tests)', 'Render'],
@@ -4054,7 +4054,7 @@ function App() {
                         It features a <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>financial health scoring engine (0–100 scale)</strong> with spending velocity anomaly detection and <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>OpenAI API-assisted insights and statement parsing</strong>, paired with an interactive <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Recharts runway simulator</strong> to model discretionary spending cuts and major purchases across comparative 6-month cash-flow curves.
                       </p>
                       <p style={{ margin: 0 }}>
-                        For shared expenses, Ledgerly implements multi-party debt simplification via a <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Greedy Two-Pointer algorithm across 4 split models (Equal, Percentage, Exact, Occupancy Days)</strong> with real-time <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>SSE alerts and PDF settlement exports</strong>, secured by OWASP session controls and <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>68 automated unit/integration tests (Vitest)</strong>.
+                        For shared expenses, Ledgerly implements multi-party debt simplification via a <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Greedy Two-Pointer algorithm across 4 split models (Equal, Percentage, Exact, Occupancy Days)</strong> with real-time <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>SSE alerts and PDF settlement exports</strong>, backed by JWT authentication (HttpOnly cookies, bcrypt hashing, and login rate limiting) and <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>68 automated unit/integration tests (Vitest)</strong>.
                       </p>
                     </div>
 
@@ -4069,7 +4069,7 @@ function App() {
                         { icon: "🧮", title: "Greedy Two-Pointer Debt Simplification", desc: "Minimizes multi-party transfers across 4 split models (Equal, Percentage, Exact, Occupancy Days)" },
                         { icon: "🔔", title: "Real-Time SSE Alerts & Activity Stream", desc: "Server-Sent Events notifications for spending anomalies, group bills, and debt settlements" },
                         { icon: "📄", title: "PDF Settlement Exports", desc: "Dynamic downloadable settlement statements generated directly from backend ledger data" },
-                        { icon: "🔒", title: "End-to-End Type Safety & OWASP Session Controls", desc: "Drizzle ORM + PostgreSQL persistence with bcryptjs password hashing and signed HTTP-only session cookies" },
+                        { icon: "🔒", title: "JWT Auth & End-to-End Type Safety", desc: "TypeScript + Drizzle ORM persistence with bcrypt password hashing, HttpOnly session cookies, and auth rate limiting" },
                         { icon: "🧪", title: "68 Automated Vitest Tests", desc: "Unit and integration test suite covering debt simplification, health scoring, session controls, and exports" }
                       ].map((cap, capIdx) => (
                         <div key={capIdx} style={{ 
