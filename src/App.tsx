@@ -2236,7 +2236,7 @@ function App() {
             3rd-Year BSc (Hons) IT &amp; Management Student | University of Moratuwa
           </h2>
           <p className="hero-description" style={{ marginBottom: '28px', lineHeight: 1.7, maxWidth: '820px', width: '100%' }}>
-            Third-year IT &amp; Management undergraduate at the University of Moratuwa with hands-on experience in full-stack web engineering using <strong style={{ color: 'var(--text-primary)' }}>React, Next.js, TypeScript, and Java Spring Boot</strong>. Proven track record of architecting offline-first retail systems and microservices-backed web platforms with automated testing and relational database design. Seeking a 6-month Software Engineering Internship commencing January 2027 to deliver clean, scalable code in collaborative engineering teams.
+            Third-year IT &amp; Management undergraduate at the University of Moratuwa with hands-on experience in full-stack web engineering using <strong style={{ color: 'var(--text-primary)' }}>React, Next.js, TypeScript, Java Spring Boot, and Python (FastAPI)</strong>. Experienced in building offline-first retail applications, microservices backends, and RESTful APIs with automated testing and relational database design. Seeking a 6-month Software Engineering Internship commencing February 1, 2027 to deliver clean, reliable code in a collaborative engineering team.
           </p>
           <div className="hero-actions">
             <a href="#projects" className="btn btn-primary">

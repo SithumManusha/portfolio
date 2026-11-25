@@ -79,7 +79,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
     {
       id: 'proj-careerflow',
       title: 'CareerFlow — Full-Stack ATS Resume Optimizer & AI Interview Platform',
-      subtitle: 'TF-IDF Vectorization, Gemini 1.5 Flash, Spring Boot 3, FastAPI, Docker',
+      subtitle: 'TF-IDF Vectorization, Gemini 4 Hydrogen, Spring Boot 3, FastAPI, Docker',
       category: 'Projects',
       icon: 'fa-solid fa-file-invoice',
       badge: 'Microservices',
@@ -92,7 +92,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
     },
     {
       id: 'proj-ledgerly',
-      title: 'Ledgerly — Autonomous AI Financial Intelligence & Collaborative Ledger',
+      title: 'Ledgerly — Personal Finance Analytics & Collaborative Ledger',
       subtitle: 'Greedy Two-Pointer algorithm, Recharts cash-flow, Vitest, PostgreSQL',
       category: 'Projects',
       icon: 'fa-solid fa-wallet',
