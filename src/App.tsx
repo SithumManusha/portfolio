@@ -209,13 +209,13 @@ const projectDetailsData: Record<string, ProjectDetails> = {
     statusLabel: "Live in Production (Vercel & Render)",
     role: "Full-Stack Software Engineer",
     methodology: "Agile Scrum & Automated CI/CD Pipeline",
-    tags: ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "Drizzle ORM", "OpenAI API", "SSE", "Recharts", "Vitest (68 Tests)", "Render"],
-    description: "Managing personal budgets and splitting expenses across roommates or group trips often results in tangled debts, uneven payments, and error-prone spreadsheet calculations. Ledgerly is a personal finance analytics platform and collaborative ledger featuring a financial health scoring engine (0–100 scale) with spending velocity anomaly detection and LLM-assisted insights and statement parsing via the OpenAI API. It includes an interactive Recharts runway simulator to model discretionary spending cuts and major purchases across comparative 6-month cash-flow curves, plus multi-party debt simplification using a Greedy Two-Pointer algorithm across 4 split models (Equal, Percentage, Exact, Occupancy Days) with real-time SSE alerts and PDF settlement exports. Implemented JWT authentication with HttpOnly cookies, bcrypt hashing, and login rate limiting alongside end-to-end TypeScript / Drizzle ORM type safety and 68 automated Vitest unit/integration tests.",
+    tags: ["React", "TypeScript", "Node.js", "Express", "PostgreSQL", "Drizzle ORM", "Vercel", "SSE", "Recharts", "Vitest (68 Tests)", "Render"],
+    description: "Managing personal budgets and splitting expenses across roommates or group trips often results in tangled debts, uneven payments, and error-prone spreadsheet calculations. Ledgerly is a personal finance analytics platform and collaborative ledger featuring an algorithmic financial health scoring engine (0–100 scale) with spending velocity anomaly detection and automated budget limit alerts. It includes an interactive Recharts runway simulator to model discretionary spending cuts and major purchases across comparative 6-month cash-flow curves, plus multi-party debt simplification using a Greedy Two-Pointer algorithm across 4 split models (Equal, Percentage, Exact, Occupancy Days) with real-time SSE alerts and PDF settlement exports. Implemented JWT authentication with HttpOnly cookies, bcrypt hashing, and login rate limiting alongside end-to-end TypeScript / Drizzle ORM type safety and 68 automated Vitest unit/integration tests.",
     executiveHighlights: [
       {
         icon: "🧠",
-        title: "Financial Health Scoring & LLM Insights",
-        desc: "0–100 financial health scoring engine with spending velocity anomaly detection (>25% surge) and OpenAI API-assisted insights and statement parsing."
+        title: "Financial Health Scoring & Anomaly Detection",
+        desc: "0–100 financial health scoring engine evaluating budget adherence, savings runway, and spending velocity anomalies (>25% surge) with proactive alerts."
       },
       {
         icon: "🎛️",
@@ -246,7 +246,7 @@ const projectDetailsData: Record<string, ProjectDetails> = {
     problemStatement: "Managing shared expenses across group trips, room rentals, and recurring household bills frequently results in tangled debt webs, uneven payment distributions, and error-prone manual spreadsheet calculations.",
     solutionOverview: "Engineered an end-to-end type-safe personal finance analytics platform and collaborative ledger featuring:",
     solutionPoints: [
-      { label: "Financial Health Scoring & Anomaly Detection", desc: "0–100 Health Score, spending velocity surge detection (>25%), and OpenAI API-assisted insights and statement parsing." },
+      { label: "Financial Health Scoring & Anomaly Detection", desc: "0–100 Health Score, spending velocity surge detection (>25%), and automated budget limit alerts." },
       { label: "Interactive 'What-If' Runway Simulator", desc: "Dynamic stress sliders and 6-month comparative Recharts cash-flow curves." },
       { label: "Real-Time SSE Alerts & Audit Stream", desc: "Live Server-Sent Events notifications for bills, debts, and settlements." },
       { label: "Greedy Two-Pointer Debt Simplification", desc: "4 split models (Equal, Percentage, Exact, Occupancy Days) minimizing settlement transfers." },
@@ -262,7 +262,7 @@ const projectDetailsData: Record<string, ProjectDetails> = {
                                           v
 +-----------------------------------------------------------------------------------+
 |                        Server (Node.js & Express, tRPC)                           |
-|   Health Scoring & Velocity Anomaly Engine    | OpenAI API Insights & Parser      |
+|   Health Scoring & Velocity Anomaly Engine    | Spending Anomaly Detection Engine  |
 |   Greedy Two-Pointer Debt Simplifier          | PDF Settlement Reporter (PDFKit)  |
 |   OWASP Session Controls (bcryptjs)           | Zod Input Validation              |
 +-----------------------------------------------------------------------------------+
@@ -275,9 +275,9 @@ const projectDetailsData: Record<string, ProjectDetails> = {
 +-----------------------------------------------------------------------------------+`,
     modules: [
       {
-        name: "🧠 Financial Health Scoring & LLM Insights",
-        desc: "Calculates a 0–100 financial health score with spending velocity anomaly detection (>25% spike), budget breach alerts, and OpenAI API-assisted insights and statement parsing.",
-        highlights: ["0–100 Health Score", "Spending Velocity Anomaly Detection", "OpenAI API Insights & Statement Parsing", "Budget Breach Alerts"]
+        name: "🧠 Financial Health Scoring & Anomaly Detection",
+        desc: "Calculates a 0–100 financial health score with spending velocity anomaly detection (>25% spike) and automated budget breach alerts.",
+        highlights: ["0–100 Health Score", "Spending Velocity Anomaly Detection", "Savings Runway Calculation", "Budget Breach Alerts"]
       },
       {
         name: "🎛️ Interactive 'What-If' Runway Simulator",
@@ -4051,7 +4051,7 @@ function App() {
                         Managing personal budgets and splitting shared expenses across roommates or group trips often leads to tangled debts and spreadsheet errors. <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Ledgerly</strong> is a personal finance analytics platform and collaborative ledger built with end-to-end TypeScript type safety across React, Node.js, Express, PostgreSQL, and Drizzle ORM.
                       </p>
                       <p style={{ margin: 0 }}>
-                        It features a <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>financial health scoring engine (0–100 scale)</strong> with spending velocity anomaly detection and <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>OpenAI API-assisted insights and statement parsing</strong>, paired with an interactive <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Recharts runway simulator</strong> to model discretionary spending cuts and major purchases across comparative 6-month cash-flow curves.
+                        It features an <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>algorithmic financial health scoring engine (0–100 scale)</strong> with spending velocity anomaly detection and <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>automated budget limit alerts</strong>, paired with an interactive <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Recharts runway simulator</strong> to model discretionary spending cuts and major purchases across comparative 6-month cash-flow curves.
                       </p>
                       <p style={{ margin: 0 }}>
                         For shared expenses, Ledgerly implements multi-party debt simplification via a <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>Greedy Two-Pointer algorithm across 4 split models (Equal, Percentage, Exact, Occupancy Days)</strong> with real-time <strong style={{ color: theme === 'light' ? '#0f172a' : '#ffffff', fontWeight: 700 }}>SSE alerts and PDF settlement exports</strong>, backed by JWT authentication (HttpOnly cookies, bcrypt hashing, and login rate limiting) and <strong style={{ color: theme === 'light' ? 'var(--primary-color)' : '#38bdf8', fontWeight: 700 }}>68 automated unit/integration tests (Vitest)</strong>.
@@ -4064,7 +4064,7 @@ function App() {
                     </h4>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '11px' }}>
                       {[
-                        { icon: "🧠", title: "Financial Health Scoring & LLM Insights", desc: "0–100 financial health score with spending velocity anomaly detection and OpenAI API-assisted insights and statement parsing" },
+                        { icon: "🧠", title: "Financial Health Scoring & Anomaly Detection", desc: "0–100 financial health score with spending velocity anomaly detection and automated budget limit alerts" },
                         { icon: "🎛️", title: "Interactive Recharts Runway Simulator", desc: "Models discretionary spending cuts and major purchases across comparative 6-month cash-flow curves" },
                         { icon: "🧮", title: "Greedy Two-Pointer Debt Simplification", desc: "Minimizes multi-party transfers across 4 split models (Equal, Percentage, Exact, Occupancy Days)" },
                         { icon: "🔔", title: "Real-Time SSE Alerts & Activity Stream", desc: "Server-Sent Events notifications for spending anomalies, group bills, and debt settlements" },

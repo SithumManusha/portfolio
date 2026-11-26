@@ -111,7 +111,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       category: 'Projects',
       icon: 'fa-solid fa-wallet',
       badge: 'Individual',
-      keywords: ['ledgerly', 'finance', 'recharts', 'debt', 'algorithm', 'vitest', 'drizzle', 'openai'],
+      keywords: ['ledgerly', 'finance', 'recharts', 'debt', 'algorithm', 'vitest', 'drizzle', 'vercel', 'render'],
       action: () => {
         onClose();
         onSelectProject('ledgerly');
