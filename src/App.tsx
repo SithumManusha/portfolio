@@ -1716,11 +1716,6 @@ const projectsData: ProjectItem[] = [
       role: 'Lead Automation Engineer / SDET'
     },
     desc: 'An enterprise-grade test automation suite for AutomationExercise.com built with Playwright, TypeScript, and the Page Object Model (POM). Features custom network route interception to eliminate flaky third-party ad scripts, dynamic timestamp-based fixtures, multi-layer UI and REST API test suites (status codes, JSON schemas, negative scenarios), and a continuous GitHub Actions CI/CD pipeline.',
-    myContributions: [
-      'Page Object Model (POM) Architecture: Built modular page classes (BasePage, HomePage, AuthPage, ProductsPage, CartPage, ContactUsPage) strictly separating UI locators from test logic.',
-      'Third-Party Ad Network Filtering: Engineered custom network route aborting in BasePage to block intrusive Google Vignette overlays for 100% deterministic test execution.',
-      'Multi-Layer UI & REST API Suites: Developed end-to-end user lifecycle flows alongside 5 backend REST API test suites validating HTTP status codes (200, 400, 405) and JSON schemas under GitHub Actions CI.'
-    ],
     image: '/playwright_demo_thumbnail.png',
     alt: 'AutomationExercise QA Framework Playwright TypeScript Showcase',
     tags: ['Playwright', 'TypeScript', 'Page Object Model (POM)', 'REST APIs', 'CI/CD', 'GitHub Actions', 'HTML Reports', 'Node.js'],
@@ -3304,7 +3299,7 @@ function App() {
                         <div className="cv-highlights-header">
                           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                             <i className="fa-solid fa-crown" style={{ color: '#10b981' }}></i>
-                            <span>MY CORE SUBSYSTEM &amp; DIRECT CONTRIBUTIONS</span>
+                            <span>{currentProj.teamBadge?.type === 'solo' ? 'CORE ARCHITECTURAL HIGHLIGHTS' : 'MY CORE SUBSYSTEM & DIRECT CONTRIBUTIONS'}</span>
                           </div>
                           {currentProj.teamBadge?.role && (
                             <span className="cv-highlights-role-badge">
