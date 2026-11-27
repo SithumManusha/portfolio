@@ -1960,6 +1960,7 @@ function App() {
 
   // Project Carousel (චක්‍රය) state
   const [projectSlideIndex, setProjectSlideIndex] = useState(0);
+  const [isPlayingQaVideo, setIsPlayingQaVideo] = useState(false);
 
   // Certifications category filter & carousel pagination
   const [certFilter, setCertFilter] = useState<'all' | 'qa' | 'cloud' | 'dev-ai'>('all');
@@ -2936,7 +2937,10 @@ function App() {
               {String(projectSlideIndex + 1).padStart(2, '0')} / {String(projectsData.length).padStart(2, '0')}
             </span>
             <button
-              onClick={() => setProjectSlideIndex(prev => (prev - 1 + projectsData.length) % projectsData.length)}
+              onClick={() => {
+                setProjectSlideIndex(prev => (prev - 1 + projectsData.length) % projectsData.length);
+                setIsPlayingQaVideo(false);
+              }}
               aria-label="Previous Project"
               style={{
                 width: '42px',
@@ -2964,7 +2968,10 @@ function App() {
               <i className="fa-solid fa-chevron-left"></i>
             </button>
             <button
-              onClick={() => setProjectSlideIndex(prev => (prev + 1) % projectsData.length)}
+              onClick={() => {
+                setProjectSlideIndex(prev => (prev + 1) % projectsData.length);
+                setIsPlayingQaVideo(false);
+              }}
               aria-label="Next Project"
               style={{
                 width: '42px',
@@ -3096,22 +3103,93 @@ function App() {
                     background: 'radial-gradient(circle at center, rgba(37,99,235,0.09) 0%, transparent 70%)'
                   }}>
                     {currentProj.id === 'automation-qa' ? (
-                      <video
-                        src="/playwright_e2e_full_showcase_extended.mp4"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        poster="/playwright_demo_thumbnail.png"
-                        style={{
-                          width: '100%',
-                          height: '100%',
-                          maxHeight: '380px',
-                          objectFit: 'contain',
-                          borderRadius: '12px',
-                          boxShadow: '0 8px 30px rgba(0,0,0,0.5)',
-                        }}
-                      />
+                      isPlayingQaVideo ? (
+                        <video
+                          src="/playwright_e2e_full_showcase_extended.mp4"
+                          autoPlay
+                          controls
+                          playsInline
+                          poster="/playwright_demo_thumbnail.png"
+                          style={{
+                            width: '100%',
+                            height: '100%',
+                            maxHeight: '380px',
+                            objectFit: 'contain',
+                            borderRadius: '12px',
+                            boxShadow: '0 8px 30px rgba(0,0,0,0.5)',
+                            background: '#000'
+                          }}
+                        />
+                      ) : (
+                        <div
+                          onClick={() => setIsPlayingQaVideo(true)}
+                          style={{
+                            position: 'relative',
+                            width: '100%',
+                            height: '100%',
+                            maxHeight: '380px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            cursor: 'pointer'
+                          }}
+                        >
+                          <img
+                            src={currentProj.image}
+                            alt={currentProj.alt}
+                            style={{
+                              width: '100%',
+                              height: '100%',
+                              maxHeight: '380px',
+                              objectFit: 'contain',
+                              borderRadius: '12px',
+                              boxShadow: '0 8px 30px rgba(0,0,0,0.5)',
+                              transition: 'transform 0.4s ease'
+                            }}
+                          />
+                          {/* Center Play Button Overlay */}
+                          <div
+                            style={{
+                              position: 'absolute',
+                              display: 'flex',
+                              alignItems: 'center',
+                              gap: '10px',
+                              padding: '12px 22px',
+                              borderRadius: '30px',
+                              background: 'rgba(15, 23, 42, 0.9)',
+                              backdropFilter: 'blur(10px)',
+                              border: '1.5px solid rgba(16, 185, 129, 0.6)',
+                              color: '#ffffff',
+                              fontWeight: 700,
+                              fontSize: '0.92rem',
+                              boxShadow: '0 8px 25px rgba(0, 0, 0, 0.5), 0 0 20px rgba(16, 185, 129, 0.4)',
+                              transition: 'transform 0.25s ease'
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.transform = 'scale(1.08)';
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.transform = 'scale(1)';
+                            }}
+                          >
+                            <span style={{
+                              width: '32px',
+                              height: '32px',
+                              borderRadius: '50%',
+                              background: '#10b981',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              color: '#fff',
+                              fontSize: '0.85rem',
+                              paddingLeft: '2px'
+                            }}>
+                              <i className="fa-solid fa-play"></i>
+                            </span>
+                            <span>Click to Watch 25s Demo</span>
+                          </div>
+                        </div>
+                      )
                     ) : (
                       <img
                         src={currentProj.image}
@@ -3287,7 +3365,16 @@ function App() {
                     paddingTop: '16px',
                     borderTop: theme === 'light' ? '1px solid #e2e8f0' : '1px solid #1e293b'
                   }}>
-                    {currentProj.liveUrl && (
+                    {currentProj.id === 'automation-qa' ? (
+                      <button
+                        onClick={() => setIsPlayingQaVideo(prev => !prev)}
+                        className="btn btn-primary cursor-pointer"
+                        style={{ padding: '9px 20px', fontSize: '0.9rem', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
+                      >
+                        <i className={`fa-solid ${isPlayingQaVideo ? 'fa-pause' : 'fa-circle-play'}`}></i>
+                        {isPlayingQaVideo ? 'Pause Video' : 'Watch Execution Video'}
+                      </button>
+                    ) : currentProj.liveUrl ? (
                       <a
                         href={currentProj.liveUrl}
                         target="_blank"
@@ -3297,7 +3384,7 @@ function App() {
                       >
                         <i className="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
                       </a>
-                    )}
+                    ) : null}
 
                     <a
                       href={currentProj.githubUrl}
@@ -3337,7 +3424,10 @@ function App() {
             return (
               <button
                 key={proj.id}
-                onClick={() => setProjectSlideIndex(idx)}
+                onClick={() => {
+                  setProjectSlideIndex(idx);
+                  setIsPlayingQaVideo(false);
+                }}
                 aria-label={`Jump to project ${proj.title}`}
                 style={{
                   width: isActive ? '34px' : '10px',
