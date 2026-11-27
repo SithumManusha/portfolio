@@ -3100,7 +3100,6 @@ function App() {
                     {currentProj.id === 'automation-qa' ? (
                       isPlayingQaVideo ? (
                         <video
-                          src="/playwright_e2e_full_showcase_extended.mp4"
                           autoPlay
                           controls
                           playsInline
@@ -3114,7 +3113,11 @@ function App() {
                             boxShadow: '0 8px 30px rgba(0,0,0,0.5)',
                             background: '#000'
                           }}
-                        />
+                        >
+                          <source src="/playwright_e2e_full_showcase_extended.mp4" type="video/mp4" />
+                          <source src="/playwright_e2e_full_showcase_extended.webm" type="video/webm" />
+                          Your browser does not support the video tag.
+                        </video>
                       ) : (
                         <div
                           onClick={() => setIsPlayingQaVideo(true)}
@@ -4833,11 +4836,12 @@ function App() {
                       <video
                         controls
                         playsInline
-                        preload="metadata"
+                        preload="auto"
                         poster="/playwright_demo_thumbnail.png"
                         style={{ width: '100%', maxHeight: '420px', display: 'block', outline: 'none' }}
                       >
                         <source src="/playwright_e2e_full_showcase_extended.mp4" type="video/mp4" />
+                        <source src="/playwright_e2e_full_showcase_extended.webm" type="video/webm" />
                         Your browser does not support the video tag.
                       </video>
                     </div>
