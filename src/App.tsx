@@ -3095,25 +3095,44 @@ function App() {
                     padding: '20px 16px 40px 16px',
                     background: 'radial-gradient(circle at center, rgba(37,99,235,0.09) 0%, transparent 70%)'
                   }}>
-                    <img
-                      src={currentProj.image}
-                      alt={currentProj.alt}
-                      style={{
-                        width: '100%',
-                        height: '100%',
-                        maxHeight: '380px',
-                        objectFit: 'contain',
-                        borderRadius: '12px',
-                        boxShadow: '0 8px 30px rgba(0,0,0,0.5)',
-                        transition: 'transform 0.4s ease'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.transform = 'scale(1.02)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.transform = 'scale(1)';
-                      }}
-                    />
+                    {currentProj.id === 'automation-qa' ? (
+                      <video
+                        src="/playwright_e2e_full_showcase_extended.mp4"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        poster="/playwright_demo_thumbnail.png"
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          maxHeight: '380px',
+                          objectFit: 'contain',
+                          borderRadius: '12px',
+                          boxShadow: '0 8px 30px rgba(0,0,0,0.5)',
+                        }}
+                      />
+                    ) : (
+                      <img
+                        src={currentProj.image}
+                        alt={currentProj.alt}
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          maxHeight: '380px',
+                          objectFit: 'contain',
+                          borderRadius: '12px',
+                          boxShadow: '0 8px 30px rgba(0,0,0,0.5)',
+                          transition: 'transform 0.4s ease'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.transform = 'scale(1.02)';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.transform = 'scale(1)';
+                        }}
+                      />
+                    )}
                   </div>
 
                   {/* Feature Badges Overlay Bar at the bottom of media */}
@@ -4697,6 +4716,45 @@ function App() {
                           {tech}
                         </span>
                       ))}
+                    </div>
+
+                    {/* Embedded Full E2E Automation Walkthrough Video Player */}
+                    <div style={{
+                      marginBottom: '26px',
+                      borderRadius: '14px',
+                      overflow: 'hidden',
+                      border: theme === 'light' ? '1.5px solid rgba(13, 148, 136, 0.3)' : '1.5px solid rgba(45, 212, 191, 0.25)',
+                      background: theme === 'light' ? '#090d16' : '#05080f',
+                      boxShadow: '0 8px 30px rgba(0, 0, 0, 0.35)'
+                    }}>
+                      <div style={{
+                        padding: '10px 16px',
+                        background: theme === 'light' ? 'rgba(13, 148, 136, 0.1)' : 'rgba(45, 212, 191, 0.08)',
+                        borderBottom: theme === 'light' ? '1px solid rgba(13, 148, 136, 0.2)' : '1px solid rgba(45, 212, 191, 0.15)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        flexWrap: 'wrap',
+                        gap: '8px'
+                      }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.86rem', fontWeight: 700, color: theme === 'light' ? '#0f766e' : '#5eead4' }}>
+                          <i className="fa-solid fa-circle-play" style={{ fontSize: '1rem', color: '#10b981' }}></i>
+                          <span>Full E2E Customer Journey (Auth &bull; Products Search &bull; Cart &bull; Teardown)</span>
+                        </div>
+                        <span style={{ fontSize: '0.72rem', background: '#10b98125', color: '#10b981', border: '1px solid #10b98140', padding: '2px 10px', borderRadius: '12px', fontWeight: 700 }}>
+                          720p 60fps &bull; Extended Demo
+                        </span>
+                      </div>
+                      <video
+                        controls
+                        playsInline
+                        preload="metadata"
+                        poster="/playwright_demo_thumbnail.png"
+                        style={{ width: '100%', maxHeight: '420px', display: 'block', outline: 'none' }}
+                      >
+                        <source src="/playwright_e2e_full_showcase_extended.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
                     </div>
 
                     {/* Core Deliverables Box */}
