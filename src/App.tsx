@@ -88,6 +88,91 @@ interface ProjectDetails {
 }
 
 const projectDetailsData: Record<string, ProjectDetails> = {
+  'automation-qa': {
+    title: "AutomationExercise QA Framework",
+    category: "E2E & REST API Test Automation Framework • Playwright & TypeScript",
+    typeLabel: "Individual Project — QA & Test Automation | 2026",
+    statusLabel: "CI/CD Passing (GitHub Actions)",
+    role: "Lead Automation Engineer / SDET",
+    methodology: "Page Object Model (POM) & Multi-Layer Test Strategy",
+    tags: ["Playwright", "TypeScript", "Page Object Model", "REST APIs", "CI/CD", "GitHub Actions", "HTML Reports", "Node.js"],
+    description: "An enterprise-grade automated testing framework for AutomationExercise.com built with Playwright, TypeScript, and the Page Object Model (POM) pattern. Features custom network interception to block intrusive third-party ads and Google Vignettes, dynamic timestamp-based fixtures to prevent test collisions, multi-layer UI and REST API test suites (status codes, JSON schemas, negative scenarios), and an automated GitHub Actions CI/CD pipeline.",
+    problemStatement: "E-commerce platforms require bulletproof functional flows across user auth, catalog browsing, and cart/checkout. However, third-party ads frequently cause flaky test failures, static test fixtures cause concurrency collisions, and manual regression cycles slow down deployment.",
+    solutionOverview: "Engineered an end-to-end automated testing architecture with Page Object Model classes, network route aborting for advertising domains, dynamic user registration/deletion lifecycle, and comprehensive REST API assertions.",
+    architecture: `+-----------------------------------------------------------------------------------+
+|                        Playwright Test Automation Runner                          |
+|         playwright.config.ts  •  Single Worker  •  Headless / Headed              |
++-----------------------------------------------------------------------------------+
+                                          |
+                +-------------------------+-------------------------+
+                |                                                   |
+                v                                                   v
++-------------------------------+                   +-------------------------------+
+|     UI E2E Test Suites        |                   |      REST API Test Suites     |
+|  Auth, Products, Cart, Form   |                   |  GET/POST, Schema, 405, 400   |
++-------------------------------+                   +-------------------------------+
+                |                                                   |
+                v                                                   |
++-------------------------------+                                   |
+|   Page Object Model (POM)     |                                   |
+| BasePage (Ad-Block Intercept) |                                   |
+| HomePage, AuthPage, CartPage  |                                   |
++-------------------------------+                                   |
+                |                                                   |
+                +-------------------------+-------------------------+
+                                          |
+                                          v
++-----------------------------------------------------------------------------------+
+|                      Target: AutomationExercise.com Platform                      |
+|                  UI Web Pages  •  RESTful Backend Endpoints                       |
++-----------------------------------------------------------------------------------+`,
+    modules: [
+      {
+        name: "🛡️ Ad-Blocking Network Routing",
+        desc: "Custom network interception in BasePage blocking Google Vignette and advertising scripts for 100% deterministic test execution.",
+        highlights: ["Eliminates test flakiness", "Blocks intrusive overlays", "Deterministic assertions"]
+      },
+      {
+        name: "📄 Page Object Model (POM)",
+        desc: "Modular page classes separating UI locators, interaction workflows, and assertion logic for high maintainability.",
+        highlights: ["Decoupled locator selectors", "Reusable interaction methods", "Strict TypeScript typings"]
+      },
+      {
+        name: "👤 Dynamic User Lifecycle",
+        desc: "Timestamp-based unique test data generation for user signup, session verification, and account deletion.",
+        highlights: ["Zero test state pollution", "Dynamic credential generation", "Automated cleanup"]
+      },
+      {
+        name: "🌐 Multi-Layer REST API Testing",
+        desc: "Automated API assertions validating HTTP 200, 400, 405 status codes, JSON schema models, and negative login flows.",
+        highlights: ["Schema validation", "Negative method assertions", "Form-data payload tests"]
+      }
+    ],
+    techLayers: [
+      {
+        layer: "Test Framework & Runner",
+        technologies: ["Playwright v1.53", "TypeScript v5.0+", "Node.js"],
+        role: "Multi-worker test execution, auto-waiting mechanisms, and headless/headed runner configurations."
+      },
+      {
+        layer: "Architecture & Design Pattern",
+        technologies: ["Page Object Model (POM)", "Dynamic Fixtures", "BasePage Utilities"],
+        role: "Modular page separation, strict typing, and third-party ad network route aborting."
+      },
+      {
+        layer: "CI/CD & Reporting",
+        technologies: ["GitHub Actions", "Playwright HTML Reports", "Video & Trace Artifacts"],
+        role: "Continuous integration workflows, artifact archiving, and deterministic test telemetry."
+      }
+    ],
+    databaseSchema: {
+      title: "Test Execution & Coverage Structure",
+      tables: ["01_auth.spec.ts (User Lifecycle)", "02_products.spec.ts (Catalog & Search)", "03_cart_checkout.spec.ts (Cart E2E)", "04_contact_us.spec.ts (Dialog & Upload)", "05_api.spec.ts (5 REST API Endpoints)"],
+      description: "Comprehensive multi-tier test suite covering both end-to-end browser workflows and backend API contracts."
+    },
+    image: "/playwright_demo_thumbnail.png",
+    github: "https://github.com/SithumManusha/AutomationExercise-Playwright-TS"
+  },
   ryzera: {
     title: "Super POS — Multi-Branch Offline-First Retail POS",
     category: "Multi-Branch Offline-First Retail POS • Offline Sync & Telemetry",
@@ -1152,12 +1237,12 @@ const skillsCategories: SkillCategory[] = [
     title: 'Programming Languages',
     icon: 'fa-solid fa-code',
     skills: [
-      { name: 'Java (21)', icon: 'fa-brands fa-java', color: '#ea580c' },
-      { name: 'Python (3.12)', icon: 'fa-brands fa-python', color: '#3776ab' },
+      { name: 'Java', icon: 'fa-brands fa-java', color: '#ea580c' },
+      { name: 'Python', icon: 'fa-brands fa-python', color: '#3776ab' },
       { name: 'JavaScript', icon: 'fa-brands fa-js', color: '#eab308' },
       { name: 'TypeScript', icon: 'fa-solid fa-file-code', color: '#3b82f6' },
-      { name: 'PHP (8)', icon: 'fa-brands fa-php', color: '#777bb4' },
-      { name: 'C / C++', icon: 'fa-solid fa-c', color: '#659ad2' },
+      { name: 'PHP', icon: 'fa-brands fa-php', color: '#777bb4' },
+      { name: 'C', icon: 'fa-solid fa-c', color: '#659ad2' },
       { name: 'SQL', icon: 'fa-solid fa-database', color: '#06b6d4' }
     ]
   },
@@ -1179,11 +1264,11 @@ const skillsCategories: SkillCategory[] = [
     title: 'Back-end & Messaging',
     icon: 'fa-solid fa-server',
     skills: [
-      { name: 'Spring Boot 3', icon: 'fa-solid fa-leaf', color: '#6db33f' },
+      { name: 'Spring Boot', icon: 'fa-solid fa-leaf', color: '#6db33f' },
       { name: 'FastAPI', icon: 'fa-solid fa-bolt', color: '#009688' },
       { name: 'Node.js & Express', icon: 'fa-brands fa-node-js', color: '#22c55e' },
       { name: 'NestJS', icon: 'fa-solid fa-fire', color: '#e0234e' },
-      { name: 'PHP (MVC)', icon: 'fa-brands fa-php', color: '#777bb4' },
+      { name: 'PHP', icon: 'fa-brands fa-php', color: '#777bb4' },
       { name: 'RabbitMQ', icon: 'fa-solid fa-tower-broadcast', color: '#ff6600' },
       { name: 'WebSockets (Socket.io)', icon: 'fa-solid fa-plug', color: '#38bdf8' },
       { name: 'RESTful APIs', icon: 'fa-solid fa-network-wired', color: '#38bdf8' }
@@ -1207,7 +1292,7 @@ const skillsCategories: SkillCategory[] = [
     title: 'Testing & Security Analysis',
     icon: 'fa-solid fa-vial-circle-check',
     skills: [
-      { name: 'JUnit 5', icon: 'fa-solid fa-vial', color: '#25a162' },
+      { name: 'JUnit', icon: 'fa-solid fa-vial', color: '#25a162' },
       { name: 'Pytest', icon: 'fa-solid fa-vial-virus', color: '#0a9edc' },
       { name: 'Vitest', icon: 'fa-solid fa-bolt', color: '#facc15' },
       { name: 'Playwright', icon: 'fa-solid fa-masks-theater', color: '#2e64b7' },
@@ -1236,7 +1321,7 @@ const skillsMetrics = [
     icon: 'fa-solid fa-code',
     num: '7',
     label: 'Languages',
-    sub: 'Java, Python, JS/TS, PHP, C/C++, SQL'
+    sub: 'Java, Python, JS/TS, PHP, C, SQL'
   },
   {
     icon: 'fa-solid fa-server',
@@ -1619,6 +1704,32 @@ const projectsData: ProjectItem[] = [
       { icon: 'fa-solid fa-brain', text: 'GOOGLE GEMINI API' },
       { icon: 'fa-solid fa-headphones', text: 'WEB SPEECH AUDIO PLAYER' },
       { icon: 'fa-solid fa-shield-halved', text: 'PDO, OWASP & CODEQL' }
+    ]
+  },
+  {
+    id: 'automation-qa',
+    title: 'AutomationExercise QA Framework',
+    category: 'E2E & REST API Test Automation Framework · 2026',
+    teamBadge: {
+      type: 'solo',
+      label: 'Individual Project',
+      role: 'Lead Automation Engineer / SDET'
+    },
+    desc: 'An enterprise-grade test automation suite for AutomationExercise.com built with Playwright, TypeScript, and the Page Object Model (POM). Features custom network route interception to eliminate flaky third-party ad scripts, dynamic timestamp-based fixtures, multi-layer UI and REST API test suites (status codes, JSON schemas, negative scenarios), and a continuous GitHub Actions CI/CD pipeline.',
+    myContributions: [
+      'Page Object Model (POM) Architecture: Built modular page classes (BasePage, HomePage, AuthPage, ProductsPage, CartPage, ContactUsPage) strictly separating UI locators from test logic.',
+      'Third-Party Ad Network Filtering: Engineered custom network route aborting in BasePage to block intrusive Google Vignette overlays for 100% deterministic test execution.',
+      'Multi-Layer UI & REST API Suites: Developed end-to-end user lifecycle flows alongside 5 backend REST API test suites validating HTTP status codes (200, 400, 405) and JSON schemas under GitHub Actions CI.'
+    ],
+    image: '/playwright_demo_thumbnail.png',
+    alt: 'AutomationExercise QA Framework Playwright TypeScript Showcase',
+    tags: ['Playwright', 'TypeScript', 'Page Object Model (POM)', 'REST APIs', 'CI/CD', 'GitHub Actions', 'HTML Reports', 'Node.js'],
+    githubUrl: 'https://github.com/SithumManusha/AutomationExercise-Playwright-TS',
+    detailsId: 'automation-qa',
+    featurePills: [
+      { icon: 'fa-solid fa-robot', text: 'PLAYWRIGHT & POM' },
+      { icon: 'fa-solid fa-network-wired', text: 'REST API & AD-BLOCK' },
+      { icon: 'fa-solid fa-code-branch', text: 'GITHUB ACTIONS CI' }
     ]
   },
   {
@@ -2936,6 +3047,7 @@ function App() {
                          currentProj.id === 'careerflow' ? 'careerflow-pink.vercel.app' :
                          currentProj.id === 'pulse-ai' ? 'pulse-ai-blog-engine.azurewebsites.net' :
                          currentProj.id === 'swiftdrop' ? 'github.com/RJSoori/SwiftDrop' :
+                         currentProj.id === 'automation-qa' ? 'github.com/SithumManusha/AutomationExercise-Playwright-TS' :
                          'github.com/SithumManusha/robotic-sorting-system'}
                       </span>
                     </div>
@@ -2967,7 +3079,8 @@ function App() {
                     <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#10b981', display: 'inline-block' }}></span>
                     {currentProj.id === 'robotic-sorting' ? 'Mechatronics & Embedded Architecture' :
                      currentProj.id === 'pulse-ai' ? 'Generative AI & MVC Architecture' :
-                     currentProj.id === 'swiftdrop' ? 'Enterprise Microservices & Cloud' : 'Enterprise Architecture'}
+                     currentProj.id === 'swiftdrop' ? 'Enterprise Microservices & Cloud' :
+                     currentProj.id === 'automation-qa' ? 'E2E & REST API Test Automation Framework' : 'Enterprise Architecture'}
                   </div>
 
                   {/* Aspect Video Image Container */}
@@ -4531,6 +4644,113 @@ function App() {
                         { icon: "🛡️", title: "Idempotent API Operations", desc: "Client-supplied Idempotency-Key headers prevent duplicate parcel creation on retried requests" },
                         { icon: "📱", title: "Automated QR Code Labels (ZXing)", desc: "Backend ZXing QR shipping labels linking parcel waybills directly to public Next.js tracking timelines" },
                         { icon: "🧪", title: "Automated Test Coverage", desc: "31 backend JUnit 5 tests + 97 frontend Vitest tests verifying booking, quoting, state transitions, and tracking" }
+                      ].map((cap, capIdx) => (
+                        <div key={capIdx} style={{ 
+                          display: 'flex', 
+                          alignItems: 'flex-start', 
+                          gap: '12px', 
+                          background: theme === 'light' ? 'rgba(13, 148, 136, 0.04)' : 'rgba(255, 255, 255, 0.02)', 
+                          border: theme === 'light' ? '1px solid rgba(13, 148, 136, 0.2)' : '1px solid var(--card-border)', 
+                          borderRadius: '10px', 
+                          padding: '12px 16px' 
+                        }}>
+                          <span style={{ fontSize: '1.25rem', lineHeight: 1, marginTop: '2px', flexShrink: 0 }}>{cap.icon}</span>
+                          <div style={{ fontSize: '0.9rem', lineHeight: 1.5, color: 'var(--text-secondary)' }}>
+                            <strong style={{ color: 'var(--text-primary)', marginRight: '6px' }}>{cap.title}:</strong>
+                            {cap.desc}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </>
+                ) : activeProjectId === 'automation-qa' ? (
+                  <>
+                    {/* Header: Title, Subtitle, and Quick Links */}
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '14px', marginBottom: '14px' }}>
+                      <div style={{ flex: '1 1 360px' }}>
+                        <h3 className="modal-project-title" style={{ margin: '0 0 6px 0', fontSize: '1.75rem', fontWeight: 800, color: 'var(--text-primary)' }}>
+                          AutomationExercise QA Framework
+                        </h3>
+                        <p style={{ margin: 0, fontSize: '0.98rem', color: theme === 'light' ? '#0d9488' : '#2dd4bf', fontWeight: 600, lineHeight: 1.4 }}>
+                          E2E &amp; REST API Test Automation Framework &bull; Playwright &amp; TypeScript (Individual Project &bull; 2026)
+                        </p>
+                      </div>
+                      <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', alignItems: 'center' }}>
+                        <a href="https://github.com/SithumManusha/AutomationExercise-Playwright-TS" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ padding: '8px 18px', fontSize: '0.85rem' }}>
+                          <i className="fa-brands fa-github" style={{ marginRight: '6px' }}></i> Source Code (GitHub)
+                        </a>
+                      </div>
+                    </div>
+
+                    {/* Tech Stack Pills */}
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '22px' }}>
+                      {["Playwright", "TypeScript", "Page Object Model (POM)", "REST APIs", "GitHub Actions CI", "HTML Reporting", "Ad Network Filtering"].map((tech, i) => (
+                        <span key={i} style={{
+                          padding: '4px 12px',
+                          borderRadius: '20px',
+                          fontSize: '0.78rem',
+                          fontWeight: 600,
+                          background: theme === 'light' ? 'rgba(13, 148, 136, 0.08)' : 'rgba(45, 212, 191, 0.1)',
+                          color: theme === 'light' ? '#0f766e' : '#5eead4',
+                          border: theme === 'light' ? '1px solid rgba(13, 148, 136, 0.25)' : '1px solid rgba(45, 212, 191, 0.2)'
+                        }}>
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Core Deliverables Box */}
+                    <div style={{ 
+                      background: theme === 'light' ? 'rgba(13, 148, 136, 0.05)' : 'rgba(45, 212, 191, 0.04)', 
+                      border: theme === 'light' ? '1.5px solid rgba(13, 148, 136, 0.35)' : '1.5px solid rgba(45, 212, 191, 0.25)', 
+                      borderRadius: '12px', 
+                      padding: '20px', 
+                      marginBottom: '26px' 
+                    }}>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px', marginBottom: '14px' }}>
+                        <span style={{ fontSize: '0.88rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.08em', color: theme === 'light' ? '#0f766e' : '#5eead4' }}>
+                          <i className="fa-solid fa-crown" style={{ marginRight: '6px' }}></i> Key Engineering Deliverables &amp; Test Architecture
+                        </span>
+                        <span style={{ fontSize: '0.75rem', fontWeight: 700, background: theme === 'light' ? '#ccfbf1' : 'rgba(45, 212, 191, 0.15)', color: theme === 'light' ? '#0f766e' : '#5eead4', padding: '3px 10px', borderRadius: '12px' }}>
+                          CI/CD Passing (GitHub Actions)
+                        </span>
+                      </div>
+                      <ul className="duo-scope-list" style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                        <li className="duo-scope-item">
+                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Page Object Model (POM) Separation:</strong> Modular page classes (<code>BasePage</code>, <code>HomePage</code>, <code>AuthPage</code>, <code>ProductsPage</code>, <code>CartPage</code>, <code>ContactUsPage</code>) cleanly isolate web element locators, user interactions, and test assertions.</span>
+                        </li>
+                        <li className="duo-scope-item">
+                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Third-Party Ad Network Interception:</strong> Custom route aborting in <code>BasePage</code> filters intrusive Google Vignette overlays and ad scripts for 100% deterministic test execution.</span>
+                        </li>
+                        <li className="duo-scope-item">
+                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Dynamic Test Fixtures &amp; Lifecycle:</strong> Unique timestamp credentials prevent collision states across concurrent test executions, concluding with automated teardown account deletion.</span>
+                        </li>
+                        <li className="duo-scope-item">
+                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Backend REST API Test Suite:</strong> 5 automated tests validating status codes (<code>200 OK</code>, <code>400 Bad Request</code>, <code>405 Method Not Allowed</code>), schema integrity, and search query params.</span>
+                        </li>
+                        <li className="duo-scope-item">
+                          <i className="fa-solid fa-circle-check" style={{ color: '#10b981', marginTop: '3px' }}></i>
+                          <span><strong style={{ color: 'var(--text-primary)' }}>Automated GitHub Actions CI/CD:</strong> Fully automated CI pipeline (<code>.github/workflows/playwright.yml</code>) running headless tests with 14-day HTML report &amp; video artifact archiving.</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    {/* Key Technical Capabilities */}
+                    <h4 style={{ margin: '0 0 16px 0', fontSize: '1.1rem', fontWeight: 800, color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <i className="fa-solid fa-circle-check" style={{ color: theme === 'light' ? '#0d9488' : '#2dd4bf' }}></i> Test Suites &amp; Coverage Metrics
+                    </h4>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                      {[
+                        { icon: "🔐", title: "Authentication & Account Lifecycle", desc: "Full registration with dynamic timestamp credentials, session assertions, and teardown deletion (E2E)" },
+                        { icon: "🛍️", title: "Product Catalog & Search Validation", desc: "Catalog navigation, keyword query verification, and price/availability/brand detail assertions" },
+                        { icon: "🛒", title: "Cart & Checkout Verification", desc: "Item addition, price subtotal assertions, and checkout review flows" },
+                        { icon: "📬", title: "Contact Form & Dialog Handling", desc: "Form input with file attachment upload and native browser window.confirm dialog automation" },
+                        { icon: "⚡", title: "5 REST API Automated Tests", desc: "GET products/brands, schema validations, 405 Method Not Supported, and 400 Bad Request login tests" },
+                        { icon: "📊", title: "Rich HTML Reporting & Traces", desc: "Playwright HTML reports with video captures, step-by-step traces, and screenshot logging" }
                       ].map((cap, capIdx) => (
                         <div key={capIdx} style={{ 
                           display: 'flex', 
